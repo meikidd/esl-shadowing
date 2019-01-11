@@ -1,0 +1,1110 @@
+﻿1
+00:00:00,000 --> 00:00:03,409
+[MUSIC PLAYING]
+
+2
+00:00:03,409 --> 00:00:09,775
+
+
+3
+00:00:09,775 --> 00:00:11,400
+ADDY OSMANI: All
+right, welcome to TTT.
+
+4
+00:00:11,400 --> 00:00:14,460
+Today, we're going to talk about
+Lighthouse and Lighthouse NCI.
+
+5
+00:00:14,460 --> 00:00:18,360
+With us today is our
+special guest Eric Bidelman.
+
+6
+00:00:18,360 --> 00:00:19,990
+Eric hacks on Lighthouse.
+
+7
+00:00:19,990 --> 00:00:21,030
+What is Lighthouse?
+
+8
+00:00:21,030 --> 00:00:21,930
+Why should we care about it?
+
+9
+00:00:21,930 --> 00:00:22,790
+ERIC BIDELMAN:
+Yeah, so Lighthouse
+
+10
+00:00:22,790 --> 00:00:25,500
+is a tool that we've been
+developing on the Chrome team
+
+11
+00:00:25,500 --> 00:00:27,750
+for about a year and
+a half now, and it's
+
+12
+00:00:27,750 --> 00:00:31,210
+a tool for web developers
+to audit their sites.
+
+13
+00:00:31,210 --> 00:00:33,300
+It tells you things
+about best practices.
+
+14
+00:00:33,300 --> 00:00:34,950
+It gives you performance scores.
+
+15
+00:00:34,950 --> 00:00:37,440
+It tells you if your site's
+a progressive web app or not.
+
+16
+00:00:37,440 --> 00:00:38,898
+It kind of lists
+off the things you
+
+17
+00:00:38,898 --> 00:00:40,482
+need to do in order
+to make it better.
+
+18
+00:00:40,482 --> 00:00:42,189
+MATT GAUNT: Yeah, and
+you've been working
+
+19
+00:00:42,189 --> 00:00:43,440
+on this for quite awhile now.
+
+20
+00:00:43,440 --> 00:00:46,141
+I think it start off
+as sort of a Node CLI,
+
+21
+00:00:46,141 --> 00:00:48,390
+and then there was the Chrome
+extension, which kind of
+
+22
+00:00:48,390 --> 00:00:49,950
+has been like super popular.
+
+23
+00:00:49,950 --> 00:00:51,900
+But you've been moving
+it around since then.
+
+24
+00:00:51,900 --> 00:00:52,410
+Right?
+
+25
+00:00:52,410 --> 00:00:54,618
+ERIC BIDELMAN: Yeah, it's
+kind of grown up over time.
+
+26
+00:00:54,618 --> 00:00:56,181
+It started off as
+the Node module,
+
+27
+00:00:56,181 --> 00:00:58,680
+so you can programmatically run
+this thing against your site
+
+28
+00:00:58,680 --> 00:00:59,564
+if you're in Node.
+
+29
+00:00:59,564 --> 00:01:01,230
+And then we develop
+the Chrome extension
+
+30
+00:01:01,230 --> 00:01:03,854
+because people just really want
+to press a button against a URL
+
+31
+00:01:03,854 --> 00:01:05,700
+and get some
+numbers and a score.
+
+32
+00:01:05,700 --> 00:01:07,980
+And over time, as the open
+source project has kind of
+
+33
+00:01:07,980 --> 00:01:11,770
+grown up-- we've released it
+in other places like Dev Tools.
+
+34
+00:01:11,770 --> 00:01:14,940
+So now in Chrome Stable,
+if you open the Dev Tools,
+
+35
+00:01:14,940 --> 00:01:17,550
+you can basically go
+to the new Audits panel
+
+36
+00:01:17,550 --> 00:01:19,510
+and, voila, instead
+of the old school
+
+37
+00:01:19,510 --> 00:01:21,556
+Audits panel that we had
+for many, many moons,
+
+38
+00:01:21,556 --> 00:01:24,560
+you have the new version,
+which includes Lighthouse.
+
+39
+00:01:24,560 --> 00:01:25,560
+So you can go to a site.
+
+40
+00:01:25,560 --> 00:01:26,130
+You can run.
+
+41
+00:01:26,130 --> 00:01:28,560
+You can choose which performance
+categories, [INAUDIBLE]
+
+42
+00:01:28,560 --> 00:01:29,400
+categories you want.
+
+43
+00:01:29,400 --> 00:01:30,690
+You run it against your site.
+
+44
+00:01:30,690 --> 00:01:33,270
+Will emulate a mobile device,
+throttle down the connection
+
+45
+00:01:33,270 --> 00:01:35,160
+to make sure your
+performance numbers are
+
+46
+00:01:35,160 --> 00:01:37,860
+realistic to the real
+world if somebody's viewing
+
+47
+00:01:37,860 --> 00:01:39,510
+your site on a mobile device.
+
+48
+00:01:39,510 --> 00:01:40,650
+And we run a bunch
+of stuff, so you'll
+
+49
+00:01:40,650 --> 00:01:42,150
+see the page reload
+a couple of times,
+
+50
+00:01:42,150 --> 00:01:44,220
+and that's just because we
+have to test for things like is
+
+51
+00:01:44,220 --> 00:01:45,390
+your site working offline.
+
+52
+00:01:45,390 --> 00:01:47,660
+We want to shut the network
+connection off, make
+
+53
+00:01:47,660 --> 00:01:50,416
+sure you're using a
+service worker or your PWA,
+
+54
+00:01:50,416 --> 00:01:52,290
+run performance audits,
+accessibility audits.
+
+55
+00:01:52,290 --> 00:01:55,480
+And eventually, we'll get
+this really nice report that
+
+56
+00:01:55,480 --> 00:01:58,200
+basically shows you what you're
+doing great at-- here we go--
+
+57
+00:01:58,200 --> 00:01:59,680
+and what you could improve upon.
+
+58
+00:01:59,680 --> 00:02:02,250
+So Chrome Status is a
+good example of PWA.
+
+59
+00:02:02,250 --> 00:02:03,727
+I spent some time making a PWA.
+
+60
+00:02:03,727 --> 00:02:06,310
+MATT GAUNT: I was going to say,
+who built Chrome Status, Eric?
+
+61
+00:02:06,310 --> 00:02:07,893
+ERIC BIDELMAN: Yeah,
+so there is that.
+
+62
+00:02:07,893 --> 00:02:10,804
+We have hundreds-- out
+of 100 for the PWA score,
+
+63
+00:02:10,804 --> 00:02:12,720
+and you can see in here
+all the different kind
+
+64
+00:02:12,720 --> 00:02:14,015
+of things we test for.
+
+65
+00:02:14,015 --> 00:02:15,390
+So there's a lot
+of stuff in here
+
+66
+00:02:15,390 --> 00:02:18,630
+I highly recommend
+checking out, diving in.
+
+67
+00:02:18,630 --> 00:02:21,000
+Really good, interesting
+performance section,
+
+68
+00:02:21,000 --> 00:02:23,250
+some newer metrics like
+first meaningful [INAUDIBLE],,
+
+69
+00:02:23,250 --> 00:02:25,470
+time to interactive,
+probably things you guys
+
+70
+00:02:25,470 --> 00:02:27,670
+have covered extensively
+on the show here.
+
+71
+00:02:27,670 --> 00:02:29,130
+ADDY OSMANI: No, first time
+we're ever covering this.
+
+72
+00:02:29,130 --> 00:02:29,520
+ERIC BIDELMAN: Yeah.
+
+73
+00:02:29,520 --> 00:02:30,940
+ADDY OSMANI: Ever in history.
+
+74
+00:02:30,940 --> 00:02:31,350
+ERIC BIDELMAN:
+But there's just--
+
+75
+00:02:31,350 --> 00:02:32,520
+there's new stuff
+happening all the time.
+
+76
+00:02:32,520 --> 00:02:35,312
+We're adding new audits, so
+as new best practices emerge
+
+77
+00:02:35,312 --> 00:02:37,770
+or the requirements for being
+a progressive web app change,
+
+78
+00:02:37,770 --> 00:02:39,120
+we're going to add
+that stuff and just
+
+79
+00:02:39,120 --> 00:02:40,244
+make the whole tool better.
+
+80
+00:02:40,244 --> 00:02:43,049
+MATT GAUNT: And then [INAUDIBLE]
+new web standards kind of land,
+
+81
+00:02:43,049 --> 00:02:45,090
+you can start seeing people
+basically add audits,
+
+82
+00:02:45,090 --> 00:02:46,980
+and then it's instantly going to
+start appearing in Lighthouse,
+
+83
+00:02:46,980 --> 00:02:50,087
+and it's kind of a nice way of
+keeping up to date with newer
+
+84
+00:02:50,087 --> 00:02:50,670
+web standards.
+
+85
+00:02:50,670 --> 00:02:50,990
+Right?
+
+86
+00:02:50,990 --> 00:02:52,590
+ERIC BIDELMAN: Yeah, and
+that's one of the goals,
+
+87
+00:02:52,590 --> 00:02:54,870
+is there's all these best
+practices you learn over time,
+
+88
+00:02:54,870 --> 00:02:56,119
+but some are kind of outdated.
+
+89
+00:02:56,119 --> 00:02:59,920
+You don't know what's
+relevant or not in 2017.
+
+90
+00:02:59,920 --> 00:03:02,640
+And so we just want to add this
+to a tool that's open source.
+
+91
+00:03:02,640 --> 00:03:05,770
+It's on GitHub, and now it's
+built into the browser itself,
+
+92
+00:03:05,770 --> 00:03:08,220
+so you can use it basically
+anywhere you want.
+
+93
+00:03:08,220 --> 00:03:08,760
+ADDY OSMANI: That's awesome.
+
+94
+00:03:08,760 --> 00:03:10,980
+I love that it's got those
+modern loading metrics going
+
+95
+00:03:10,980 --> 00:03:12,480
+there, and it's
+also got the section
+
+96
+00:03:12,480 --> 00:03:15,480
+for your critical
+network request chains.
+
+97
+00:03:15,480 --> 00:03:16,830
+Really useful to look at.
+
+98
+00:03:16,830 --> 00:03:20,640
+So Lighthouse is great for
+your local dev workflow,
+
+99
+00:03:20,640 --> 00:03:22,890
+checking your own performance
+on your local machine,
+
+100
+00:03:22,890 --> 00:03:24,570
+but it's important
+to be continuously
+
+101
+00:03:24,570 --> 00:03:26,540
+testing this stuff out.
+
+102
+00:03:26,540 --> 00:03:28,800
+Does Lighthouse work in
+continuous integration
+
+103
+00:03:28,800 --> 00:03:31,830
+with things like Travis, and if
+so, can we have it now please,
+
+104
+00:03:31,830 --> 00:03:32,414
+Eric, and how?
+
+105
+00:03:32,414 --> 00:03:34,288
+ERIC BIDELMAN: Well,
+I'm glad you asked that.
+
+106
+00:03:34,288 --> 00:03:34,920
+Indeed, we can.
+
+107
+00:03:34,920 --> 00:03:37,020
+Something we showed
+at Google I/O
+
+108
+00:03:37,020 --> 00:03:40,320
+is the ability to basically
+just hook up headless Chrome
+
+109
+00:03:40,320 --> 00:03:41,880
+and Lighthouse to GitHub.
+
+110
+00:03:41,880 --> 00:03:43,710
+So someone submits a
+pull request to you.
+
+111
+00:03:43,710 --> 00:03:45,626
+You want to know if that
+pull request is going
+
+112
+00:03:45,626 --> 00:03:48,090
+to hurt your performance,
+accessibility, best practices,
+
+113
+00:03:48,090 --> 00:03:50,710
+or if it's going to
+make it better or not.
+
+114
+00:03:50,710 --> 00:03:51,990
+So you can totally do that.
+
+115
+00:03:51,990 --> 00:03:54,635
+I've actually been experimenting
+with that over on GitHub.
+
+116
+00:03:54,635 --> 00:03:55,510
+You can check it out.
+
+117
+00:03:55,510 --> 00:03:59,370
+It's
+github.com/ebidel/lighthouse-ci.
+
+118
+00:03:59,370 --> 00:04:01,890
+And basically what this is,
+it's just a Docker image
+
+119
+00:04:01,890 --> 00:04:03,540
+that we've put on Google Cloud.
+
+120
+00:04:03,540 --> 00:04:05,220
+So it's on App Engine.
+
+121
+00:04:05,220 --> 00:04:06,780
+It runs Docker, runs
+headless Chrome,
+
+122
+00:04:06,780 --> 00:04:09,090
+and it basically sends off
+your GitHub pull requests
+
+123
+00:04:09,090 --> 00:04:11,910
+as they come into
+this Rest endpoint.
+
+124
+00:04:11,910 --> 00:04:14,040
+It stages and tests
+and then gives you
+
+125
+00:04:14,040 --> 00:04:15,982
+your Lighthouse score.
+
+126
+00:04:15,982 --> 00:04:17,940
+So that's pretty nice
+because you can basically
+
+127
+00:04:17,940 --> 00:04:20,023
+have this little Lighthouse
+following you wherever
+
+128
+00:04:20,023 --> 00:04:22,841
+you go, and this is an example
+of what this tool actually
+
+129
+00:04:22,841 --> 00:04:23,340
+does.
+
+130
+00:04:23,340 --> 00:04:24,940
+So it'll report on
+your pull request.
+
+131
+00:04:24,940 --> 00:04:26,940
+It'll comment saying,
+hey, this pull request is
+
+132
+00:04:26,940 --> 00:04:28,380
+going to be 100 of 100 now.
+
+133
+00:04:28,380 --> 00:04:29,170
+No worries.
+
+134
+00:04:29,170 --> 00:04:31,090
+You're safe to merge.
+
+135
+00:04:31,090 --> 00:04:33,280
+MATT GAUNT: So do you
+have to stay to your site
+
+136
+00:04:33,280 --> 00:04:35,650
+and then tell the CI,
+this is your role,
+
+137
+00:04:35,650 --> 00:04:37,970
+I want to run this pull request?
+
+138
+00:04:37,970 --> 00:04:39,190
+ERIC BIDELMAN: You do.
+
+139
+00:04:39,190 --> 00:04:40,770
+I'll just show you right here.
+
+140
+00:04:40,770 --> 00:04:41,590
+It's just Travis.
+
+141
+00:04:41,590 --> 00:04:43,364
+So you drop in a
+Travis YAML file,
+
+142
+00:04:43,364 --> 00:04:45,280
+and you run this little
+script that I created.
+
+143
+00:04:45,280 --> 00:04:47,116
+And that script,
+called runlighthouse,
+
+144
+00:04:47,116 --> 00:04:49,240
+just handles the details
+of commenting on your pull
+
+145
+00:04:49,240 --> 00:04:52,630
+request, and sending the
+pull request to this Docker
+
+146
+00:04:52,630 --> 00:04:54,275
+image in the cloud.
+
+147
+00:04:54,275 --> 00:04:55,900
+And then all you do
+in your Travis file
+
+148
+00:04:55,900 --> 00:04:59,510
+is have your usual
+install handler, your npm
+
+149
+00:04:59,510 --> 00:05:02,500
+link, or whatever you have
+to do to test your site.
+
+150
+00:05:02,500 --> 00:05:05,262
+And then in
+after_success, the stuff
+
+151
+00:05:05,262 --> 00:05:06,970
+you mentioned, which
+is deploy your site.
+
+152
+00:05:06,970 --> 00:05:09,730
+We want folks to deploy
+their pull request changes
+
+153
+00:05:09,730 --> 00:05:12,215
+to a staging URL,
+because we think
+
+154
+00:05:12,215 --> 00:05:14,950
+it will give more realistic
+performance numbers.
+
+155
+00:05:14,950 --> 00:05:16,840
+If you run locally
+on localhost, and you
+
+156
+00:05:16,840 --> 00:05:19,570
+don't have things like
+SSL, for instance, you
+
+157
+00:05:19,570 --> 00:05:22,330
+don't have an H2PUSH,
+so there's going
+
+158
+00:05:22,330 --> 00:05:24,790
+to be different performance
+characteristics if you don't
+
+159
+00:05:24,790 --> 00:05:26,367
+send it to a staging server.
+
+160
+00:05:26,367 --> 00:05:27,700
+But it's basically just drop in.
+
+161
+00:05:27,700 --> 00:05:29,300
+And you call this little
+runlighthouse script,
+
+162
+00:05:29,300 --> 00:05:31,174
+you give it the URL you
+want to test against,
+
+163
+00:05:31,174 --> 00:05:33,799
+your staging server URL.
+
+164
+00:05:33,799 --> 00:05:35,590
+And then lightousebot
+will do the hard work
+
+165
+00:05:35,590 --> 00:05:37,156
+of reporting back
+the new scores,
+
+166
+00:05:37,156 --> 00:05:38,530
+commenting on your
+pull requests,
+
+167
+00:05:38,530 --> 00:05:41,200
+and letting you know what's up.
+
+168
+00:05:41,200 --> 00:05:44,320
+MATT GAUNT: So because it's
+running in headless Chrome,
+
+169
+00:05:44,320 --> 00:05:46,990
+does that affect the
+performance scores and stuff,
+
+170
+00:05:46,990 --> 00:05:50,410
+and is there any way of
+basically getting around that,
+
+171
+00:05:50,410 --> 00:05:52,079
+so it's a bit more realistic?
+
+172
+00:05:52,079 --> 00:05:53,620
+ERIC BIDELMAN: So
+right now actually,
+
+173
+00:05:53,620 --> 00:05:55,328
+and I'm glad you asked
+that, because it's
+
+174
+00:05:55,328 --> 00:05:56,800
+a real important point.
+
+175
+00:05:56,800 --> 00:05:58,827
+Inside of this
+repo, it's a tool we
+
+176
+00:05:58,827 --> 00:06:00,910
+have online that people
+can just drop into Github,
+
+177
+00:06:00,910 --> 00:06:04,600
+but it's also a reference
+server, and a docker image
+
+178
+00:06:04,600 --> 00:06:07,250
+that people can run their
+own setup if they wanted to.
+
+179
+00:06:07,250 --> 00:06:09,110
+But I have two different
+Docker files here.
+
+180
+00:06:09,110 --> 00:06:11,770
+One is for headless
+Chrome, so test my site
+
+181
+00:06:11,770 --> 00:06:14,650
+using headless Chrome, and
+also using full Chrome, so
+
+182
+00:06:14,650 --> 00:06:16,810
+non-headless version of Chrome.
+
+183
+00:06:16,810 --> 00:06:19,420
+And so the CI's actually using
+the non-headless one right now,
+
+184
+00:06:19,420 --> 00:06:22,960
+because there's some bugs
+with headless Chrome on--
+
+185
+00:06:22,960 --> 00:06:24,880
+basically you can't do
+throttling and network
+
+186
+00:06:24,880 --> 00:06:26,560
+emulation in headless right now.
+
+187
+00:06:26,560 --> 00:06:28,360
+So it's not going
+to be entirely--
+
+188
+00:06:28,360 --> 00:06:30,870
+you're basically going to
+get better scores than you'd
+
+189
+00:06:30,870 --> 00:06:31,370
+expect.
+
+190
+00:06:31,370 --> 00:06:34,081
+And we want the most
+realistic ones possible.
+
+191
+00:06:34,081 --> 00:06:34,580
+Yeah.
+
+192
+00:06:34,580 --> 00:06:36,172
+A couple of options, though.
+
+193
+00:06:36,172 --> 00:06:36,880
+MATT GAUNT: Nice.
+
+194
+00:06:36,880 --> 00:06:38,622
+So you can use it as
+a Chrome extension,
+
+195
+00:06:38,622 --> 00:06:40,830
+but there's no real need
+for that, because you got it
+
+196
+00:06:40,830 --> 00:06:42,100
+in dev tools now.
+
+197
+00:06:42,100 --> 00:06:46,030
+Is it any other way you can
+use it after the CI as well?
+
+198
+00:06:46,030 --> 00:06:47,357
+Nudge nudge, WebPagetest?
+
+199
+00:06:47,357 --> 00:06:48,690
+ERIC BIDELMAN: WebPagetest, yes.
+
+200
+00:06:48,690 --> 00:06:49,940
+And actually we've integrated.
+
+201
+00:06:49,940 --> 00:06:51,790
+We've worked with the
+folks at WebPagetest
+
+202
+00:06:51,790 --> 00:06:53,590
+to integrate lighthouse.
+
+203
+00:06:53,590 --> 00:06:57,082
+So if you're on WebPagetest, you
+can pop over to Simple Testing.
+
+204
+00:06:57,082 --> 00:06:58,540
+Inside of here,
+you can see there's
+
+205
+00:06:58,540 --> 00:07:00,594
+a checkbox for Run Lighthouse.
+
+206
+00:07:00,594 --> 00:07:03,010
+And when you do this, you're
+going to get your typical web
+
+207
+00:07:03,010 --> 00:07:05,855
+page test results, but you'll
+also have the lighthouse report
+
+208
+00:07:05,855 --> 00:07:08,230
+that you saw, that we just
+saw in the dev tools, show up.
+
+209
+00:07:08,230 --> 00:07:10,984
+So you can get all this
+information in a single place,
+
+210
+00:07:10,984 --> 00:07:12,400
+if you're already
+using this tool.
+
+211
+00:07:12,400 --> 00:07:14,733
+ADDY OSMANI: And the benefit
+of this versus just running
+
+212
+00:07:14,733 --> 00:07:18,220
+it locally is you can also
+run on a real device, Moto G4,
+
+213
+00:07:18,220 --> 00:07:21,270
+and get slightly more
+realistic performance numbers
+
+214
+00:07:21,270 --> 00:07:22,080
+off the back of it.
+
+215
+00:07:22,080 --> 00:07:23,163
+ERIC BIDELMAN: Definitely.
+
+216
+00:07:23,163 --> 00:07:25,810
+One of the coolest things
+about WebPagetest in general
+
+217
+00:07:25,810 --> 00:07:27,400
+is there's all these
+different places
+
+218
+00:07:27,400 --> 00:07:31,090
+you can test, in a bunch of
+different versions of browsers
+
+219
+00:07:31,090 --> 00:07:32,210
+and devices.
+
+220
+00:07:32,210 --> 00:07:33,965
+So you get realistic numbers.
+
+221
+00:07:33,965 --> 00:07:34,840
+ADDY OSMANI: Awesome.
+
+222
+00:07:34,840 --> 00:07:37,200
+So a plethora of options.
+
+223
+00:07:37,200 --> 00:07:38,344
+Folks should check it out.
+
+224
+00:07:38,344 --> 00:07:39,010
+MATT GAUNT: Yep.
+
+225
+00:07:39,010 --> 00:07:41,166
+I'd just get it in your
+CI, so you don't trip up.
+
+226
+00:07:41,166 --> 00:07:42,540
+That's what I've
+done on my site,
+
+227
+00:07:42,540 --> 00:07:44,710
+but I've been customizing
+it like no end.
+
+228
+00:07:44,710 --> 00:07:45,460
+So I'm glad that--
+
+229
+00:07:45,460 --> 00:07:46,210
+ERIC BIDELMAN:
+It's open sourcing,
+
+230
+00:07:46,210 --> 00:07:46,840
+you can do whatever you want.
+
+231
+00:07:46,840 --> 00:07:48,048
+Customize the snot out of it.
+
+232
+00:07:48,048 --> 00:07:49,130
+ADDY OSMANI: Awesome.
+
+233
+00:07:49,130 --> 00:07:51,032
+So check out lighthouse,
+try it in CI.
+
+234
+00:07:51,032 --> 00:07:52,240
+Thanks for dropping by, Eric.
+
+235
+00:07:52,240 --> 00:07:52,570
+ERIC BIDELMAN: Thanks, guys.
+
+236
+00:07:52,570 --> 00:07:53,792
+Appreciate it.
+
+237
+00:07:53,792 --> 00:07:58,300
+[MUSIC PLAYING]
+
+238
+00:07:58,300 --> 00:08:02,045
+
+

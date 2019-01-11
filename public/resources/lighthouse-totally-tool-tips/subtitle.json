@@ -1,0 +1,1822 @@
+[
+    {
+        "startTime": 0,
+        "endTime": 3.409,
+        "content": [
+            "[MUSIC PLAYING]"
+        ]
+    },
+    {
+        "startTime": 3.409,
+        "endTime": 9.775,
+        "content": []
+    },
+    {
+        "startTime": 9.775,
+        "endTime": 11.4,
+        "content": [
+            "ADDY OSMANI: All",
+            "right, welcome to TTT."
+        ]
+    },
+    {
+        "startTime": 11.4,
+        "endTime": 14.46,
+        "content": [
+            "Today, we're going to talk about",
+            "Lighthouse and Lighthouse NCI."
+        ]
+    },
+    {
+        "startTime": 14.46,
+        "endTime": 18.36,
+        "content": [
+            "With us today is our",
+            "special guest Eric Bidelman."
+        ]
+    },
+    {
+        "startTime": 18.36,
+        "endTime": 19.99,
+        "content": [
+            "Eric hacks on Lighthouse."
+        ]
+    },
+    {
+        "startTime": 19.99,
+        "endTime": 21.03,
+        "content": [
+            "What is Lighthouse?"
+        ]
+    },
+    {
+        "startTime": 21.03,
+        "endTime": 21.93,
+        "content": [
+            "Why should we care about it?"
+        ]
+    },
+    {
+        "startTime": 21.93,
+        "endTime": 22.79,
+        "content": [
+            "ERIC BIDELMAN:",
+            "Yeah, so Lighthouse"
+        ]
+    },
+    {
+        "startTime": 22.79,
+        "endTime": 25.5,
+        "content": [
+            "is a tool that we've been",
+            "developing on the Chrome team"
+        ]
+    },
+    {
+        "startTime": 25.5,
+        "endTime": 27.75,
+        "content": [
+            "for about a year and",
+            "a half now, and it's"
+        ]
+    },
+    {
+        "startTime": 27.75,
+        "endTime": 31.21,
+        "content": [
+            "a tool for web developers",
+            "to audit their sites."
+        ]
+    },
+    {
+        "startTime": 31.21,
+        "endTime": 33.3,
+        "content": [
+            "It tells you things",
+            "about best practices."
+        ]
+    },
+    {
+        "startTime": 33.3,
+        "endTime": 34.95,
+        "content": [
+            "It gives you performance scores."
+        ]
+    },
+    {
+        "startTime": 34.95,
+        "endTime": 37.44,
+        "content": [
+            "It tells you if your site's",
+            "a progressive web app or not."
+        ]
+    },
+    {
+        "startTime": 37.44,
+        "endTime": 38.898,
+        "content": [
+            "It kind of lists",
+            "off the things you"
+        ]
+    },
+    {
+        "startTime": 38.898,
+        "endTime": 40.482,
+        "content": [
+            "need to do in order",
+            "to make it better."
+        ]
+    },
+    {
+        "startTime": 40.482,
+        "endTime": 42.189,
+        "content": [
+            "MATT GAUNT: Yeah, and",
+            "you've been working"
+        ]
+    },
+    {
+        "startTime": 42.189,
+        "endTime": 43.44,
+        "content": [
+            "on this for quite awhile now."
+        ]
+    },
+    {
+        "startTime": 43.44,
+        "endTime": 46.141,
+        "content": [
+            "I think it start off",
+            "as sort of a Node CLI,"
+        ]
+    },
+    {
+        "startTime": 46.141,
+        "endTime": 48.39,
+        "content": [
+            "and then there was the Chrome",
+            "extension, which kind of"
+        ]
+    },
+    {
+        "startTime": 48.39,
+        "endTime": 49.95,
+        "content": [
+            "has been like super popular."
+        ]
+    },
+    {
+        "startTime": 49.95,
+        "endTime": 51.9,
+        "content": [
+            "But you've been moving",
+            "it around since then."
+        ]
+    },
+    {
+        "startTime": 51.9,
+        "endTime": 52.41,
+        "content": [
+            "Right?"
+        ]
+    },
+    {
+        "startTime": 52.41,
+        "endTime": 54.618,
+        "content": [
+            "ERIC BIDELMAN: Yeah, it's",
+            "kind of grown up over time."
+        ]
+    },
+    {
+        "startTime": 54.618,
+        "endTime": 56.181,
+        "content": [
+            "It started off as",
+            "the Node module,"
+        ]
+    },
+    {
+        "startTime": 56.181,
+        "endTime": 58.68,
+        "content": [
+            "so you can programmatically run",
+            "this thing against your site"
+        ]
+    },
+    {
+        "startTime": 58.68,
+        "endTime": 59.564,
+        "content": [
+            "if you're in Node."
+        ]
+    },
+    {
+        "startTime": 59.564,
+        "endTime": 61.23,
+        "content": [
+            "And then we develop",
+            "the Chrome extension"
+        ]
+    },
+    {
+        "startTime": 61.23,
+        "endTime": 63.854,
+        "content": [
+            "because people just really want",
+            "to press a button against a URL"
+        ]
+    },
+    {
+        "startTime": 63.854,
+        "endTime": 65.7,
+        "content": [
+            "and get some",
+            "numbers and a score."
+        ]
+    },
+    {
+        "startTime": 65.7,
+        "endTime": 67.98,
+        "content": [
+            "And over time, as the open",
+            "source project has kind of"
+        ]
+    },
+    {
+        "startTime": 67.98,
+        "endTime": 71.77,
+        "content": [
+            "grown up-- we've released it",
+            "in other places like Dev Tools."
+        ]
+    },
+    {
+        "startTime": 71.77,
+        "endTime": 74.94,
+        "content": [
+            "So now in Chrome Stable,",
+            "if you open the Dev Tools,"
+        ]
+    },
+    {
+        "startTime": 74.94,
+        "endTime": 77.55,
+        "content": [
+            "you can basically go",
+            "to the new Audits panel"
+        ]
+    },
+    {
+        "startTime": 77.55,
+        "endTime": 79.51,
+        "content": [
+            "and, voila, instead",
+            "of the old school"
+        ]
+    },
+    {
+        "startTime": 79.51,
+        "endTime": 81.556,
+        "content": [
+            "Audits panel that we had",
+            "for many, many moons,"
+        ]
+    },
+    {
+        "startTime": 81.556,
+        "endTime": 84.56,
+        "content": [
+            "you have the new version,",
+            "which includes Lighthouse."
+        ]
+    },
+    {
+        "startTime": 84.56,
+        "endTime": 85.56,
+        "content": [
+            "So you can go to a site."
+        ]
+    },
+    {
+        "startTime": 85.56,
+        "endTime": 86.13,
+        "content": [
+            "You can run."
+        ]
+    },
+    {
+        "startTime": 86.13,
+        "endTime": 88.56,
+        "content": [
+            "You can choose which performance",
+            "categories, [INAUDIBLE]"
+        ]
+    },
+    {
+        "startTime": 88.56,
+        "endTime": 89.4,
+        "content": [
+            "categories you want."
+        ]
+    },
+    {
+        "startTime": 89.4,
+        "endTime": 90.69,
+        "content": [
+            "You run it against your site."
+        ]
+    },
+    {
+        "startTime": 90.69,
+        "endTime": 93.27,
+        "content": [
+            "Will emulate a mobile device,",
+            "throttle down the connection"
+        ]
+    },
+    {
+        "startTime": 93.27,
+        "endTime": 95.16,
+        "content": [
+            "to make sure your",
+            "performance numbers are"
+        ]
+    },
+    {
+        "startTime": 95.16,
+        "endTime": 97.86,
+        "content": [
+            "realistic to the real",
+            "world if somebody's viewing"
+        ]
+    },
+    {
+        "startTime": 97.86,
+        "endTime": 99.51,
+        "content": [
+            "your site on a mobile device."
+        ]
+    },
+    {
+        "startTime": 99.51,
+        "endTime": 100.65,
+        "content": [
+            "And we run a bunch",
+            "of stuff, so you'll"
+        ]
+    },
+    {
+        "startTime": 100.65,
+        "endTime": 102.15,
+        "content": [
+            "see the page reload",
+            "a couple of times,"
+        ]
+    },
+    {
+        "startTime": 102.15,
+        "endTime": 104.22,
+        "content": [
+            "and that's just because we",
+            "have to test for things like is"
+        ]
+    },
+    {
+        "startTime": 104.22,
+        "endTime": 105.39,
+        "content": [
+            "your site working offline."
+        ]
+    },
+    {
+        "startTime": 105.39,
+        "endTime": 107.66,
+        "content": [
+            "We want to shut the network",
+            "connection off, make"
+        ]
+    },
+    {
+        "startTime": 107.66,
+        "endTime": 110.416,
+        "content": [
+            "sure you're using a",
+            "service worker or your PWA,"
+        ]
+    },
+    {
+        "startTime": 110.416,
+        "endTime": 112.29,
+        "content": [
+            "run performance audits,",
+            "accessibility audits."
+        ]
+    },
+    {
+        "startTime": 112.29,
+        "endTime": 115.48,
+        "content": [
+            "And eventually, we'll get",
+            "this really nice report that"
+        ]
+    },
+    {
+        "startTime": 115.48,
+        "endTime": 118.2,
+        "content": [
+            "basically shows you what you're",
+            "doing great at-- here we go--"
+        ]
+    },
+    {
+        "startTime": 118.2,
+        "endTime": 119.68,
+        "content": [
+            "and what you could improve upon."
+        ]
+    },
+    {
+        "startTime": 119.68,
+        "endTime": 122.25,
+        "content": [
+            "So Chrome Status is a",
+            "good example of PWA."
+        ]
+    },
+    {
+        "startTime": 122.25,
+        "endTime": 123.727,
+        "content": [
+            "I spent some time making a PWA."
+        ]
+    },
+    {
+        "startTime": 123.727,
+        "endTime": 126.31,
+        "content": [
+            "MATT GAUNT: I was going to say,",
+            "who built Chrome Status, Eric?"
+        ]
+    },
+    {
+        "startTime": 126.31,
+        "endTime": 127.893,
+        "content": [
+            "ERIC BIDELMAN: Yeah,",
+            "so there is that."
+        ]
+    },
+    {
+        "startTime": 127.893,
+        "endTime": 130.804,
+        "content": [
+            "We have hundreds-- out",
+            "of 100 for the PWA score,"
+        ]
+    },
+    {
+        "startTime": 130.804,
+        "endTime": 132.72,
+        "content": [
+            "and you can see in here",
+            "all the different kind"
+        ]
+    },
+    {
+        "startTime": 132.72,
+        "endTime": 134.015,
+        "content": [
+            "of things we test for."
+        ]
+    },
+    {
+        "startTime": 134.015,
+        "endTime": 135.39,
+        "content": [
+            "So there's a lot",
+            "of stuff in here"
+        ]
+    },
+    {
+        "startTime": 135.39,
+        "endTime": 138.63,
+        "content": [
+            "I highly recommend",
+            "checking out, diving in."
+        ]
+    },
+    {
+        "startTime": 138.63,
+        "endTime": 141,
+        "content": [
+            "Really good, interesting",
+            "performance section,"
+        ]
+    },
+    {
+        "startTime": 141,
+        "endTime": 143.25,
+        "content": [
+            "some newer metrics like",
+            "first meaningful [INAUDIBLE],,"
+        ]
+    },
+    {
+        "startTime": 143.25,
+        "endTime": 145.47,
+        "content": [
+            "time to interactive,",
+            "probably things you guys"
+        ]
+    },
+    {
+        "startTime": 145.47,
+        "endTime": 147.67,
+        "content": [
+            "have covered extensively",
+            "on the show here."
+        ]
+    },
+    {
+        "startTime": 147.67,
+        "endTime": 149.13,
+        "content": [
+            "ADDY OSMANI: No, first time",
+            "we're ever covering this."
+        ]
+    },
+    {
+        "startTime": 149.13,
+        "endTime": 149.52,
+        "content": [
+            "ERIC BIDELMAN: Yeah."
+        ]
+    },
+    {
+        "startTime": 149.52,
+        "endTime": 150.94,
+        "content": [
+            "ADDY OSMANI: Ever in history."
+        ]
+    },
+    {
+        "startTime": 150.94,
+        "endTime": 151.35,
+        "content": [
+            "ERIC BIDELMAN:",
+            "But there's just--"
+        ]
+    },
+    {
+        "startTime": 151.35,
+        "endTime": 152.52,
+        "content": [
+            "there's new stuff",
+            "happening all the time."
+        ]
+    },
+    {
+        "startTime": 152.52,
+        "endTime": 155.312,
+        "content": [
+            "We're adding new audits, so",
+            "as new best practices emerge"
+        ]
+    },
+    {
+        "startTime": 155.312,
+        "endTime": 157.77,
+        "content": [
+            "or the requirements for being",
+            "a progressive web app change,"
+        ]
+    },
+    {
+        "startTime": 157.77,
+        "endTime": 159.12,
+        "content": [
+            "we're going to add",
+            "that stuff and just"
+        ]
+    },
+    {
+        "startTime": 159.12,
+        "endTime": 160.244,
+        "content": [
+            "make the whole tool better."
+        ]
+    },
+    {
+        "startTime": 160.244,
+        "endTime": 163.049,
+        "content": [
+            "MATT GAUNT: And then [INAUDIBLE]",
+            "new web standards kind of land,"
+        ]
+    },
+    {
+        "startTime": 163.049,
+        "endTime": 165.09,
+        "content": [
+            "you can start seeing people",
+            "basically add audits,"
+        ]
+    },
+    {
+        "startTime": 165.09,
+        "endTime": 166.98,
+        "content": [
+            "and then it's instantly going to",
+            "start appearing in Lighthouse,"
+        ]
+    },
+    {
+        "startTime": 166.98,
+        "endTime": 170.087,
+        "content": [
+            "and it's kind of a nice way of",
+            "keeping up to date with newer"
+        ]
+    },
+    {
+        "startTime": 170.087,
+        "endTime": 170.67,
+        "content": [
+            "web standards."
+        ]
+    },
+    {
+        "startTime": 170.67,
+        "endTime": 170.99,
+        "content": [
+            "Right?"
+        ]
+    },
+    {
+        "startTime": 170.99,
+        "endTime": 172.59,
+        "content": [
+            "ERIC BIDELMAN: Yeah, and",
+            "that's one of the goals,"
+        ]
+    },
+    {
+        "startTime": 172.59,
+        "endTime": 174.87,
+        "content": [
+            "is there's all these best",
+            "practices you learn over time,"
+        ]
+    },
+    {
+        "startTime": 174.87,
+        "endTime": 176.119,
+        "content": [
+            "but some are kind of outdated."
+        ]
+    },
+    {
+        "startTime": 176.119,
+        "endTime": 179.92,
+        "content": [
+            "You don't know what's",
+            "relevant or not in 2017."
+        ]
+    },
+    {
+        "startTime": 179.92,
+        "endTime": 182.64,
+        "content": [
+            "And so we just want to add this",
+            "to a tool that's open source."
+        ]
+    },
+    {
+        "startTime": 182.64,
+        "endTime": 185.77,
+        "content": [
+            "It's on GitHub, and now it's",
+            "built into the browser itself,"
+        ]
+    },
+    {
+        "startTime": 185.77,
+        "endTime": 188.22,
+        "content": [
+            "so you can use it basically",
+            "anywhere you want."
+        ]
+    },
+    {
+        "startTime": 188.22,
+        "endTime": 188.76,
+        "content": [
+            "ADDY OSMANI: That's awesome."
+        ]
+    },
+    {
+        "startTime": 188.76,
+        "endTime": 190.98,
+        "content": [
+            "I love that it's got those",
+            "modern loading metrics going"
+        ]
+    },
+    {
+        "startTime": 190.98,
+        "endTime": 192.48,
+        "content": [
+            "there, and it's",
+            "also got the section"
+        ]
+    },
+    {
+        "startTime": 192.48,
+        "endTime": 195.48,
+        "content": [
+            "for your critical",
+            "network request chains."
+        ]
+    },
+    {
+        "startTime": 195.48,
+        "endTime": 196.83,
+        "content": [
+            "Really useful to look at."
+        ]
+    },
+    {
+        "startTime": 196.83,
+        "endTime": 200.64,
+        "content": [
+            "So Lighthouse is great for",
+            "your local dev workflow,"
+        ]
+    },
+    {
+        "startTime": 200.64,
+        "endTime": 202.89,
+        "content": [
+            "checking your own performance",
+            "on your local machine,"
+        ]
+    },
+    {
+        "startTime": 202.89,
+        "endTime": 204.57,
+        "content": [
+            "but it's important",
+            "to be continuously"
+        ]
+    },
+    {
+        "startTime": 204.57,
+        "endTime": 206.54,
+        "content": [
+            "testing this stuff out."
+        ]
+    },
+    {
+        "startTime": 206.54,
+        "endTime": 208.8,
+        "content": [
+            "Does Lighthouse work in",
+            "continuous integration"
+        ]
+    },
+    {
+        "startTime": 208.8,
+        "endTime": 211.83,
+        "content": [
+            "with things like Travis, and if",
+            "so, can we have it now please,"
+        ]
+    },
+    {
+        "startTime": 211.83,
+        "endTime": 212.414,
+        "content": [
+            "Eric, and how?"
+        ]
+    },
+    {
+        "startTime": 212.414,
+        "endTime": 214.288,
+        "content": [
+            "ERIC BIDELMAN: Well,",
+            "I'm glad you asked that."
+        ]
+    },
+    {
+        "startTime": 214.288,
+        "endTime": 214.92,
+        "content": [
+            "Indeed, we can."
+        ]
+    },
+    {
+        "startTime": 214.92,
+        "endTime": 217.02,
+        "content": [
+            "Something we showed",
+            "at Google I/O"
+        ]
+    },
+    {
+        "startTime": 217.02,
+        "endTime": 220.32,
+        "content": [
+            "is the ability to basically",
+            "just hook up headless Chrome"
+        ]
+    },
+    {
+        "startTime": 220.32,
+        "endTime": 221.88,
+        "content": [
+            "and Lighthouse to GitHub."
+        ]
+    },
+    {
+        "startTime": 221.88,
+        "endTime": 223.71,
+        "content": [
+            "So someone submits a",
+            "pull request to you."
+        ]
+    },
+    {
+        "startTime": 223.71,
+        "endTime": 225.626,
+        "content": [
+            "You want to know if that",
+            "pull request is going"
+        ]
+    },
+    {
+        "startTime": 225.626,
+        "endTime": 228.09,
+        "content": [
+            "to hurt your performance,",
+            "accessibility, best practices,"
+        ]
+    },
+    {
+        "startTime": 228.09,
+        "endTime": 230.71,
+        "content": [
+            "or if it's going to",
+            "make it better or not."
+        ]
+    },
+    {
+        "startTime": 230.71,
+        "endTime": 231.99,
+        "content": [
+            "So you can totally do that."
+        ]
+    },
+    {
+        "startTime": 231.99,
+        "endTime": 234.635,
+        "content": [
+            "I've actually been experimenting",
+            "with that over on GitHub."
+        ]
+    },
+    {
+        "startTime": 234.635,
+        "endTime": 235.51,
+        "content": [
+            "You can check it out."
+        ]
+    },
+    {
+        "startTime": 235.51,
+        "endTime": 239.37,
+        "content": [
+            "It's",
+            "github.com/ebidel/lighthouse-ci."
+        ]
+    },
+    {
+        "startTime": 239.37,
+        "endTime": 241.89,
+        "content": [
+            "And basically what this is,",
+            "it's just a Docker image"
+        ]
+    },
+    {
+        "startTime": 241.89,
+        "endTime": 243.54,
+        "content": [
+            "that we've put on Google Cloud."
+        ]
+    },
+    {
+        "startTime": 243.54,
+        "endTime": 245.22,
+        "content": [
+            "So it's on App Engine."
+        ]
+    },
+    {
+        "startTime": 245.22,
+        "endTime": 246.78,
+        "content": [
+            "It runs Docker, runs",
+            "headless Chrome,"
+        ]
+    },
+    {
+        "startTime": 246.78,
+        "endTime": 249.09,
+        "content": [
+            "and it basically sends off",
+            "your GitHub pull requests"
+        ]
+    },
+    {
+        "startTime": 249.09,
+        "endTime": 251.91,
+        "content": [
+            "as they come into",
+            "this Rest endpoint."
+        ]
+    },
+    {
+        "startTime": 251.91,
+        "endTime": 254.04,
+        "content": [
+            "It stages and tests",
+            "and then gives you"
+        ]
+    },
+    {
+        "startTime": 254.04,
+        "endTime": 255.982,
+        "content": [
+            "your Lighthouse score."
+        ]
+    },
+    {
+        "startTime": 255.982,
+        "endTime": 257.94,
+        "content": [
+            "So that's pretty nice",
+            "because you can basically"
+        ]
+    },
+    {
+        "startTime": 257.94,
+        "endTime": 260.023,
+        "content": [
+            "have this little Lighthouse",
+            "following you wherever"
+        ]
+    },
+    {
+        "startTime": 260.023,
+        "endTime": 262.841,
+        "content": [
+            "you go, and this is an example",
+            "of what this tool actually"
+        ]
+    },
+    {
+        "startTime": 262.841,
+        "endTime": 263.34,
+        "content": [
+            "does."
+        ]
+    },
+    {
+        "startTime": 263.34,
+        "endTime": 264.94,
+        "content": [
+            "So it'll report on",
+            "your pull request."
+        ]
+    },
+    {
+        "startTime": 264.94,
+        "endTime": 266.94,
+        "content": [
+            "It'll comment saying,",
+            "hey, this pull request is"
+        ]
+    },
+    {
+        "startTime": 266.94,
+        "endTime": 268.38,
+        "content": [
+            "going to be 100 of 100 now."
+        ]
+    },
+    {
+        "startTime": 268.38,
+        "endTime": 269.17,
+        "content": [
+            "No worries."
+        ]
+    },
+    {
+        "startTime": 269.17,
+        "endTime": 271.09,
+        "content": [
+            "You're safe to merge."
+        ]
+    },
+    {
+        "startTime": 271.09,
+        "endTime": 273.28,
+        "content": [
+            "MATT GAUNT: So do you",
+            "have to stay to your site"
+        ]
+    },
+    {
+        "startTime": 273.28,
+        "endTime": 275.65,
+        "content": [
+            "and then tell the CI,",
+            "this is your role,"
+        ]
+    },
+    {
+        "startTime": 275.65,
+        "endTime": 277.97,
+        "content": [
+            "I want to run this pull request?"
+        ]
+    },
+    {
+        "startTime": 277.97,
+        "endTime": 279.19,
+        "content": [
+            "ERIC BIDELMAN: You do."
+        ]
+    },
+    {
+        "startTime": 279.19,
+        "endTime": 280.77,
+        "content": [
+            "I'll just show you right here."
+        ]
+    },
+    {
+        "startTime": 280.77,
+        "endTime": 281.59,
+        "content": [
+            "It's just Travis."
+        ]
+    },
+    {
+        "startTime": 281.59,
+        "endTime": 283.364,
+        "content": [
+            "So you drop in a",
+            "Travis YAML file,"
+        ]
+    },
+    {
+        "startTime": 283.364,
+        "endTime": 285.28,
+        "content": [
+            "and you run this little",
+            "script that I created."
+        ]
+    },
+    {
+        "startTime": 285.28,
+        "endTime": 287.116,
+        "content": [
+            "And that script,",
+            "called runlighthouse,"
+        ]
+    },
+    {
+        "startTime": 287.116,
+        "endTime": 289.24,
+        "content": [
+            "just handles the details",
+            "of commenting on your pull"
+        ]
+    },
+    {
+        "startTime": 289.24,
+        "endTime": 292.63,
+        "content": [
+            "request, and sending the",
+            "pull request to this Docker"
+        ]
+    },
+    {
+        "startTime": 292.63,
+        "endTime": 294.275,
+        "content": [
+            "image in the cloud."
+        ]
+    },
+    {
+        "startTime": 294.275,
+        "endTime": 295.9,
+        "content": [
+            "And then all you do",
+            "in your Travis file"
+        ]
+    },
+    {
+        "startTime": 295.9,
+        "endTime": 299.51,
+        "content": [
+            "is have your usual",
+            "install handler, your npm"
+        ]
+    },
+    {
+        "startTime": 299.51,
+        "endTime": 302.5,
+        "content": [
+            "link, or whatever you have",
+            "to do to test your site."
+        ]
+    },
+    {
+        "startTime": 302.5,
+        "endTime": 305.262,
+        "content": [
+            "And then in",
+            "after_success, the stuff"
+        ]
+    },
+    {
+        "startTime": 305.262,
+        "endTime": 306.97,
+        "content": [
+            "you mentioned, which",
+            "is deploy your site."
+        ]
+    },
+    {
+        "startTime": 306.97,
+        "endTime": 309.73,
+        "content": [
+            "We want folks to deploy",
+            "their pull request changes"
+        ]
+    },
+    {
+        "startTime": 309.73,
+        "endTime": 312.215,
+        "content": [
+            "to a staging URL,",
+            "because we think"
+        ]
+    },
+    {
+        "startTime": 312.215,
+        "endTime": 314.95,
+        "content": [
+            "it will give more realistic",
+            "performance numbers."
+        ]
+    },
+    {
+        "startTime": 314.95,
+        "endTime": 316.84,
+        "content": [
+            "If you run locally",
+            "on localhost, and you"
+        ]
+    },
+    {
+        "startTime": 316.84,
+        "endTime": 319.57,
+        "content": [
+            "don't have things like",
+            "SSL, for instance, you"
+        ]
+    },
+    {
+        "startTime": 319.57,
+        "endTime": 322.33,
+        "content": [
+            "don't have an H2PUSH,",
+            "so there's going"
+        ]
+    },
+    {
+        "startTime": 322.33,
+        "endTime": 324.79,
+        "content": [
+            "to be different performance",
+            "characteristics if you don't"
+        ]
+    },
+    {
+        "startTime": 324.79,
+        "endTime": 326.367,
+        "content": [
+            "send it to a staging server."
+        ]
+    },
+    {
+        "startTime": 326.367,
+        "endTime": 327.7,
+        "content": [
+            "But it's basically just drop in."
+        ]
+    },
+    {
+        "startTime": 327.7,
+        "endTime": 329.3,
+        "content": [
+            "And you call this little",
+            "runlighthouse script,"
+        ]
+    },
+    {
+        "startTime": 329.3,
+        "endTime": 331.174,
+        "content": [
+            "you give it the URL you",
+            "want to test against,"
+        ]
+    },
+    {
+        "startTime": 331.174,
+        "endTime": 333.799,
+        "content": [
+            "your staging server URL."
+        ]
+    },
+    {
+        "startTime": 333.799,
+        "endTime": 335.59,
+        "content": [
+            "And then lightousebot",
+            "will do the hard work"
+        ]
+    },
+    {
+        "startTime": 335.59,
+        "endTime": 337.156,
+        "content": [
+            "of reporting back",
+            "the new scores,"
+        ]
+    },
+    {
+        "startTime": 337.156,
+        "endTime": 338.53,
+        "content": [
+            "commenting on your",
+            "pull requests,"
+        ]
+    },
+    {
+        "startTime": 338.53,
+        "endTime": 341.2,
+        "content": [
+            "and letting you know what's up."
+        ]
+    },
+    {
+        "startTime": 341.2,
+        "endTime": 344.32,
+        "content": [
+            "MATT GAUNT: So because it's",
+            "running in headless Chrome,"
+        ]
+    },
+    {
+        "startTime": 344.32,
+        "endTime": 346.99,
+        "content": [
+            "does that affect the",
+            "performance scores and stuff,"
+        ]
+    },
+    {
+        "startTime": 346.99,
+        "endTime": 350.41,
+        "content": [
+            "and is there any way of",
+            "basically getting around that,"
+        ]
+    },
+    {
+        "startTime": 350.41,
+        "endTime": 352.079,
+        "content": [
+            "so it's a bit more realistic?"
+        ]
+    },
+    {
+        "startTime": 352.079,
+        "endTime": 353.62,
+        "content": [
+            "ERIC BIDELMAN: So",
+            "right now actually,"
+        ]
+    },
+    {
+        "startTime": 353.62,
+        "endTime": 355.328,
+        "content": [
+            "and I'm glad you asked",
+            "that, because it's"
+        ]
+    },
+    {
+        "startTime": 355.328,
+        "endTime": 356.8,
+        "content": [
+            "a real important point."
+        ]
+    },
+    {
+        "startTime": 356.8,
+        "endTime": 358.827,
+        "content": [
+            "Inside of this",
+            "repo, it's a tool we"
+        ]
+    },
+    {
+        "startTime": 358.827,
+        "endTime": 360.91,
+        "content": [
+            "have online that people",
+            "can just drop into Github,"
+        ]
+    },
+    {
+        "startTime": 360.91,
+        "endTime": 364.6,
+        "content": [
+            "but it's also a reference",
+            "server, and a docker image"
+        ]
+    },
+    {
+        "startTime": 364.6,
+        "endTime": 367.25,
+        "content": [
+            "that people can run their",
+            "own setup if they wanted to."
+        ]
+    },
+    {
+        "startTime": 367.25,
+        "endTime": 369.11,
+        "content": [
+            "But I have two different",
+            "Docker files here."
+        ]
+    },
+    {
+        "startTime": 369.11,
+        "endTime": 371.77,
+        "content": [
+            "One is for headless",
+            "Chrome, so test my site"
+        ]
+    },
+    {
+        "startTime": 371.77,
+        "endTime": 374.65,
+        "content": [
+            "using headless Chrome, and",
+            "also using full Chrome, so"
+        ]
+    },
+    {
+        "startTime": 374.65,
+        "endTime": 376.81,
+        "content": [
+            "non-headless version of Chrome."
+        ]
+    },
+    {
+        "startTime": 376.81,
+        "endTime": 379.42,
+        "content": [
+            "And so the CI's actually using",
+            "the non-headless one right now,"
+        ]
+    },
+    {
+        "startTime": 379.42,
+        "endTime": 382.96,
+        "content": [
+            "because there's some bugs",
+            "with headless Chrome on--"
+        ]
+    },
+    {
+        "startTime": 382.96,
+        "endTime": 384.88,
+        "content": [
+            "basically you can't do",
+            "throttling and network"
+        ]
+    },
+    {
+        "startTime": 384.88,
+        "endTime": 386.56,
+        "content": [
+            "emulation in headless right now."
+        ]
+    },
+    {
+        "startTime": 386.56,
+        "endTime": 388.36,
+        "content": [
+            "So it's not going",
+            "to be entirely--"
+        ]
+    },
+    {
+        "startTime": 388.36,
+        "endTime": 390.87,
+        "content": [
+            "you're basically going to",
+            "get better scores than you'd"
+        ]
+    },
+    {
+        "startTime": 390.87,
+        "endTime": 391.37,
+        "content": [
+            "expect."
+        ]
+    },
+    {
+        "startTime": 391.37,
+        "endTime": 394.081,
+        "content": [
+            "And we want the most",
+            "realistic ones possible."
+        ]
+    },
+    {
+        "startTime": 394.081,
+        "endTime": 394.58,
+        "content": [
+            "Yeah."
+        ]
+    },
+    {
+        "startTime": 394.58,
+        "endTime": 396.172,
+        "content": [
+            "A couple of options, though."
+        ]
+    },
+    {
+        "startTime": 396.172,
+        "endTime": 396.88,
+        "content": [
+            "MATT GAUNT: Nice."
+        ]
+    },
+    {
+        "startTime": 396.88,
+        "endTime": 398.622,
+        "content": [
+            "So you can use it as",
+            "a Chrome extension,"
+        ]
+    },
+    {
+        "startTime": 398.622,
+        "endTime": 400.83,
+        "content": [
+            "but there's no real need",
+            "for that, because you got it"
+        ]
+    },
+    {
+        "startTime": 400.83,
+        "endTime": 402.1,
+        "content": [
+            "in dev tools now."
+        ]
+    },
+    {
+        "startTime": 402.1,
+        "endTime": 406.03,
+        "content": [
+            "Is it any other way you can",
+            "use it after the CI as well?"
+        ]
+    },
+    {
+        "startTime": 406.03,
+        "endTime": 407.357,
+        "content": [
+            "Nudge nudge, WebPagetest?"
+        ]
+    },
+    {
+        "startTime": 407.357,
+        "endTime": 408.69,
+        "content": [
+            "ERIC BIDELMAN: WebPagetest, yes."
+        ]
+    },
+    {
+        "startTime": 408.69,
+        "endTime": 409.94,
+        "content": [
+            "And actually we've integrated."
+        ]
+    },
+    {
+        "startTime": 409.94,
+        "endTime": 411.79,
+        "content": [
+            "We've worked with the",
+            "folks at WebPagetest"
+        ]
+    },
+    {
+        "startTime": 411.79,
+        "endTime": 413.59,
+        "content": [
+            "to integrate lighthouse."
+        ]
+    },
+    {
+        "startTime": 413.59,
+        "endTime": 417.082,
+        "content": [
+            "So if you're on WebPagetest, you",
+            "can pop over to Simple Testing."
+        ]
+    },
+    {
+        "startTime": 417.082,
+        "endTime": 418.54,
+        "content": [
+            "Inside of here,",
+            "you can see there's"
+        ]
+    },
+    {
+        "startTime": 418.54,
+        "endTime": 420.594,
+        "content": [
+            "a checkbox for Run Lighthouse."
+        ]
+    },
+    {
+        "startTime": 420.594,
+        "endTime": 423.01,
+        "content": [
+            "And when you do this, you're",
+            "going to get your typical web"
+        ]
+    },
+    {
+        "startTime": 423.01,
+        "endTime": 425.855,
+        "content": [
+            "page test results, but you'll",
+            "also have the lighthouse report"
+        ]
+    },
+    {
+        "startTime": 425.855,
+        "endTime": 428.23,
+        "content": [
+            "that you saw, that we just",
+            "saw in the dev tools, show up."
+        ]
+    },
+    {
+        "startTime": 428.23,
+        "endTime": 430.984,
+        "content": [
+            "So you can get all this",
+            "information in a single place,"
+        ]
+    },
+    {
+        "startTime": 430.984,
+        "endTime": 432.4,
+        "content": [
+            "if you're already",
+            "using this tool."
+        ]
+    },
+    {
+        "startTime": 432.4,
+        "endTime": 434.733,
+        "content": [
+            "ADDY OSMANI: And the benefit",
+            "of this versus just running"
+        ]
+    },
+    {
+        "startTime": 434.733,
+        "endTime": 438.22,
+        "content": [
+            "it locally is you can also",
+            "run on a real device, Moto G4,"
+        ]
+    },
+    {
+        "startTime": 438.22,
+        "endTime": 441.27,
+        "content": [
+            "and get slightly more",
+            "realistic performance numbers"
+        ]
+    },
+    {
+        "startTime": 441.27,
+        "endTime": 442.08,
+        "content": [
+            "off the back of it."
+        ]
+    },
+    {
+        "startTime": 442.08,
+        "endTime": 443.163,
+        "content": [
+            "ERIC BIDELMAN: Definitely."
+        ]
+    },
+    {
+        "startTime": 443.163,
+        "endTime": 445.81,
+        "content": [
+            "One of the coolest things",
+            "about WebPagetest in general"
+        ]
+    },
+    {
+        "startTime": 445.81,
+        "endTime": 447.4,
+        "content": [
+            "is there's all these",
+            "different places"
+        ]
+    },
+    {
+        "startTime": 447.4,
+        "endTime": 451.09,
+        "content": [
+            "you can test, in a bunch of",
+            "different versions of browsers"
+        ]
+    },
+    {
+        "startTime": 451.09,
+        "endTime": 452.21,
+        "content": [
+            "and devices."
+        ]
+    },
+    {
+        "startTime": 452.21,
+        "endTime": 453.965,
+        "content": [
+            "So you get realistic numbers."
+        ]
+    },
+    {
+        "startTime": 453.965,
+        "endTime": 454.84,
+        "content": [
+            "ADDY OSMANI: Awesome."
+        ]
+    },
+    {
+        "startTime": 454.84,
+        "endTime": 457.2,
+        "content": [
+            "So a plethora of options."
+        ]
+    },
+    {
+        "startTime": 457.2,
+        "endTime": 458.344,
+        "content": [
+            "Folks should check it out."
+        ]
+    },
+    {
+        "startTime": 458.344,
+        "endTime": 459.01,
+        "content": [
+            "MATT GAUNT: Yep."
+        ]
+    },
+    {
+        "startTime": 459.01,
+        "endTime": 461.166,
+        "content": [
+            "I'd just get it in your",
+            "CI, so you don't trip up."
+        ]
+    },
+    {
+        "startTime": 461.166,
+        "endTime": 462.54,
+        "content": [
+            "That's what I've",
+            "done on my site,"
+        ]
+    },
+    {
+        "startTime": 462.54,
+        "endTime": 464.71,
+        "content": [
+            "but I've been customizing",
+            "it like no end."
+        ]
+    },
+    {
+        "startTime": 464.71,
+        "endTime": 465.46,
+        "content": [
+            "So I'm glad that--"
+        ]
+    },
+    {
+        "startTime": 465.46,
+        "endTime": 466.21,
+        "content": [
+            "ERIC BIDELMAN:",
+            "It's open sourcing,"
+        ]
+    },
+    {
+        "startTime": 466.21,
+        "endTime": 466.84,
+        "content": [
+            "you can do whatever you want."
+        ]
+    },
+    {
+        "startTime": 466.84,
+        "endTime": 468.048,
+        "content": [
+            "Customize the snot out of it."
+        ]
+    },
+    {
+        "startTime": 468.048,
+        "endTime": 469.13,
+        "content": [
+            "ADDY OSMANI: Awesome."
+        ]
+    },
+    {
+        "startTime": 469.13,
+        "endTime": 471.032,
+        "content": [
+            "So check out lighthouse,",
+            "try it in CI."
+        ]
+    },
+    {
+        "startTime": 471.032,
+        "endTime": 472.24,
+        "content": [
+            "Thanks for dropping by, Eric."
+        ]
+    },
+    {
+        "startTime": 472.24,
+        "endTime": 472.57,
+        "content": [
+            "ERIC BIDELMAN: Thanks, guys."
+        ]
+    },
+    {
+        "startTime": 472.57,
+        "endTime": 473.792,
+        "content": [
+            "Appreciate it."
+        ]
+    },
+    {
+        "startTime": 473.792,
+        "endTime": 478.3,
+        "content": [
+            "[MUSIC PLAYING]"
+        ]
+    },
+    {
+        "startTime": 478.3,
+        "endTime": 482.045,
+        "content": []
+    }
+]
