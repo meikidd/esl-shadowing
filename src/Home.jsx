@@ -6,9 +6,10 @@ class Home extends React.Component {
   state = {
     resourceIds: []
   };
-  async componentDidMount() {
-    const resourceIds = await RestAPI.getResources();
-    this.setState({ resourceIds });
+  componentDidMount() {
+    RestAPI.getResources().then(resourceIds => {
+      this.setState({ resourceIds });
+    });
   }
   render() {
     return (
@@ -16,7 +17,7 @@ class Home extends React.Component {
         <h1>ESL Shadowing</h1>
         <nav className="home-nav">
           {this.state.resourceIds.map(id => (
-            <Link key={id} to={`/audio/${id}`}>
+            <Link key={id} to={`/shadowing/audio/${id}`}>
               {id}
             </Link>
           ))}

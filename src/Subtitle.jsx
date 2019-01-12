@@ -10,11 +10,12 @@ class Subtitle extends React.Component {
   playerRef = React.createRef();
   exportBtnRef = React.createRef();
 
-  async componentDidMount() {
+  componentDidMount() {
     // fetch data
     const id = this.props.match.params.id;
-    const subtitles = await RestAPI.getSubtitle(id);
-    this.setState({ subtitles });
+    RestAPI.getSubtitle(id).then(subtitles => {
+      this.setState({ subtitles });
+    });
 
     // handle timeupdate
     this.playerRef.current.addEventListener('timeupdate', this.onTimeUpdate);

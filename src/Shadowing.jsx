@@ -12,16 +12,18 @@ class Shadowing extends React.Component {
   countdownTimer = null;
   playerRef = React.createRef();
 
-  async componentDidMount() {
+  componentDidMount() {
     // fetch data
     const id = this.props.match.params.id;
-    const subtitles = await RestAPI.getMergedSubtitle(id);
-    this.setState({ subtitles });
+    RestAPI.getMergedSubtitle(id).then(subtitles => {
+      this.setState({ subtitles });
+    });
 
     // handle timeupdate
     this.playerRef.current.addEventListener('timeupdate', this.onTimeUpdate);
   }
   componentWillUnmount() {
+    this.stopCountdown();
     this.playerRef.current.removeEventListener('timeupdate', this.onTimeUpdate);
   }
 
@@ -115,7 +117,7 @@ class Shadowing extends React.Component {
     return (
       <div className="views-shadowing">
         <h2>
-          ESL Shadowing <Link to="/">back</Link>
+          ESL Shadowing <Link to="/shadowing">back</Link>
         </h2>
         <div className="settings">
           <div className="settings-field">
