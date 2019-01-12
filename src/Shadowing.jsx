@@ -6,7 +6,8 @@ class Shadowing extends React.Component {
   state = {
     subtitles: [],
     current: 0,
-    countdownStyle: {}
+    countdownStyle: {},
+    showSettings: false
   };
   interval = -1;
   countdownTimer = null;
@@ -79,6 +80,7 @@ class Shadowing extends React.Component {
     this.stopCountdown();
     this.playerRef.current.play();
   };
+
   onPlaySentenceClick = i => {
     const subtitle = this.state.subtitles[i];
     this.playerRef.current.currentTime = subtitle.startTime;
@@ -109,6 +111,12 @@ class Shadowing extends React.Component {
   onIntervalChange = e => {
     this.interval = parseInt(e.currentTarget.value);
   };
+  onToggleSettings = () => {
+    const show = this.state.showSettings;
+    this.setState({
+      showSettings: !show
+    });
+  };
   render() {
     const id = this.props.match.params.id;
     const subtitles = this.state.subtitles;
@@ -117,29 +125,34 @@ class Shadowing extends React.Component {
     return (
       <div className="views-shadowing">
         <h2>
-          ESL Shadowing <Link to="/shadowing">back</Link>
+          <Link to="/shadowing">back</Link>
+          <a href="javascript: void(0);" onClick={this.onToggleSettings}>
+            Settings
+          </a>
         </h2>
-        <div className="settings">
-          <div className="settings-field">
-            <span>speed:</span>
-            <select defaultValue={1} onChange={this.onPlaySpeedChange}>
-              <option value={0.6}>0.6x</option>
-              <option value={0.8}>0.8x</option>
-              <option value={1}>1x</option>
-              <option value={1.5}>1.5x</option>
-            </select>
+        {this.state.showSettings && (
+          <div className="settings">
+            <div className="settings-field">
+              <span>speed:</span>
+              <select defaultValue={1} onChange={this.onPlaySpeedChange}>
+                <option value={0.6}>0.6x</option>
+                <option value={0.8}>0.8x</option>
+                <option value={1}>1x</option>
+                <option value={1.5}>1.5x</option>
+              </select>
+            </div>
+            <div className="settings-field">
+              <span>interval:</span>
+              <select defaultValue={-1} onChange={this.onIntervalChange}>
+                <option value={-1}>stop</option>
+                <option value={0}>dont stop</option>
+                <option value={2}>2x</option>
+                <option value={3}>3x</option>
+                <option value={5}>5x</option>
+              </select>
+            </div>
           </div>
-          <div className="settings-field">
-            <span>interval:</span>
-            <select defaultValue={-1} onChange={this.onIntervalChange}>
-              <option value={-1}>stop</option>
-              <option value={0}>dont stop</option>
-              <option value={2}>2x</option>
-              <option value={3}>3x</option>
-              <option value={5}>5x</option>
-            </select>
-          </div>
-        </div>
+        )}
         <div className="player">
           <audio
             controls
@@ -156,11 +169,11 @@ class Shadowing extends React.Component {
           <div className="btn" onClick={this.onPauseClick}>
             Pause
           </div>
-          <div className="btn" onClick={this.onPlayNextClick}>
-            Next
-          </div>
           <div className="btn" onClick={this.onPlayPrevClick}>
             Prev
+          </div>
+          <div className="btn" onClick={this.onPlayNextClick}>
+            Next
           </div>
         </div>
         <div className="subtitles">

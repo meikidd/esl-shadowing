@@ -87,6 +87,8 @@ code {
 .views-shadowing h2 {
   flex: none;
   margin: 0 0 5px;
+  display: flex;
+  justify-content: space-between;
 }
 .views-shadowing .settings .settings-field {
   display: flex;
@@ -129,7 +131,7 @@ code {
 }
 .views-shadowing .btns {
   flex: none;
-  margin-top: 10px;
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
 }
