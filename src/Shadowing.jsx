@@ -144,7 +144,7 @@ class Shadowing extends React.Component {
           <audio
             controls
             ref={this.playerRef}
-            src={`/resources/${id}/audio.mp3`}
+            src={`/shadowing/resources/${id}/audio.mp3`}
           />
         </div>
         <div className="countdown-bar" style={this.state.countdownStyle} />
