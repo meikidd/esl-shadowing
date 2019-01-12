@@ -89,7 +89,7 @@ code {
 .views-shadowing .settings .settings-field {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 4px 0;
 }
 .views-shadowing .settings .settings-field span {
   width: 100px;
@@ -100,6 +100,7 @@ code {
 }
 .views-shadowing .player {
   flex: none;
+  display: none;
 }
 .views-shadowing .countdown-bar {
   flex: none;
@@ -115,15 +116,11 @@ code {
 }
 .views-shadowing .subtitles .subtitle {
   margin: 20px 0;
-  padding-left: 30px;
   position: relative;
   cursor: pointer;
   font-size: 18px;
   line-height: 24px;
   transition: color 0.3s;
-}
-.views-shadowing .subtitles .subtitle:hover {
-  color: #ff2222;
 }
 .views-shadowing .subtitles .subtitle.current {
   color: red;
@@ -133,13 +130,17 @@ code {
   flex: none;
   margin-top: 10px;
   display: flex;
+  justify-content: space-between;
 }
 .views-shadowing .btns .btn {
-  padding: 10px 20px;
+  padding: 10px 5px;
   font-size: 20px;
   border-radius: 5px;
   height: 45px;
   box-sizing: border-box;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
 }
 .views-shadowing .btns .btn:focus {
   outline: none;

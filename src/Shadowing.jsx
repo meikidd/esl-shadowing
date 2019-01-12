@@ -148,6 +148,33 @@ class Shadowing extends React.Component {
           />
         </div>
         <div className="countdown-bar" style={this.state.countdownStyle} />
+
+        <div className="btns">
+          <div className="btn" onClick={this.play}>
+            <span role="img" aria-label="play">
+              ▶️
+            </span>
+            Play
+          </div>
+          <div className="btn" onClick={this.onPauseClick}>
+            <span role="img" aria-label="pause">
+              ⏸
+            </span>
+            Pause
+          </div>
+          <div className="btn" onClick={this.onPlayNextClick}>
+            <span role="img" aria-label="next">
+              ⏭
+            </span>
+            Next
+          </div>
+          <div className="btn" onClick={this.onPlayPrevClick}>
+            <span role="img" aria-label="previous">
+              ⏮
+            </span>
+            Prev
+          </div>
+        </div>
         <div className="subtitles">
           {subtitles.map((sentence, i) => (
             <div
@@ -160,32 +187,6 @@ class Shadowing extends React.Component {
               ))}
             </div>
           ))}
-        </div>
-        <div className="btns">
-          <button className="btn" onClick={this.play}>
-            <span role="img" aria-label="play">
-              ▶️
-            </span>
-            Play
-          </button>
-          <button className="btn" onClick={this.onPauseClick}>
-            <span role="img" aria-label="pause">
-              ⏸
-            </span>
-            Pause
-          </button>
-          <button className="btn" onClick={this.onPlayNextClick}>
-            <span role="img" aria-label="next">
-              ⏭
-            </span>
-            Next
-          </button>
-          <button className="btn" onClick={this.onPlayPrevClick}>
-            <span role="img" aria-label="previous">
-              ⏮
-            </span>
-            Prev
-          </button>
         </div>
       </div>
     );
