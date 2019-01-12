@@ -31,5 +31,8 @@ export default {
   },
   getSubtitle(id) {
     return api('get', `/resources/${id}/subtitle.json`);
+  },
+  getMergedSubtitle(id) {
+    return api('get', `/resources/${id}/merged.json`);
   }
 };

@@ -14,7 +14,8 @@ code {
 }
 
 .views-home,
-.views-subtitle {
+.views-subtitle,
+.views-shadowing {
   padding: 20px;
 }
 .views-home .home-nav a {
@@ -22,7 +23,7 @@ code {
   margin: 10px;
   padding: 10px;
 }
-
+/* subtitle */
 .views-subtitle {
   height: 100vh;
   box-sizing: border-box;
@@ -50,7 +51,6 @@ code {
 .views-subtitle .subtitles .content {
   cursor: pointer;
 }
-
 .views-subtitle .subtitles .merge-up {
   position: absolute;
   top: 50%;
@@ -73,5 +73,74 @@ code {
   border-radius: 5px;
 }
 .views-subtitle .btns .btn:focus {
+  outline: none;
+}
+
+/* shadowing */
+.views-shadowing {
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.views-shadowing h2 {
+  flex: none;
+}
+.views-shadowing .settings .settings-field {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.views-shadowing .settings .settings-field span {
+  width: 100px;
+}
+.views-shadowing .settings .settings-field select {
+  font-size: 16px;
+  width: 100px;
+}
+.views-shadowing .player {
+  flex: none;
+}
+.views-shadowing .countdown-bar {
+  flex: none;
+  height: 2px;
+  background-color: green;
+  transition: width 3s linear;
+  width: 100%;
+  visibility: hidden;
+}
+.views-shadowing .subtitles {
+  flex: auto;
+  overflow: auto;
+}
+.views-shadowing .subtitles .subtitle {
+  margin: 20px 0;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 24px;
+  transition: color 0.3s;
+}
+.views-shadowing .subtitles .subtitle:hover {
+  color: #ff2222;
+}
+.views-shadowing .subtitles .subtitle.current {
+  color: red;
+}
+
+.views-shadowing .btns {
+  flex: none;
+  margin-top: 10px;
+  display: flex;
+}
+.views-shadowing .btns .btn {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  height: 45px;
+  box-sizing: border-box;
+}
+.views-shadowing .btns .btn:focus {
   outline: none;
 }
