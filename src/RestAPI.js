@@ -2,7 +2,7 @@ import axios from 'axios';
 import Utils from './utils';
 
 function api(method = 'get', src, data = {}) {
-  const url = src;
+  const url = '/shadowing' + src;
 
   const params = {
     method,

@@ -1,13 +1,13 @@
 {
   "main.css": "/shadowing/static/css/main.1ab5354f.chunk.css",
-  "main.js": "/shadowing/static/js/main.934842ab.chunk.js",
-  "main.js.map": "/shadowing/static/js/main.934842ab.chunk.js.map",
+  "main.js": "/shadowing/static/js/main.8f719916.chunk.js",
+  "main.js.map": "/shadowing/static/js/main.8f719916.chunk.js.map",
   "static/js/1.f8344f96.chunk.js": "/shadowing/static/js/1.f8344f96.chunk.js",
   "static/js/1.f8344f96.chunk.js.map": "/shadowing/static/js/1.f8344f96.chunk.js.map",
   "runtime~main.js": "/shadowing/static/js/runtime~main.ce71a64a.js",
   "runtime~main.js.map": "/shadowing/static/js/runtime~main.ce71a64a.js.map",
   "static/css/main.1ab5354f.chunk.css.map": "/shadowing/static/css/main.1ab5354f.chunk.css.map",
   "index.html": "/shadowing/index.html",
-  "precache-manifest.852a97a49e78c339e0afdb212e2b4563.js": "/shadowing/precache-manifest.852a97a49e78c339e0afdb212e2b4563.js",
+  "precache-manifest.e92d0e745f5137845299f61a6fd334d2.js": "/shadowing/precache-manifest.e92d0e745f5137845299f61a6fd334d2.js",
   "service-worker.js": "/shadowing/service-worker.js"
 }
