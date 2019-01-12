@@ -151,27 +151,15 @@ class Shadowing extends React.Component {
 
         <div className="btns">
           <div className="btn" onClick={this.play}>
-            <span role="img" aria-label="play">
-              ▶️
-            </span>
             Play
           </div>
           <div className="btn" onClick={this.onPauseClick}>
-            <span role="img" aria-label="pause">
-              ⏸
-            </span>
             Pause
           </div>
           <div className="btn" onClick={this.onPlayNextClick}>
-            <span role="img" aria-label="next">
-              ⏭
-            </span>
             Next
           </div>
           <div className="btn" onClick={this.onPlayPrevClick}>
-            <span role="img" aria-label="previous">
-              ⏮
-            </span>
             Prev
           </div>
         </div>

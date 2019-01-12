@@ -86,6 +86,7 @@ code {
 }
 .views-shadowing h2 {
   flex: none;
+  margin: 0 0 5px;
 }
 .views-shadowing .settings .settings-field {
   display: flex;
@@ -126,7 +127,6 @@ code {
 .views-shadowing .subtitles .subtitle.current {
   color: red;
 }
-
 .views-shadowing .btns {
   flex: none;
   margin-top: 10px;
@@ -134,8 +134,8 @@ code {
   justify-content: space-between;
 }
 .views-shadowing .btns .btn {
-  padding: 10px 5px;
-  font-size: 20px;
+  padding: 10px;
+  font-size: 18px;
   border-radius: 5px;
   height: 45px;
   box-sizing: border-box;
