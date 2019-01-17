@@ -1,13 +1,13 @@
 {
-  "main.css": "/shadowing/static/css/main.ff7f9827.chunk.css",
-  "main.js": "/shadowing/static/js/main.bc66e8b8.chunk.js",
-  "main.js.map": "/shadowing/static/js/main.bc66e8b8.chunk.js.map",
-  "static/js/1.f8344f96.chunk.js": "/shadowing/static/js/1.f8344f96.chunk.js",
-  "static/js/1.f8344f96.chunk.js.map": "/shadowing/static/js/1.f8344f96.chunk.js.map",
-  "runtime~main.js": "/shadowing/static/js/runtime~main.ce71a64a.js",
-  "runtime~main.js.map": "/shadowing/static/js/runtime~main.ce71a64a.js.map",
-  "static/css/main.ff7f9827.chunk.css.map": "/shadowing/static/css/main.ff7f9827.chunk.css.map",
-  "index.html": "/shadowing/index.html",
-  "precache-manifest.31124df2b0abd71495afc51a73c2734e.js": "/shadowing/precache-manifest.31124df2b0abd71495afc51a73c2734e.js",
-  "service-worker.js": "/shadowing/service-worker.js"
+  "main.css": "/esl-shadowing/static/css/main.ff7f9827.chunk.css",
+  "main.js": "/esl-shadowing/static/js/main.cbf0b270.chunk.js",
+  "main.js.map": "/esl-shadowing/static/js/main.cbf0b270.chunk.js.map",
+  "static/js/1.f8344f96.chunk.js": "/esl-shadowing/static/js/1.f8344f96.chunk.js",
+  "static/js/1.f8344f96.chunk.js.map": "/esl-shadowing/static/js/1.f8344f96.chunk.js.map",
+  "runtime~main.js": "/esl-shadowing/static/js/runtime~main.a5d0d468.js",
+  "runtime~main.js.map": "/esl-shadowing/static/js/runtime~main.a5d0d468.js.map",
+  "static/css/main.ff7f9827.chunk.css.map": "/esl-shadowing/static/css/main.ff7f9827.chunk.css.map",
+  "index.html": "/esl-shadowing/index.html",
+  "precache-manifest.dcaa325519d3804353b8187baf798c5c.js": "/esl-shadowing/precache-manifest.dcaa325519d3804353b8187baf798c5c.js",
+  "service-worker.js": "/esl-shadowing/service-worker.js"
 }
