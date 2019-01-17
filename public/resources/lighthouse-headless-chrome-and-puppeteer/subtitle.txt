@@ -1,0 +1,3905 @@
+﻿1
+00:00:00,000 --> 00:00:04,980
+[MUSIC PLAYING]
+
+2
+00:00:04,980 --> 00:00:06,889
+
+
+3
+00:00:06,889 --> 00:00:08,430
+ERIC BIDELMAN: So
+welcome, everybody,
+
+4
+00:00:08,430 --> 00:00:11,099
+to Modern Tooling,
+Testing, and Automation.
+
+5
+00:00:11,099 --> 00:00:13,640
+We're going to talk a little
+bit about Lighthouse, Puppeteer,
+
+6
+00:00:13,640 --> 00:00:14,490
+and Headless Chrome.
+
+7
+00:00:14,490 --> 00:00:15,960
+So we only have
+30 minutes, a lot
+
+8
+00:00:15,960 --> 00:00:17,293
+to cover in that amount of time.
+
+9
+00:00:17,293 --> 00:00:19,210
+So let's go ahead
+and get started.
+
+10
+00:00:19,210 --> 00:00:20,520
+So my name is Eric Bidelman.
+
+11
+00:00:20,520 --> 00:00:22,395
+I am an engineer
+on the Chrome team.
+
+12
+00:00:22,395 --> 00:00:24,270
+I work with web developers
+all over the world
+
+13
+00:00:24,270 --> 00:00:28,110
+and help you guys build
+amazing web experiences.
+
+14
+00:00:28,110 --> 00:00:29,820
+Fun fact about me
+is I'm actually
+
+15
+00:00:29,820 --> 00:00:32,369
+from a state in the
+US called Michigan.
+
+16
+00:00:32,369 --> 00:00:34,120
+And I can literally
+point to my hand,
+
+17
+00:00:34,120 --> 00:00:36,000
+because it looks like a hand,
+and tell people where I'm from,
+
+18
+00:00:36,000 --> 00:00:37,332
+which is really convenient.
+
+19
+00:00:37,332 --> 00:00:38,790
+The other cool
+thing about Michigan
+
+20
+00:00:38,790 --> 00:00:41,400
+is that it has the most
+number of lighthouses
+
+21
+00:00:41,400 --> 00:00:43,530
+of any state in
+the United States.
+
+22
+00:00:43,530 --> 00:00:45,900
+So it was only fitting that
+I worked on a project called
+
+23
+00:00:45,900 --> 00:00:47,662
+Lighthouse eventually.
+
+24
+00:00:47,662 --> 00:00:49,120
+VINAMRATA SINGAL:
+And hi, everyone.
+
+25
+00:00:49,120 --> 00:00:50,820
+My name is Vinamrata Singal.
+
+26
+00:00:50,820 --> 00:00:53,220
+I am a product manager on
+the Chrome web platform team,
+
+27
+00:00:53,220 --> 00:00:54,720
+working on Lighthouse.
+
+28
+00:00:54,720 --> 00:00:57,930
+And as a fun fact about
+myself, I actually
+
+29
+00:00:57,930 --> 00:01:00,300
+really loved Bollywood
+dancing as a kid.
+
+30
+00:01:00,300 --> 00:01:02,190
+And these are some
+embarrassing photos
+
+31
+00:01:02,190 --> 00:01:04,730
+of me performing at
+family functions.
+
+32
+00:01:04,730 --> 00:01:07,710
+And what I recently realized
+is Bollywood dancing
+
+33
+00:01:07,710 --> 00:01:11,070
+is actually pretty similar to
+my day job as a product manager.
+
+34
+00:01:11,070 --> 00:01:13,260
+Specifically, when I'm
+doing Bollywood dancing,
+
+35
+00:01:13,260 --> 00:01:15,810
+I'm trying to tell a story,
+through physical movements,
+
+36
+00:01:15,810 --> 00:01:17,520
+about what I'm
+feeling in the music.
+
+37
+00:01:17,520 --> 00:01:19,740
+And with product management,
+I'm telling a story
+
+38
+00:01:19,740 --> 00:01:21,790
+to my users about my products.
+
+39
+00:01:21,790 --> 00:01:24,130
+And so today, I'd
+like to tell you--
+
+40
+00:01:24,130 --> 00:01:25,380
+take you on a little journey--
+
+41
+00:01:25,380 --> 00:01:28,440
+into the Lighthouse product
+itself, more on the PM style,
+
+42
+00:01:28,440 --> 00:01:30,330
+and less on the
+Bollywood dancing style.
+
+43
+00:01:30,330 --> 00:01:32,340
+But I'm sure that would
+be pretty great too.
+
+44
+00:01:32,340 --> 00:01:35,070
+Specifically, I wanted to
+focus on, with Lighthouse,
+
+45
+00:01:35,070 --> 00:01:36,600
+talk a little bit
+about the problem
+
+46
+00:01:36,600 --> 00:01:39,485
+that we're trying to solve, deep
+dive into the product itself,
+
+47
+00:01:39,485 --> 00:01:40,860
+and then kind of
+take a step back
+
+48
+00:01:40,860 --> 00:01:42,660
+and talk about
+Lighthouse in the broader
+
+49
+00:01:42,660 --> 00:01:44,010
+context of web development.
+
+50
+00:01:44,010 --> 00:01:46,468
+And then Eric will take over
+and talk about Headless Chrome
+
+51
+00:01:46,468 --> 00:01:47,190
+and Puppeteer.
+
+52
+00:01:47,190 --> 00:01:49,360
+So let's get started.
+
+53
+00:01:49,360 --> 00:01:51,570
+So as a web developer,
+you might have
+
+54
+00:01:51,570 --> 00:01:53,964
+heard about a lot of things
+that you're supposed to do.
+
+55
+00:01:53,964 --> 00:01:56,130
+For example, you might have
+heard not to use methods
+
+56
+00:01:56,130 --> 00:01:58,470
+like document.write,
+that you're supposed
+
+57
+00:01:58,470 --> 00:02:00,840
+to optimize your images by
+compressing them to create
+
+58
+00:02:00,840 --> 00:02:02,790
+performant web
+experiences, that you're
+
+59
+00:02:02,790 --> 00:02:05,940
+supposed to be on HTTPS to
+deliver a secure experience
+
+60
+00:02:05,940 --> 00:02:09,377
+to your end users, that
+accessibility is really
+
+61
+00:02:09,377 --> 00:02:11,460
+important, and you should
+have ARIA labels for all
+
+62
+00:02:11,460 --> 00:02:13,890
+the elements on your
+page, and that you
+
+63
+00:02:13,890 --> 00:02:16,740
+shouldn't use vendor blocking
+scripts, and so much more
+
+64
+00:02:16,740 --> 00:02:18,000
+stuff.
+
+65
+00:02:18,000 --> 00:02:19,830
+To add to this, you
+might have heard
+
+66
+00:02:19,830 --> 00:02:21,330
+about a thing called
+progressive web
+
+67
+00:02:21,330 --> 00:02:23,070
+apps throughout this
+conference, that
+
+68
+00:02:23,070 --> 00:02:26,070
+help you create really great
+mobile web experiences that
+
+69
+00:02:26,070 --> 00:02:28,827
+feel like native
+app experiences.
+
+70
+00:02:28,827 --> 00:02:30,660
+But in order to build
+a progressive web app,
+
+71
+00:02:30,660 --> 00:02:32,470
+there's a lot of
+things you need to do,
+
+72
+00:02:32,470 --> 00:02:34,890
+including serving
+your site over HTTPS,
+
+73
+00:02:34,890 --> 00:02:37,080
+creating responsive pages
+on mobile and tablet,
+
+74
+00:02:37,080 --> 00:02:38,590
+et cetera, et cetera.
+
+75
+00:02:38,590 --> 00:02:41,610
+So you probably feel like
+this person, really confused,
+
+76
+00:02:41,610 --> 00:02:43,380
+like what am I
+supposed to be doing?
+
+77
+00:02:43,380 --> 00:02:44,970
+And all you really
+want to be doing
+
+78
+00:02:44,970 --> 00:02:47,880
+is spending time pushing
+code and creating features
+
+79
+00:02:47,880 --> 00:02:51,290
+for your end users, being more
+like the person to the right,
+
+80
+00:02:51,290 --> 00:02:52,770
+I guess.
+
+81
+00:02:52,770 --> 00:02:54,840
+And that is a problem
+that we completely
+
+82
+00:02:54,840 --> 00:02:56,100
+understand on Lighthouse.
+
+83
+00:02:56,100 --> 00:02:58,560
+Because we want to enable
+all of you in the audience
+
+84
+00:02:58,560 --> 00:03:01,992
+out there to create really
+awesome mobile web experiences.
+
+85
+00:03:01,992 --> 00:03:04,200
+So that's why we built
+Lighthouse, which is basically
+
+86
+00:03:04,200 --> 00:03:06,060
+a product that
+helps you understand
+
+87
+00:03:06,060 --> 00:03:09,120
+your website against
+four different categories
+
+88
+00:03:09,120 --> 00:03:11,860
+of performance,
+accessibility, progressive web
+
+89
+00:03:11,860 --> 00:03:13,987
+apps, and developer
+best practices,
+
+90
+00:03:13,987 --> 00:03:16,320
+and running checks against
+them to create a personalized
+
+91
+00:03:16,320 --> 00:03:17,972
+report that helps
+you understand,
+
+92
+00:03:17,972 --> 00:03:20,430
+what are the things that you're
+doing well on your website,
+
+93
+00:03:20,430 --> 00:03:22,560
+and what are the things
+that you could perhaps
+
+94
+00:03:22,560 --> 00:03:23,760
+do a little bit better.
+
+95
+00:03:23,760 --> 00:03:25,860
+So this is a little
+bit hard to understand
+
+96
+00:03:25,860 --> 00:03:27,310
+on the abstract level.
+
+97
+00:03:27,310 --> 00:03:29,320
+So let's go into a live demo.
+
+98
+00:03:29,320 --> 00:03:32,180
+So if we could switch
+to the demo, please.
+
+99
+00:03:32,180 --> 00:03:32,960
+Awesome.
+
+100
+00:03:32,960 --> 00:03:35,240
+So I'm going to run
+Lighthouse right now,
+
+101
+00:03:35,240 --> 00:03:36,980
+live, in front of all of you.
+
+102
+00:03:36,980 --> 00:03:39,000
+And I'm going to run
+it on possibly the best
+
+103
+00:03:39,000 --> 00:03:41,000
+website you can imagine,
+which is airhorner.com.
+
+104
+00:03:41,000 --> 00:03:44,060
+For those of you who have
+never seen this before,
+
+105
+00:03:44,060 --> 00:03:45,270
+it's pretty simple.
+
+106
+00:03:45,270 --> 00:03:48,006
+You just click this
+button, and it gives you
+
+107
+00:03:48,006 --> 00:03:49,130
+the sound of an air horner.
+
+108
+00:03:49,130 --> 00:03:50,720
+So pretty awesome.
+
+109
+00:03:50,720 --> 00:03:53,450
+So I'm going to now run
+Lighthouse through the Chrome
+
+110
+00:03:53,450 --> 00:03:55,610
+Developer Tools,
+but I will also talk
+
+111
+00:03:55,610 --> 00:03:58,170
+about other ways in which
+you can run Lighthouse later.
+
+112
+00:03:58,170 --> 00:04:01,250
+So I'm just going to open up
+the Chrome Developer Tools here.
+
+113
+00:04:01,250 --> 00:04:05,120
+And then I'm going to go into
+the audit panel, and voila.
+
+114
+00:04:05,120 --> 00:04:06,530
+I have Lighthouse right there.
+
+115
+00:04:06,530 --> 00:04:09,350
+And so I'm going to click
+on performant audit,
+
+116
+00:04:09,350 --> 00:04:11,900
+and I can check whatever
+categories of audits
+
+117
+00:04:11,900 --> 00:04:12,920
+I'm interested in.
+
+118
+00:04:12,920 --> 00:04:14,640
+So I care about everything.
+
+119
+00:04:14,640 --> 00:04:16,700
+So I'm just going to run
+it across everything.
+
+120
+00:04:16,700 --> 00:04:19,220
+And so now, what Lighthouse
+is actually doing,
+
+121
+00:04:19,220 --> 00:04:22,520
+is that it's emulating my
+website on a mobile device,
+
+122
+00:04:22,520 --> 00:04:25,640
+specifically, a Nexus 5x
+device, and it's actually
+
+123
+00:04:25,640 --> 00:04:27,170
+throttling the network.
+
+124
+00:04:27,170 --> 00:04:30,830
+So it's simulating
+a 3G connection.
+
+125
+00:04:30,830 --> 00:04:33,260
+And that's why it kind of
+takes a little bit of time.
+
+126
+00:04:33,260 --> 00:04:36,350
+But now you can see right here,
+I have my Lighthouse report,
+
+127
+00:04:36,350 --> 00:04:38,150
+and things look pretty
+good on my website.
+
+128
+00:04:38,150 --> 00:04:39,800
+So that's pretty awesome.
+
+129
+00:04:39,800 --> 00:04:42,770
+So as I was mentioning earlier,
+there's quite a few ways
+
+130
+00:04:42,770 --> 00:04:43,940
+that you can run Lighthouse.
+
+131
+00:04:43,940 --> 00:04:45,270
+So the way that
+I just showed you
+
+132
+00:04:45,270 --> 00:04:46,550
+was through the Chrome
+Developer Tools.
+
+133
+00:04:46,550 --> 00:04:48,758
+But you can also run it
+through the Lighthouse Chrome
+
+134
+00:04:48,758 --> 00:04:49,490
+extension.
+
+135
+00:04:49,490 --> 00:04:51,290
+You can run it through
+the command line
+
+136
+00:04:51,290 --> 00:04:53,180
+with the Lighthouse NPM module.
+
+137
+00:04:53,180 --> 00:04:56,370
+And you can also run
+Lighthouse on web page text.
+
+138
+00:04:56,370 --> 00:04:58,970
+So now let's do a
+little bit of deep dive
+
+139
+00:04:58,970 --> 00:05:01,580
+into the Lighthouse report
+that I was showing you earlier.
+
+140
+00:05:01,580 --> 00:05:03,990
+And for the purposes of
+this part of the talk,
+
+141
+00:05:03,990 --> 00:05:08,010
+I will only be focusing on the
+Performance and PWA section.
+
+142
+00:05:08,010 --> 00:05:10,110
+So let's get started
+with the PWA section.
+
+143
+00:05:10,110 --> 00:05:11,961
+So this is a slide
+earlier, talking to you
+
+144
+00:05:11,961 --> 00:05:14,210
+about what are all the
+different requirements that you
+
+145
+00:05:14,210 --> 00:05:17,120
+need to implement in order to
+build a progressive web app.
+
+146
+00:05:17,120 --> 00:05:18,950
+And we have a handy
+dandy checklist
+
+147
+00:05:18,950 --> 00:05:20,960
+that you can look at
+in order to understand
+
+148
+00:05:20,960 --> 00:05:23,420
+what are the things you
+need to do to build a PWA.
+
+149
+00:05:23,420 --> 00:05:24,920
+And what Lighthouse
+does, is that it
+
+150
+00:05:24,920 --> 00:05:27,170
+takes this baseline
+checklist, and it basically
+
+151
+00:05:27,170 --> 00:05:28,656
+automates the entire process.
+
+152
+00:05:28,656 --> 00:05:30,030
+So you don't have
+to think about,
+
+153
+00:05:30,030 --> 00:05:32,280
+am I actually implementing
+a service worker correctly.
+
+154
+00:05:32,280 --> 00:05:34,530
+Lighthouse can tell
+and do that for you.
+
+155
+00:05:34,530 --> 00:05:36,290
+And it tells you a
+score at the top that
+
+156
+00:05:36,290 --> 00:05:38,120
+helps you understand,
+at a high level,
+
+157
+00:05:38,120 --> 00:05:40,400
+how far are you in the
+journey in building
+
+158
+00:05:40,400 --> 00:05:41,930
+your own progressive web app.
+
+159
+00:05:41,930 --> 00:05:46,260
+And for Lighthouse definition,
+we consider a score of a 100,
+
+160
+00:05:46,260 --> 00:05:49,490
+meaning that you've built
+a progressive web app.
+
+161
+00:05:49,490 --> 00:05:51,560
+So now, talking about
+the Performance section
+
+162
+00:05:51,560 --> 00:05:54,740
+of the report, before we deep
+dive into the report itself,
+
+163
+00:05:54,740 --> 00:05:57,560
+I want to explain to you how
+we think about the page load.
+
+164
+00:05:57,560 --> 00:05:59,120
+And so, on the Chrome
+team, you might
+
+165
+00:05:59,120 --> 00:06:02,500
+have heard us talk about a thing
+called progressive web metrics.
+
+166
+00:06:02,500 --> 00:06:04,160
+And the idea behind
+that is the way
+
+167
+00:06:04,160 --> 00:06:05,900
+that you understand
+a page load is
+
+168
+00:06:05,900 --> 00:06:08,540
+through how an end user
+perceives the page loading.
+
+169
+00:06:08,540 --> 00:06:11,200
+And there's a couple of key
+moments here in that user
+
+170
+00:06:11,200 --> 00:06:14,400
+journey, the first one being
+First Contentful Paint.
+
+171
+00:06:14,400 --> 00:06:17,000
+So what are the first
+pixels of content
+
+172
+00:06:17,000 --> 00:06:18,330
+appearing on the screen.
+
+173
+00:06:18,330 --> 00:06:22,190
+So this could be something like
+a text, an image, or an SVG.
+
+174
+00:06:22,190 --> 00:06:24,320
+The next thing is
+First Meaningful Paint.
+
+175
+00:06:24,320 --> 00:06:26,300
+So First Meaningful
+Paint is when
+
+176
+00:06:26,300 --> 00:06:29,910
+did the first meaningful content
+on my page start appearing.
+
+177
+00:06:29,910 --> 00:06:32,640
+So this could be like a
+hero image, for example.
+
+178
+00:06:32,640 --> 00:06:34,070
+And then finally,
+at the very end,
+
+179
+00:06:34,070 --> 00:06:35,390
+you have Time to Interactive.
+
+180
+00:06:35,390 --> 00:06:38,690
+So when does my page become
+first interactive to users,
+
+181
+00:06:38,690 --> 00:06:40,520
+as well as continuously
+interactive,
+
+182
+00:06:40,520 --> 00:06:42,140
+so that users can
+click on anything,
+
+183
+00:06:42,140 --> 00:06:45,960
+and they're able to see
+the page be responsive.
+
+184
+00:06:45,960 --> 00:06:48,830
+And so what Lighthouse
+does, is it basically takes
+
+185
+00:06:48,830 --> 00:06:51,740
+all these metrics, shows them
+to you for your web page,
+
+186
+00:06:51,740 --> 00:06:53,420
+helps you understand,
+at a high level,
+
+187
+00:06:53,420 --> 00:06:55,059
+how good these
+metrics are, and then
+
+188
+00:06:55,059 --> 00:06:56,600
+also tells you what
+are ways that you
+
+189
+00:06:56,600 --> 00:06:58,670
+can improve these metrics
+with the performance
+
+190
+00:06:58,670 --> 00:06:59,880
+section of the report.
+
+191
+00:06:59,880 --> 00:07:01,230
+So this looks kind of daunting.
+
+192
+00:07:01,230 --> 00:07:03,470
+So I'll just go through
+it step by step with you.
+
+193
+00:07:03,470 --> 00:07:06,170
+So at the very top, you
+have a high level score--
+
+194
+00:07:06,170 --> 00:07:07,670
+in this case it's 63--
+
+195
+00:07:07,670 --> 00:07:09,170
+that tells you this
+is, overall, how
+
+196
+00:07:09,170 --> 00:07:11,150
+the performance of
+your website is.
+
+197
+00:07:11,150 --> 00:07:13,430
+The next section is
+what we call Metrics.
+
+198
+00:07:13,430 --> 00:07:14,930
+So basically, at
+the top, you'll see
+
+199
+00:07:14,930 --> 00:07:17,810
+a bunch of different images,
+what we call a filmstrip, which
+
+200
+00:07:17,810 --> 00:07:21,020
+is basically how did your
+page look at different time
+
+201
+00:07:21,020 --> 00:07:23,810
+intervals of your
+web site loading.
+
+202
+00:07:23,810 --> 00:07:25,612
+And then, it also
+gives you values
+
+203
+00:07:25,612 --> 00:07:27,320
+for the metrics that
+I was talking about,
+
+204
+00:07:27,320 --> 00:07:30,320
+like First Meaningful Paint
+and Time to Interactive.
+
+205
+00:07:30,320 --> 00:07:33,950
+The key thing to note here is
+that this section basically
+
+206
+00:07:33,950 --> 00:07:36,050
+determines your
+Lighthouse score,
+
+207
+00:07:36,050 --> 00:07:39,110
+meaning that metrics like
+First Meaningful Paint, First
+
+208
+00:07:39,110 --> 00:07:41,660
+Interactive, and
+Consistently Interactive,
+
+209
+00:07:41,660 --> 00:07:45,230
+are worth five times as
+much in terms of determining
+
+210
+00:07:45,230 --> 00:07:46,449
+your final Lighthouse score.
+
+211
+00:07:46,449 --> 00:07:48,740
+And so when you're thinking
+about what metrics should I
+
+212
+00:07:48,740 --> 00:07:50,660
+be paying attention
+to and how do I
+
+213
+00:07:50,660 --> 00:07:52,670
+think about improving
+my Lighthouse score,
+
+214
+00:07:52,670 --> 00:07:57,650
+those are the top three metrics
+that you should be looking at.
+
+215
+00:07:57,650 --> 00:07:59,570
+So the next section
+of the report
+
+216
+00:07:59,570 --> 00:08:03,020
+is the Opportunity section,
+with the idea being,
+
+217
+00:08:03,020 --> 00:08:05,110
+how are ways that you
+can improve your website.
+
+218
+00:08:05,110 --> 00:08:08,000
+So in this case, you can see
+that optimizing your images
+
+219
+00:08:08,000 --> 00:08:09,740
+is probably your
+best bet in terms
+
+220
+00:08:09,740 --> 00:08:12,600
+of improving the
+performance of your website.
+
+221
+00:08:12,600 --> 00:08:14,570
+And then finally,
+we have diagnostics.
+
+222
+00:08:14,570 --> 00:08:16,430
+So if you're interested
+in deep diving
+
+223
+00:08:16,430 --> 00:08:18,230
+into performance
+further, you can
+
+224
+00:08:18,230 --> 00:08:22,420
+look into things like
+Critical Request Chains.
+
+225
+00:08:22,420 --> 00:08:24,750
+So I would like to
+give to all of you
+
+226
+00:08:24,750 --> 00:08:27,540
+a sneak peek into what's
+coming up next for Lighthouse.
+
+227
+00:08:27,540 --> 00:08:30,720
+So I'm excited to announce
+that in the next few releases
+
+228
+00:08:30,720 --> 00:08:33,390
+of Lighthouse, we'll be adding a
+whole new section of the report
+
+229
+00:08:33,390 --> 00:08:36,270
+itself, Focus on Search
+Engine Optimization,
+
+230
+00:08:36,270 --> 00:08:39,480
+specifically about how you
+can make your website more
+
+231
+00:08:39,480 --> 00:08:42,450
+friendly to search engine
+callers and indexers.
+
+232
+00:08:42,450 --> 00:08:45,930
+But it's coming soon,
+so it's not out yet.
+
+233
+00:08:45,930 --> 00:08:48,750
+So now I want to take a step
+back and talk about Lighthouse
+
+234
+00:08:48,750 --> 00:08:50,730
+in a broader context
+of web development.
+
+235
+00:08:50,730 --> 00:08:52,110
+Specifically, I
+want to start off
+
+236
+00:08:52,110 --> 00:08:54,480
+by talking about our
+adoption metrics.
+
+237
+00:08:54,480 --> 00:08:58,410
+So Lighthouse has pretty good
+adoption, in the sense of we
+
+238
+00:08:58,410 --> 00:09:02,010
+have over 100,000 users using
+the Lighthouse extension.
+
+239
+00:09:02,010 --> 00:09:06,626
+We have over 250,000 users
+using the Lighthouse NPM module.
+
+240
+00:09:06,626 --> 00:09:08,250
+And in terms of
+DevTools tools, well, I
+
+241
+00:09:08,250 --> 00:09:10,080
+can't share exact stats.
+
+242
+00:09:10,080 --> 00:09:11,700
+What I can say is
+that it's about half
+
+243
+00:09:11,700 --> 00:09:13,710
+as popular as the
+Timeline panel.
+
+244
+00:09:13,710 --> 00:09:15,810
+We've also seen people
+building services
+
+245
+00:09:15,810 --> 00:09:18,060
+on top of Lighthouse,
+specifically services
+
+246
+00:09:18,060 --> 00:09:20,820
+like Calibre and Treo.
+
+247
+00:09:20,820 --> 00:09:23,040
+I also want to talk about
+our open source community,
+
+248
+00:09:23,040 --> 00:09:24,970
+because we are an
+open source project.
+
+249
+00:09:24,970 --> 00:09:25,980
+And we definitely
+wouldn't be here
+
+250
+00:09:25,980 --> 00:09:27,375
+without open source
+contributions
+
+251
+00:09:27,375 --> 00:09:29,490
+we receive from
+developers like you.
+
+252
+00:09:29,490 --> 00:09:32,100
+Even something as simple
+as changing the README file
+
+253
+00:09:32,100 --> 00:09:34,050
+really helps our
+project go a long way.
+
+254
+00:09:34,050 --> 00:09:35,810
+And we have over 100
+plus contributors
+
+255
+00:09:35,810 --> 00:09:36,810
+from all over the world.
+
+256
+00:09:36,810 --> 00:09:39,960
+You can see them in blue on
+this map here, from countries
+
+257
+00:09:39,960 --> 00:09:43,410
+like India, and
+Brazil, and Poland,
+
+258
+00:09:43,410 --> 00:09:46,046
+and even the United States
+next door neighbor, Canada.
+
+259
+00:09:46,046 --> 00:09:48,420
+So if you're interested in
+being part of this contributor
+
+260
+00:09:48,420 --> 00:09:50,460
+community, and we'd
+love to have you join,
+
+261
+00:09:50,460 --> 00:09:51,780
+check us out on GitHub.
+
+262
+00:09:51,780 --> 00:09:54,600
+The VEPO is called Lighthouse.
+
+263
+00:09:54,600 --> 00:09:57,354
+And then, finally,
+I want to thank you.
+
+264
+00:09:57,354 --> 00:09:58,770
+I want to thank
+everyone for being
+
+265
+00:09:58,770 --> 00:10:00,660
+here on behalf of the team.
+
+266
+00:10:00,660 --> 00:10:02,910
+I really appreciate you
+coming out and listening to me
+
+267
+00:10:02,910 --> 00:10:04,077
+talk about Lighthouse.
+
+268
+00:10:04,077 --> 00:10:06,160
+And if you're interested
+in trying out Lighthouse,
+
+269
+00:10:06,160 --> 00:10:07,966
+we actually have a
+booth at the sandbox.
+
+270
+00:10:07,966 --> 00:10:10,590
+You can come talk to Eric and I
+about Lighthouse after the talk
+
+271
+00:10:10,590 --> 00:10:12,180
+if you want to learn more.
+
+272
+00:10:12,180 --> 00:10:14,250
+And so now that
+you have a website
+
+273
+00:10:14,250 --> 00:10:17,670
+and you have a nice little way
+to audit it via Lighthouse,
+
+274
+00:10:17,670 --> 00:10:19,260
+you might want to
+think about what
+
+275
+00:10:19,260 --> 00:10:24,639
+is the best way that I can
+detect regressions and automate
+
+276
+00:10:24,639 --> 00:10:27,180
+some testing to make sure that
+the regressions don't actually
+
+277
+00:10:27,180 --> 00:10:28,650
+end up going to my end users.
+
+278
+00:10:28,650 --> 00:10:30,390
+And this is where
+Eric will tell you
+
+279
+00:10:30,390 --> 00:10:32,940
+all about Puppeteer
+and Headless Chrome,
+
+280
+00:10:32,940 --> 00:10:34,570
+to see how you can
+make that happen.
+
+281
+00:10:34,570 --> 00:10:36,880
+So thanks very much.
+
+282
+00:10:36,880 --> 00:10:38,140
+ERIC BIDELMAN: Thank you.
+
+283
+00:10:38,140 --> 00:10:39,580
+Thank you.
+
+284
+00:10:39,580 --> 00:10:40,779
+So let's get started.
+
+285
+00:10:40,779 --> 00:10:42,570
+We talked a little bit
+about manual testing
+
+286
+00:10:42,570 --> 00:10:44,650
+using Lighthouse, which
+is in the DevTools now.
+
+287
+00:10:44,650 --> 00:10:47,487
+But maybe you want to do some
+testing and automation using
+
+288
+00:10:47,487 --> 00:10:48,695
+Headless Chrome or Puppeteer.
+
+289
+00:10:48,695 --> 00:10:51,290
+And we're going to talk
+about both these right now.
+
+290
+00:10:51,290 --> 00:10:51,840
+All right.
+
+291
+00:10:51,840 --> 00:10:53,304
+So what is headless browsing?
+
+292
+00:10:53,304 --> 00:10:55,220
+How many people have
+heard of Headless Chrome?
+
+293
+00:10:55,220 --> 00:10:57,860
+
+
+294
+00:10:57,860 --> 00:11:01,220
+So normally, when you click
+the icon on your desktop,
+
+295
+00:11:01,220 --> 00:11:03,200
+or you launch Chrome,
+there's this nice window.
+
+296
+00:11:03,200 --> 00:11:04,741
+There's a page you
+can interact with.
+
+297
+00:11:04,741 --> 00:11:05,990
+There's a URL bar.
+
+298
+00:11:05,990 --> 00:11:09,350
+There's the DevTools that you
+can open and poke around in.
+
+299
+00:11:09,350 --> 00:11:12,080
+But with headless browsing,
+there's actually none of that.
+
+300
+00:11:12,080 --> 00:11:14,600
+So there's no UI whatsoever.
+
+301
+00:11:14,600 --> 00:11:15,770
+There's no URL bar.
+
+302
+00:11:15,770 --> 00:11:17,930
+There's no address
+bar to interact with.
+
+303
+00:11:17,930 --> 00:11:20,920
+Quite literally, there's
+no Chrome to Chrome.
+
+304
+00:11:20,920 --> 00:11:23,270
+And so using Headless
+Chrome, you actually
+
+305
+00:11:23,270 --> 00:11:25,190
+decide the future
+of what's going on.
+
+306
+00:11:25,190 --> 00:11:27,594
+You control it using the
+scripts that you write.
+
+307
+00:11:27,594 --> 00:11:29,010
+To launch Chrome
+in headless mode,
+
+308
+00:11:29,010 --> 00:11:31,340
+you simply provide one
+flag on the command line.
+
+309
+00:11:31,340 --> 00:11:32,341
+It's dash dash headless.
+
+310
+00:11:32,341 --> 00:11:34,298
+And this will launch
+Chrome into headless mode,
+
+311
+00:11:34,298 --> 00:11:35,970
+and you're not going
+to see a window.
+
+312
+00:11:35,970 --> 00:11:37,844
+So what do you
+actually do with it?
+
+313
+00:11:37,844 --> 00:11:40,010
+Well, the important thing
+is to add this other flag.
+
+314
+00:11:40,010 --> 00:11:42,320
+It's called the remote
+debugging port flag.
+
+315
+00:11:42,320 --> 00:11:44,162
+This is where the magic happens.
+
+316
+00:11:44,162 --> 00:11:46,370
+So what this does, is it
+will launch Headless Chrome.
+
+317
+00:11:46,370 --> 00:11:49,530
+But it also enables the
+remote debugging protocol,
+
+318
+00:11:49,530 --> 00:11:52,160
+the same API and protocol
+used by the DevTools
+
+319
+00:11:52,160 --> 00:11:54,920
+itself, when you're
+inspecting Node, or in VS
+
+320
+00:11:54,920 --> 00:11:56,960
+code, when you're
+inspecting your application.
+
+321
+00:11:56,960 --> 00:12:00,860
+Same stuff we can tap into
+using this command line flag.
+
+322
+00:12:00,860 --> 00:12:03,240
+And so by doing this, we can
+then write an application
+
+323
+00:12:03,240 --> 00:12:06,020
+in no JS, or what have you, to
+actually control and automate
+
+324
+00:12:06,020 --> 00:12:07,700
+Headless Chrome.
+
+325
+00:12:07,700 --> 00:12:10,172
+So if you want to know
+more about Headless Chrome,
+
+326
+00:12:10,172 --> 00:12:12,380
+I'm not going to really talk
+about it too much today.
+
+327
+00:12:12,380 --> 00:12:13,220
+But there's a lot
+of cool stuff you
+
+328
+00:12:13,220 --> 00:12:14,270
+can do from the command line.
+
+329
+00:12:14,270 --> 00:12:15,561
+You can launch Headless Chrome.
+
+330
+00:12:15,561 --> 00:12:16,700
+You can take screenshots.
+
+331
+00:12:16,700 --> 00:12:18,560
+You can generate PDF.
+
+332
+00:12:18,560 --> 00:12:21,249
+Check out this article
+on developers.google.com.
+
+333
+00:12:21,249 --> 00:12:23,040
+There's some interesting
+things you can do.
+
+334
+00:12:23,040 --> 00:12:24,873
+But the more interesting
+things are actually
+
+335
+00:12:24,873 --> 00:12:27,909
+when you write programs that
+control Headless Chrome.
+
+336
+00:12:27,909 --> 00:12:30,200
+So one way you can use Headless
+Chrome programmatically
+
+337
+00:12:30,200 --> 00:12:32,210
+is to use this
+amazing little module.
+
+338
+00:12:32,210 --> 00:12:33,579
+It's called Chrome Launcher.
+
+339
+00:12:33,579 --> 00:12:35,120
+A White House team
+put this together,
+
+340
+00:12:35,120 --> 00:12:37,040
+because actually
+launching Headless Chrome,
+
+341
+00:12:37,040 --> 00:12:39,260
+and dealing with Chrome
+on different platforms,
+
+342
+00:12:39,260 --> 00:12:40,880
+and different systems,
+finding Chrome,
+
+343
+00:12:40,880 --> 00:12:43,429
+launching the right version,
+is actually kind of complex.
+
+344
+00:12:43,429 --> 00:12:44,970
+So we just basically
+abstracted that,
+
+345
+00:12:44,970 --> 00:12:47,690
+created a little NPM
+module for you guys to use.
+
+346
+00:12:47,690 --> 00:12:50,430
+It's really easy to launch
+Chrome just with this module.
+
+347
+00:12:50,430 --> 00:12:53,210
+You can pass it that
+remote debugging port flag.
+
+348
+00:12:53,210 --> 00:12:55,490
+In this case, I'm also saying
+launch in headless mode.
+
+349
+00:12:55,490 --> 00:12:57,310
+And boom, in one
+line of code, you
+
+350
+00:12:57,310 --> 00:13:01,820
+can interact with Chrome
+in your no JS program.
+
+351
+00:13:01,820 --> 00:13:05,650
+This is where Puppeteer
+comes in the mix.
+
+352
+00:13:05,650 --> 00:13:09,085
+So Puppeteer is a library for
+working with Headless Chrome.
+
+353
+00:13:09,085 --> 00:13:11,901
+There's a lot of automation
+and testing framework libraries
+
+354
+00:13:11,901 --> 00:13:12,400
+out there.
+
+355
+00:13:12,400 --> 00:13:14,447
+You might have heard of
+Phantom and Selenium.
+
+356
+00:13:14,447 --> 00:13:16,780
+We're not trying to invent
+the wheel and make a new one.
+
+357
+00:13:16,780 --> 00:13:18,340
+We're just trying
+to make, sort of,
+
+358
+00:13:18,340 --> 00:13:21,250
+an easy to use, out of the box
+experience for Headless Chrome.
+
+359
+00:13:21,250 --> 00:13:23,680
+We think it's really important
+for testing and automation,
+
+360
+00:13:23,680 --> 00:13:25,304
+and we want that to
+be easy, especially
+
+361
+00:13:25,304 --> 00:13:26,294
+in the case of Chrome.
+
+362
+00:13:26,294 --> 00:13:28,460
+So the Chrome team said,
+hey, let's build a library.
+
+363
+00:13:28,460 --> 00:13:29,820
+Let's build a no JS library.
+
+364
+00:13:29,820 --> 00:13:31,400
+We'll make it a modern library.
+
+365
+00:13:31,400 --> 00:13:34,824
+We'll take advantage of some
+of these newer ES6 features.
+
+366
+00:13:34,824 --> 00:13:36,490
+We're using Promises
+all over the place.
+
+367
+00:13:36,490 --> 00:13:38,956
+We'll see that in the code
+examples I show today.
+
+368
+00:13:38,956 --> 00:13:41,080
+The other reason for that
+is that it's just the way
+
+369
+00:13:41,080 --> 00:13:42,510
+the architecture
+of Chrome works.
+
+370
+00:13:42,510 --> 00:13:44,452
+So we're writing a Node program.
+
+371
+00:13:44,452 --> 00:13:45,910
+We're sending
+asynchronous messages
+
+372
+00:13:45,910 --> 00:13:48,970
+to this remote API, which
+in turn, automates and does
+
+373
+00:13:48,970 --> 00:13:51,400
+things with Chrome, that's
+all that message passing is
+
+374
+00:13:51,400 --> 00:13:52,250
+asynchronous.
+
+375
+00:13:52,250 --> 00:13:55,220
+So Promises, actually, lend
+themselves very nicely to that.
+
+376
+00:13:55,220 --> 00:13:56,720
+And of course, async
+and await, that
+
+377
+00:13:56,720 --> 00:13:59,594
+cleans Promises up quite a bit,
+makes our code a lot cleaner.
+
+378
+00:13:59,594 --> 00:14:00,260
+But don't worry.
+
+379
+00:14:00,260 --> 00:14:01,700
+You can use Node 6 if you want.
+
+380
+00:14:01,700 --> 00:14:02,550
+You don't have to transpile.
+
+381
+00:14:02,550 --> 00:14:04,720
+You can use Puppeteer and
+older versions of Node.
+
+382
+00:14:04,720 --> 00:14:06,334
+No problem there.
+
+383
+00:14:06,334 --> 00:14:07,750
+Now the other thing
+we want to do,
+
+384
+00:14:07,750 --> 00:14:10,194
+is we wanted to bundle
+Chrome with the library.
+
+385
+00:14:10,194 --> 00:14:12,610
+So one of the hard things we
+do is actually install Chrome
+
+386
+00:14:12,610 --> 00:14:15,026
+on different platforms, make
+sure all the dependencies are
+
+387
+00:14:15,026 --> 00:14:15,730
+installed.
+
+388
+00:14:15,730 --> 00:14:17,510
+So when you get
+Puppeteer from NPM,
+
+389
+00:14:17,510 --> 00:14:19,420
+we actually just
+download a local version
+
+390
+00:14:19,420 --> 00:14:22,044
+of Chromium, which is the
+open source version of Chrome.
+
+391
+00:14:22,044 --> 00:14:24,460
+So you don't have to worry
+about configuration or anything
+
+392
+00:14:24,460 --> 00:14:24,960
+like that.
+
+393
+00:14:24,960 --> 00:14:26,680
+It just works-- you
+focus on your code.
+
+394
+00:14:26,680 --> 00:14:29,710
+You don't have to worry about
+actually launching Chrome.
+
+395
+00:14:29,710 --> 00:14:32,240
+We want it to be a reference
+implementation for the DevTools
+
+396
+00:14:32,240 --> 00:14:32,740
+protocol.
+
+397
+00:14:32,740 --> 00:14:35,260
+Now the protocol itself,
+there's so much you can do.
+
+398
+00:14:35,260 --> 00:14:38,470
+It's a really complex,
+very awesome API surface.
+
+399
+00:14:38,470 --> 00:14:43,420
+But we wanted to actually create
+the highest level API possible,
+
+400
+00:14:43,420 --> 00:14:45,490
+really wrap the API,
+the protocol API,
+
+401
+00:14:45,490 --> 00:14:47,140
+in the most useful
+things we could.
+
+402
+00:14:47,140 --> 00:14:49,999
+And so we have API calls for
+probably the most common use
+
+403
+00:14:49,999 --> 00:14:51,040
+cases that you would use.
+
+404
+00:14:51,040 --> 00:14:54,239
+
+
+405
+00:14:54,239 --> 00:14:56,780
+So where does Puppeteer fit in
+our overall testing narrative?
+
+406
+00:14:56,780 --> 00:14:59,810
+Well, I present to you
+the pyramid of Puppeteer.
+
+407
+00:14:59,810 --> 00:15:01,420
+So at the bottom,
+we have the browser.
+
+408
+00:15:01,420 --> 00:15:02,420
+We have Headless Chrome.
+
+409
+00:15:02,420 --> 00:15:05,162
+
+
+410
+00:15:05,162 --> 00:15:06,435
+Headless Chrome.
+
+411
+00:15:06,435 --> 00:15:07,810
+And so I just want
+to remind you,
+
+412
+00:15:07,810 --> 00:15:09,851
+at the bottom of this
+layer, we have the browser.
+
+413
+00:15:09,851 --> 00:15:12,700
+It's all your new ES6 features,
+your JavaScript features,
+
+414
+00:15:12,700 --> 00:15:14,500
+your new web platform features.
+
+415
+00:15:14,500 --> 00:15:16,690
+So the fact that we can
+use an automated testing
+
+416
+00:15:16,690 --> 00:15:18,490
+library to test things
+like service worker,
+
+417
+00:15:18,490 --> 00:15:21,204
+and push notifications, and
+some of these newer web platform
+
+418
+00:15:21,204 --> 00:15:22,870
+features, it's actually
+really exciting.
+
+419
+00:15:22,870 --> 00:15:24,578
+We haven't had that
+in the past with some
+
+420
+00:15:24,578 --> 00:15:26,200
+of these other frameworks.
+
+421
+00:15:26,200 --> 00:15:29,830
+On top of that, you have the
+Chrome Developer remote API.
+
+422
+00:15:29,830 --> 00:15:32,210
+Again very, very complex--
+
+423
+00:15:32,210 --> 00:15:33,346
+big API.
+
+424
+00:15:33,346 --> 00:15:34,720
+But that's the
+thing that's going
+
+425
+00:15:34,720 --> 00:15:36,615
+to interact with Chrome itself.
+
+426
+00:15:36,615 --> 00:15:38,740
+And we're not going to
+interact with that directly.
+
+427
+00:15:38,740 --> 00:15:39,890
+That's where Puppeteer comes in.
+
+428
+00:15:39,890 --> 00:15:42,473
+So again, this small shim that
+sits on top of this lower level
+
+429
+00:15:42,473 --> 00:15:43,180
+stuff.
+
+430
+00:15:43,180 --> 00:15:45,822
+And at the very top is
+where your scripts come in.
+
+431
+00:15:45,822 --> 00:15:47,530
+So these are the Node
+scripts that you're
+
+432
+00:15:47,530 --> 00:15:49,738
+going to write, that interact
+with the Puppeteer API,
+
+433
+00:15:49,738 --> 00:15:51,280
+and then control Chrome.
+
+434
+00:15:51,280 --> 00:15:53,824
+That's how everything
+fits together.
+
+435
+00:15:53,824 --> 00:15:55,240
+So just to show
+you the difference
+
+436
+00:15:55,240 --> 00:15:57,370
+between using the DevTools
+protocol by itself
+
+437
+00:15:57,370 --> 00:15:59,800
+and using Puppeteer,
+two examples.
+
+438
+00:15:59,800 --> 00:16:02,260
+The same thing will
+basically navigate to a page
+
+439
+00:16:02,260 --> 00:16:04,725
+and then print the HTML
+content of that page.
+
+440
+00:16:04,725 --> 00:16:06,850
+And you don't really have
+to understand the details
+
+441
+00:16:06,850 --> 00:16:07,990
+of the code on the left.
+
+442
+00:16:07,990 --> 00:16:09,850
+Just know that it's
+much more robust.
+
+443
+00:16:09,850 --> 00:16:11,584
+There's more stuff
+that's going on.
+
+444
+00:16:11,584 --> 00:16:13,750
+I need two libraries to do
+things like launch Chrome
+
+445
+00:16:13,750 --> 00:16:15,280
+and control the protocol.
+
+446
+00:16:15,280 --> 00:16:17,650
+I have to do a lot of
+setup, a lot of cleanup.
+
+447
+00:16:17,650 --> 00:16:20,200
+I have to enable things
+and disable things.
+
+448
+00:16:20,200 --> 00:16:21,700
+In the right example
+with Puppeteer,
+
+449
+00:16:21,700 --> 00:16:23,470
+it's really clear
+what's going on.
+
+450
+00:16:23,470 --> 00:16:25,890
+You launch a browser,
+you create a new page,
+
+451
+00:16:25,890 --> 00:16:28,360
+you navigate to
+example.com, and then you
+
+452
+00:16:28,360 --> 00:16:30,410
+print the content of that page.
+
+453
+00:16:30,410 --> 00:16:32,860
+So Puppeteer makes a lot
+of these things very easy
+
+454
+00:16:32,860 --> 00:16:35,420
+to do in just a
+few lines of code.
+
+455
+00:16:35,420 --> 00:16:36,260
+So what can you do?
+
+456
+00:16:36,260 --> 00:16:37,390
+Well, the first thing
+a lot of people do
+
+457
+00:16:37,390 --> 00:16:39,100
+is take screenshots
+of their page.
+
+458
+00:16:39,100 --> 00:16:42,704
+You can do that with
+Puppeteer's API.
+
+459
+00:16:42,704 --> 00:16:44,620
+So, of course, the first
+thing you need to do,
+
+460
+00:16:44,620 --> 00:16:45,800
+go grab Puppeteer off NPM.
+
+461
+00:16:45,800 --> 00:16:47,830
+You can use Yarn or NPM.
+
+462
+00:16:47,830 --> 00:16:49,204
+Just install Puppeteer locally.
+
+463
+00:16:49,204 --> 00:16:51,370
+Again, it's going to bring
+down a version of Chrome.
+
+464
+00:16:51,370 --> 00:16:55,694
+And you can require it inside
+of your Node application.
+
+465
+00:16:55,694 --> 00:16:56,610
+So first things first.
+
+466
+00:16:56,610 --> 00:16:58,230
+If you want to write a
+script that uses Puppeteer,
+
+467
+00:16:58,230 --> 00:17:00,604
+the first thing you probably
+want to do is launch Chrome.
+
+468
+00:17:00,604 --> 00:17:01,910
+Puppeteer has a launch method.
+
+469
+00:17:01,910 --> 00:17:03,900
+And by default, what
+that is going to do
+
+470
+00:17:03,900 --> 00:17:06,480
+is launch a headless
+version of Chrome.
+
+471
+00:17:06,480 --> 00:17:08,203
+And again, everything
+is a Promise.
+
+472
+00:17:08,203 --> 00:17:09,869
+So this is going to
+resolve, and give us
+
+473
+00:17:09,869 --> 00:17:12,786
+a browser instance, to then
+interact with and control.
+
+474
+00:17:12,786 --> 00:17:14,869
+So calling launch will
+give us a browser instance.
+
+475
+00:17:14,869 --> 00:17:16,285
+So the next thing
+we do is we want
+
+476
+00:17:16,285 --> 00:17:19,319
+to create a page using async
+and await, just to clean up
+
+477
+00:17:19,319 --> 00:17:20,760
+the Promises a little bit.
+
+478
+00:17:20,760 --> 00:17:22,740
+So we'll use browser.newPage
+to create that.
+
+479
+00:17:22,740 --> 00:17:25,500
+
+
+480
+00:17:25,500 --> 00:17:27,824
+We'll use page.goto to
+navigate to example.com.
+
+481
+00:17:27,824 --> 00:17:29,490
+And what this is going
+to do is actually
+
+482
+00:17:29,490 --> 00:17:31,440
+wait for the load event
+to fire, so make sure
+
+483
+00:17:31,440 --> 00:17:33,180
+our page is loaded
+up and ready to go.
+
+484
+00:17:33,180 --> 00:17:36,000
+And then finally, we're going
+to take a screenshot of the page
+
+485
+00:17:36,000 --> 00:17:37,870
+itself.
+
+486
+00:17:37,870 --> 00:17:40,794
+So Puppeteer has an API
+for that, page.screenshot.
+
+487
+00:17:40,794 --> 00:17:41,710
+And it's kind of nice.
+
+488
+00:17:41,710 --> 00:17:44,537
+It's got this path
+property that you can set.
+
+489
+00:17:44,537 --> 00:17:46,620
+You don't have to read a
+stream, or read a buffer,
+
+490
+00:17:46,620 --> 00:17:47,536
+or anything like that.
+
+491
+00:17:47,536 --> 00:17:50,010
+You just give it the filename
+that you want to create.
+
+492
+00:17:50,010 --> 00:17:52,837
+And boom, you have your
+screenshot on disk.
+
+493
+00:17:52,837 --> 00:17:54,420
+So last but not
+least, you'll probably
+
+494
+00:17:54,420 --> 00:17:55,440
+want to close the browser.
+
+495
+00:17:55,440 --> 00:17:56,070
+We're done with it.
+
+496
+00:17:56,070 --> 00:17:57,821
+We don't need it to
+do any more scripting.
+
+497
+00:17:57,821 --> 00:17:58,861
+So we'll close up Chrome.
+
+498
+00:17:58,861 --> 00:18:01,290
+And all in all, that clocks
+in at like five lines of code
+
+499
+00:18:01,290 --> 00:18:03,461
+to take a screenshot
+of your web app.
+
+500
+00:18:03,461 --> 00:18:03,960
+Pretty cool.
+
+501
+00:18:03,960 --> 00:18:06,465
+
+
+502
+00:18:06,465 --> 00:18:07,840
+So what are the
+other cool things
+
+503
+00:18:07,840 --> 00:18:08,923
+can you do with Puppeteer?
+
+504
+00:18:08,923 --> 00:18:10,920
+Or Screenshots are one.
+
+505
+00:18:10,920 --> 00:18:13,262
+A lot of people like to
+create PDFs of their site.
+
+506
+00:18:13,262 --> 00:18:13,970
+I don't know why.
+
+507
+00:18:13,970 --> 00:18:16,720
+They like to literally print out
+their page, their entire site,
+
+508
+00:18:16,720 --> 00:18:18,930
+and give that to
+someone to look at.
+
+509
+00:18:18,930 --> 00:18:21,250
+Well, Headless Chrome has
+the ability to print to PDF.
+
+510
+00:18:21,250 --> 00:18:23,990
+And you can do that using
+Puppeteer's APIs as well.
+
+511
+00:18:23,990 --> 00:18:26,680
+So very similar to
+the screenshot API,
+
+512
+00:18:26,680 --> 00:18:29,200
+we can navigate to
+Google.com, for instance,
+
+513
+00:18:29,200 --> 00:18:32,450
+emulate a media device, a screen
+media, instead of print media,
+
+514
+00:18:32,450 --> 00:18:34,300
+so we don't get the
+print stylesheet.
+
+515
+00:18:34,300 --> 00:18:39,400
+And then call page.pdf
+and save the PDF to disk.
+
+516
+00:18:39,400 --> 00:18:40,537
+Pretty simple.
+
+517
+00:18:40,537 --> 00:18:42,370
+Another thing we can
+do is emulate a device.
+
+518
+00:18:42,370 --> 00:18:45,190
+Maybe you want to test the
+responsiveness of your device
+
+519
+00:18:45,190 --> 00:18:47,120
+or of your application.
+
+520
+00:18:47,120 --> 00:18:50,030
+This example here uses some of
+the built in, predefined device
+
+521
+00:18:50,030 --> 00:18:50,950
+descriptors we have.
+
+522
+00:18:50,950 --> 00:18:52,300
+So you don't have to
+worry about knowing
+
+523
+00:18:52,300 --> 00:18:54,220
+the viewport settings
+of different devices,
+
+524
+00:18:54,220 --> 00:18:55,990
+or the display pixels,
+ratios, or anything
+
+525
+00:18:55,990 --> 00:18:59,530
+like that, just the required
+Puppeteer device descriptors.
+
+526
+00:18:59,530 --> 00:19:03,000
+In this example here, I'm just
+emulating an iPhone 6 device
+
+527
+00:19:03,000 --> 00:19:04,450
+and then navigating
+to Google.com.
+
+528
+00:19:04,450 --> 00:19:06,200
+And so this is the
+end result here.
+
+529
+00:19:06,200 --> 00:19:08,450
+Obviously, it's just the
+mobile version of Google.com.
+
+530
+00:19:08,450 --> 00:19:11,191
+So it's super easy to emulate
+a device in Puppeteer.
+
+531
+00:19:11,191 --> 00:19:12,690
+And again, DevTools
+can do all this.
+
+532
+00:19:12,690 --> 00:19:15,250
+But Puppeteer is
+the programmatic way
+
+533
+00:19:15,250 --> 00:19:17,497
+to do a lot of these things.
+
+534
+00:19:17,497 --> 00:19:19,330
+One of the neater things
+you can actually do
+
+535
+00:19:19,330 --> 00:19:20,621
+is inject code into the page.
+
+536
+00:19:20,621 --> 00:19:22,870
+Maybe you want to test the
+functionality of your page,
+
+537
+00:19:22,870 --> 00:19:25,000
+or make sure some
+JavaScript is operating
+
+538
+00:19:25,000 --> 00:19:26,115
+like you expect it to.
+
+539
+00:19:26,115 --> 00:19:27,490
+So what we're
+going to do here is
+
+540
+00:19:27,490 --> 00:19:29,890
+we're going to navigate
+to just my Twitter feed.
+
+541
+00:19:29,890 --> 00:19:32,050
+We're going to find the
+first tweet on the page.
+
+542
+00:19:32,050 --> 00:19:34,424
+We're going to programmatically
+click that element, which
+
+543
+00:19:34,424 --> 00:19:35,590
+will bring up this overlay.
+
+544
+00:19:35,590 --> 00:19:38,140
+That's what Twitter does when
+you click the first element.
+
+545
+00:19:38,140 --> 00:19:40,723
+And then we're going to take a
+screenshot of that DOM element.
+
+546
+00:19:40,723 --> 00:19:43,521
+So you can take a screenshot of
+a page, a full page, or a DOM
+
+547
+00:19:43,521 --> 00:19:44,020
+element.
+
+548
+00:19:44,020 --> 00:19:45,360
+The choice is yours.
+
+549
+00:19:45,360 --> 00:19:47,110
+So I'm going to run
+some code in the page.
+
+550
+00:19:47,110 --> 00:19:48,240
+And the first thing, of
+course, we're going to do
+
+551
+00:19:48,240 --> 00:19:49,190
+is call launch.
+
+552
+00:19:49,190 --> 00:19:52,190
+We're going to launch a new
+instance of Headless Chrome.
+
+553
+00:19:52,190 --> 00:19:54,350
+We're going to create a
+new page to work with.
+
+554
+00:19:54,350 --> 00:19:56,500
+We're going to navigate
+to my Twitter stream,
+
+555
+00:19:56,500 --> 00:20:00,730
+just twitter.com/ebidel.
+
+556
+00:20:00,730 --> 00:20:04,360
+Next, what we'll do, is
+launch a use page.$eval.
+
+557
+00:20:04,360 --> 00:20:06,287
+And what this does, it's
+kind of like jQuery.
+
+558
+00:20:06,287 --> 00:20:07,870
+You give it a CSS
+selector, which will
+
+559
+00:20:07,870 --> 00:20:09,880
+find that node on the page.
+
+560
+00:20:09,880 --> 00:20:11,380
+And the cool thing
+that happens here
+
+561
+00:20:11,380 --> 00:20:14,259
+is the callback for this
+is not run inside of Node.
+
+562
+00:20:14,259 --> 00:20:15,800
+It's actually run
+inside of the page.
+
+563
+00:20:15,800 --> 00:20:19,270
+So this gets injected inside the
+browser, very similar to typing
+
+564
+00:20:19,270 --> 00:20:20,900
+this in the console.
+
+565
+00:20:20,900 --> 00:20:23,920
+And so we'll click that
+using anchor click, which
+
+566
+00:20:23,920 --> 00:20:27,010
+will open that overlay.
+
+567
+00:20:27,010 --> 00:20:30,402
+The next function call
+is waiting for that
+
+568
+00:20:30,402 --> 00:20:31,360
+select to be available.
+
+569
+00:20:31,360 --> 00:20:33,436
+So Puppeteer has a
+method that says, hey,
+
+570
+00:20:33,436 --> 00:20:35,560
+make sure this element is
+visible before I move on.
+
+571
+00:20:35,560 --> 00:20:36,976
+And so when this
+promise resolves,
+
+572
+00:20:36,976 --> 00:20:40,390
+we're guaranteed to have
+this Twitter overlay popup.
+
+573
+00:20:40,390 --> 00:20:43,390
+And then, finally, we'll
+take a screenshot of that DOM
+
+574
+00:20:43,390 --> 00:20:46,610
+element [INAUDIBLE].
+
+575
+00:20:46,610 --> 00:20:48,550
+So we'll just grab that
+handle to that element
+
+576
+00:20:48,550 --> 00:20:49,730
+and then take a screenshot.
+
+577
+00:20:49,730 --> 00:20:51,840
+So all in all, it looks
+like something like this.
+
+578
+00:20:51,840 --> 00:20:52,798
+We'll open the browser.
+
+579
+00:20:52,798 --> 00:20:54,351
+We'll navigate to Twitter.
+
+580
+00:20:54,351 --> 00:20:56,100
+I'll find the first
+tweet using Puppeteer.
+
+581
+00:20:56,100 --> 00:20:57,580
+You can see it all very fast.
+
+582
+00:20:57,580 --> 00:20:58,810
+It finds that element.
+
+583
+00:20:58,810 --> 00:21:01,210
+And eventually, what you get
+is the final product, which
+
+584
+00:21:01,210 --> 00:21:02,509
+is the screenshot.
+
+585
+00:21:02,509 --> 00:21:03,800
+So this is my new puppy, Chewy.
+
+586
+00:21:03,800 --> 00:21:04,883
+Everybody say hi to Chewy.
+
+587
+00:21:04,883 --> 00:21:05,980
+He's super cute.
+
+588
+00:21:05,980 --> 00:21:08,770
+He's a wookie,
+likes "Star Wars."
+
+589
+00:21:08,770 --> 00:21:10,580
+So we can take
+screenshots of full pages.
+
+590
+00:21:10,580 --> 00:21:12,246
+We can take screenshots
+of DOM elements.
+
+591
+00:21:12,246 --> 00:21:14,400
+And we can take
+screenshots of any portions
+
+592
+00:21:14,400 --> 00:21:16,415
+of the page you want.
+
+593
+00:21:16,415 --> 00:21:18,790
+So what you just saw is actually
+really, really powerful.
+
+594
+00:21:18,790 --> 00:21:20,206
+In a couple lines
+of code, we just
+
+595
+00:21:20,206 --> 00:21:22,270
+wrote some Puppeteer API code.
+
+596
+00:21:22,270 --> 00:21:25,060
+And you can wrap that in your
+favorite testing framework.
+
+597
+00:21:25,060 --> 00:21:27,599
+And all of a sudden, you
+have an instance smoke test.
+
+598
+00:21:27,599 --> 00:21:29,140
+Insert your favorite
+testing harness,
+
+599
+00:21:29,140 --> 00:21:30,850
+no matter what you want to use.
+
+600
+00:21:30,850 --> 00:21:32,470
+And you've got an instant
+integration smoke test.
+
+601
+00:21:32,470 --> 00:21:34,250
+We're just testing the
+functionality of Twitter,
+
+602
+00:21:34,250 --> 00:21:34,930
+in this case.
+
+603
+00:21:34,930 --> 00:21:36,610
+Very, very cool.
+
+604
+00:21:36,610 --> 00:21:39,586
+And easy to do using Puppeteer.
+
+605
+00:21:39,586 --> 00:21:41,710
+Another thing you can do
+that's very, very powerful
+
+606
+00:21:41,710 --> 00:21:44,140
+is intercept request,
+before the browser ever
+
+607
+00:21:44,140 --> 00:21:46,030
+issues those requests.
+
+608
+00:21:46,030 --> 00:21:49,365
+And we can do that using the
+set request interception method.
+
+609
+00:21:49,365 --> 00:21:50,740
+But in this case,
+what I'm doing,
+
+610
+00:21:50,740 --> 00:21:52,450
+is I'm waiting for
+the request event.
+
+611
+00:21:52,450 --> 00:21:54,770
+Every time the browser tries
+to make a network request,
+
+612
+00:21:54,770 --> 00:21:58,506
+we'll intercept that request
+and decide what to do with it.
+
+613
+00:21:58,506 --> 00:22:00,880
+So this example here is going
+to navigate to YouTube.com,
+
+614
+00:22:00,880 --> 00:22:02,890
+and it's the resource type.
+
+615
+00:22:02,890 --> 00:22:05,050
+If the request is for
+an image, we'll actually
+
+616
+00:22:05,050 --> 00:22:06,154
+just abort that request.
+
+617
+00:22:06,154 --> 00:22:06,820
+We'll cancel it.
+
+618
+00:22:06,820 --> 00:22:08,800
+The browser will
+never issue that.
+
+619
+00:22:08,800 --> 00:22:11,734
+And if it's not, we'll just let
+that pass through as normal.
+
+620
+00:22:11,734 --> 00:22:13,150
+So the end result,
+if you actually
+
+621
+00:22:13,150 --> 00:22:16,600
+run this piece of code in Node,
+exactly what you'd expect.
+
+622
+00:22:16,600 --> 00:22:18,294
+So the images start to 404.
+
+623
+00:22:18,294 --> 00:22:20,710
+What this is really great for
+is you can test things like,
+
+624
+00:22:20,710 --> 00:22:25,370
+does my layout of my site
+work if images don't load.
+
+625
+00:22:25,370 --> 00:22:26,450
+Is my accessibility OK.
+
+626
+00:22:26,450 --> 00:22:27,940
+Is my layout OK.
+
+627
+00:22:27,940 --> 00:22:30,571
+You can imagine doing this
+for other resources, like CSS.
+
+628
+00:22:30,571 --> 00:22:32,320
+Maybe you want to
+intercept one stylesheet
+
+629
+00:22:32,320 --> 00:22:33,195
+and serve up another.
+
+630
+00:22:33,195 --> 00:22:37,030
+You can totally do that using
+network request interception.
+
+631
+00:22:37,030 --> 00:22:40,656
+So you kind of decide what to
+do, based on the request set.
+
+632
+00:22:40,656 --> 00:22:42,970
+A really common thing
+to do in automation
+
+633
+00:22:42,970 --> 00:22:45,190
+is to do automation form
+submission, hey, does
+
+634
+00:22:45,190 --> 00:22:47,000
+my form actually work.
+
+635
+00:22:47,000 --> 00:22:48,820
+So Puppeteer has high
+level APIs for this,
+
+636
+00:22:48,820 --> 00:22:52,900
+for typing in form inputs and
+clicking things on the page.
+
+637
+00:22:52,900 --> 00:22:56,667
+The classic example here
+is just go to Google.com.
+
+638
+00:22:56,667 --> 00:22:58,000
+So we'll navigate to Google.com.
+
+639
+00:22:58,000 --> 00:23:01,360
+We'll input the text
+Puppeteer into that search box
+
+640
+00:23:01,360 --> 00:23:04,630
+just by selecting it,
+using its CSS selector.
+
+641
+00:23:04,630 --> 00:23:07,570
+And we'll call page.click
+and click the Google search
+
+642
+00:23:07,570 --> 00:23:10,410
+button using page.click.
+
+643
+00:23:10,410 --> 00:23:13,390
+Next, we'll use the same
+wait for selector method.
+
+644
+00:23:13,390 --> 00:23:15,130
+Each of the Google.com
+search results
+
+645
+00:23:15,130 --> 00:23:17,411
+is an anchor tag wrapped in H3.
+
+646
+00:23:17,411 --> 00:23:18,910
+So we'll just wait
+for those results
+
+647
+00:23:18,910 --> 00:23:22,570
+to be ready using
+that same method.
+
+648
+00:23:22,570 --> 00:23:26,080
+And then finally, we'll just use
+$$eval to iterate through all
+
+649
+00:23:26,080 --> 00:23:29,356
+of those titles that come
+up, and just print the titles
+
+650
+00:23:29,356 --> 00:23:29,980
+to the console.
+
+651
+00:23:29,980 --> 00:23:32,814
+So if you run this in
+Node, just in the console,
+
+652
+00:23:32,814 --> 00:23:35,230
+you get exactly what you'd
+expect, just the list of search
+
+653
+00:23:35,230 --> 00:23:36,865
+results for the word Puppeteer.
+
+654
+00:23:36,865 --> 00:23:37,990
+So we've showed two things.
+
+655
+00:23:37,990 --> 00:23:41,080
+We've showed interaction with
+the keyboard, form submission,
+
+656
+00:23:41,080 --> 00:23:42,670
+and, actually, just
+scraping content
+
+657
+00:23:42,670 --> 00:23:45,334
+from a website using
+Puppeteer's APIs.
+
+658
+00:23:45,334 --> 00:23:47,500
+So something new to the
+DevTools is that it actually
+
+659
+00:23:47,500 --> 00:23:50,020
+has this new panel called
+Performance Monitor, which
+
+660
+00:23:50,020 --> 00:23:52,269
+has a slew of awesome
+performance information
+
+661
+00:23:52,269 --> 00:23:52,810
+inside of it.
+
+662
+00:23:52,810 --> 00:23:55,510
+A lot of that stuff is actually
+being surfaced in Lighthouse
+
+663
+00:23:55,510 --> 00:23:56,125
+now.
+
+664
+00:23:56,125 --> 00:23:58,750
+And you can programmatically get
+access to that as well, inside
+
+665
+00:23:58,750 --> 00:23:59,940
+of Puppeteer.
+
+666
+00:23:59,940 --> 00:24:03,250
+It's a simple API called
+Puppeteer page.metrics,
+
+667
+00:24:03,250 --> 00:24:05,170
+will give you this information.
+
+668
+00:24:05,170 --> 00:24:07,130
+It corresponds to
+the panel itself,
+
+669
+00:24:07,130 --> 00:24:08,680
+so all the information,
+like how long
+
+670
+00:24:08,680 --> 00:24:10,471
+do your scripts take,
+how long does it take
+
+671
+00:24:10,471 --> 00:24:12,042
+to recount styles in this app.
+
+672
+00:24:12,042 --> 00:24:14,500
+And more and more stuff is
+being added to this all the time
+
+673
+00:24:14,500 --> 00:24:15,374
+by the DevTools team.
+
+674
+00:24:15,374 --> 00:24:17,512
+So this is going to get
+much more rich as we go on.
+
+675
+00:24:17,512 --> 00:24:19,720
+This is really great if you
+want to track performance
+
+676
+00:24:19,720 --> 00:24:23,050
+over time of your application,
+maybe in a CI environment.
+
+677
+00:24:23,050 --> 00:24:24,382
+Really useful stuff.
+
+678
+00:24:24,382 --> 00:24:26,590
+And there's a ton of stuff
+you can do with Puppeteer.
+
+679
+00:24:26,590 --> 00:24:28,250
+I can't cover everything today.
+
+680
+00:24:28,250 --> 00:24:30,130
+I just want to play on
+a couple more things.
+
+681
+00:24:30,130 --> 00:24:31,900
+If you're using
+service worker, a PWA,
+
+682
+00:24:31,900 --> 00:24:34,980
+you want to test your
+site to work offline.
+
+683
+00:24:34,980 --> 00:24:36,860
+You can turn, actually,
+JavaScript off.
+
+684
+00:24:36,860 --> 00:24:38,526
+You can test with the
+network connection
+
+685
+00:24:38,526 --> 00:24:41,772
+off, to see if your site
+does, indeed, work offline.
+
+686
+00:24:41,772 --> 00:24:43,480
+Using Puppeteer, we
+can intercept network
+
+687
+00:24:43,480 --> 00:24:46,342
+and console requests, that
+anytime the browser or the site
+
+688
+00:24:46,342 --> 00:24:48,550
+logs something to the console,
+we can intercept that,
+
+689
+00:24:48,550 --> 00:24:51,999
+and print that, or do something
+with that information.
+
+690
+00:24:51,999 --> 00:24:54,040
+And if we don't have a
+device descriptor for you,
+
+691
+00:24:54,040 --> 00:24:56,020
+you can actually emulate
+any type of device
+
+692
+00:24:56,020 --> 00:24:59,770
+you want using page.setViewport,
+set a device pixel,
+
+693
+00:24:59,770 --> 00:25:01,990
+or any dimensions you want.
+
+694
+00:25:01,990 --> 00:25:03,944
+So before I leave you,
+a couple more pro tips
+
+695
+00:25:03,944 --> 00:25:05,110
+that I've actually run into.
+
+696
+00:25:05,110 --> 00:25:06,100
+I've talked to a
+lot of developers
+
+697
+00:25:06,100 --> 00:25:07,390
+getting started in Puppeteer.
+
+698
+00:25:07,390 --> 00:25:09,306
+Just want to mention a
+few pro tips for debug.
+
+699
+00:25:09,306 --> 00:25:11,294
+I think they're really useful.
+
+700
+00:25:11,294 --> 00:25:13,210
+Let's talk about this
+Puppeteer launch method.
+
+701
+00:25:13,210 --> 00:25:15,280
+And again, this just
+launches Headless Chrome,
+
+702
+00:25:15,280 --> 00:25:18,740
+and you get a browser
+instance to interact with.
+
+703
+00:25:18,740 --> 00:25:20,650
+A couple of interesting things.
+
+704
+00:25:20,650 --> 00:25:23,279
+If you're writing a script and
+you can't see what's going on,
+
+705
+00:25:23,279 --> 00:25:24,070
+it's not so useful.
+
+706
+00:25:24,070 --> 00:25:24,970
+Maybe you're debugging a script.
+
+707
+00:25:24,970 --> 00:25:26,345
+You have no idea
+what it's doing.
+
+708
+00:25:26,345 --> 00:25:27,940
+Just throw on headless false.
+
+709
+00:25:27,940 --> 00:25:29,622
+You can actually
+just launch Chrome.
+
+710
+00:25:29,622 --> 00:25:30,580
+You can see the window.
+
+711
+00:25:30,580 --> 00:25:32,746
+You can see Puppeteer
+automate the script, the page,
+
+712
+00:25:32,746 --> 00:25:34,170
+and navigate, and click around.
+
+713
+00:25:34,170 --> 00:25:36,160
+It's actually pretty
+cool to watch this.
+
+714
+00:25:36,160 --> 00:25:38,535
+But that's actually really
+useful just for debugging too.
+
+715
+00:25:38,535 --> 00:25:42,170
+So I highly recommend throwing
+the headful mode of Chrome on.
+
+716
+00:25:42,170 --> 00:25:44,230
+You can also auto open
+the DevTools if you want,
+
+717
+00:25:44,230 --> 00:25:46,746
+using this flag devtools=true.
+
+718
+00:25:46,746 --> 00:25:48,620
+That will launch a
+headful version of Chrome,
+
+719
+00:25:48,620 --> 00:25:51,025
+but also just open the
+DevTools at the same time.
+
+720
+00:25:51,025 --> 00:25:51,650
+Kind of useful.
+
+721
+00:25:51,650 --> 00:25:53,660
+You can see DevTools,
+poke around as Puppeteer.
+
+722
+00:25:53,660 --> 00:25:55,550
+It's kind of
+automating your page.
+
+723
+00:25:55,550 --> 00:25:56,941
+All right, debugging options.
+
+724
+00:25:56,941 --> 00:25:58,940
+Another couple of interesting
+things you can do,
+
+725
+00:25:58,940 --> 00:26:00,940
+is you can set slowMo.
+
+726
+00:26:00,940 --> 00:26:03,260
+And slowMo is a flag that
+allows you to slow down
+
+727
+00:26:03,260 --> 00:26:05,000
+all operations
+that Puppeteer does
+
+728
+00:26:05,000 --> 00:26:07,020
+by a certain number
+of milliseconds.
+
+729
+00:26:07,020 --> 00:26:09,050
+So let's say somebody
+is typing in a website.
+
+730
+00:26:09,050 --> 00:26:10,846
+They don't type as
+fast as a computer.
+
+731
+00:26:10,846 --> 00:26:12,470
+So you can actually
+slow that operation
+
+732
+00:26:12,470 --> 00:26:15,710
+down using this option
+slowMo, which will basically
+
+733
+00:26:15,710 --> 00:26:17,600
+simulate a real user,
+which is useful to see
+
+734
+00:26:17,600 --> 00:26:19,730
+what a real user
+would do on your site.
+
+735
+00:26:19,730 --> 00:26:21,530
+It also slows things
+down, like navigation.
+
+736
+00:26:21,530 --> 00:26:25,092
+So you can see what's happening
+as Puppeteer is going through.
+
+737
+00:26:25,092 --> 00:26:27,050
+Dumpio is useful if you
+want to see information
+
+738
+00:26:27,050 --> 00:26:28,012
+from Chrome itself.
+
+739
+00:26:28,012 --> 00:26:29,720
+So if your page is
+doing something weird,
+
+740
+00:26:29,720 --> 00:26:32,960
+like the browser is actually
+crashing, turning this flag on
+
+741
+00:26:32,960 --> 00:26:37,282
+is actually pretty useful
+to see that information.
+
+742
+00:26:37,282 --> 00:26:38,740
+So last but not
+least, if you don't
+
+743
+00:26:38,740 --> 00:26:40,406
+want to actually
+install anything today,
+
+744
+00:26:40,406 --> 00:26:42,060
+you can totally just
+try out Puppeteer.
+
+745
+00:26:42,060 --> 00:26:44,590
+I hacked together this
+little site over the weekend.
+
+746
+00:26:44,590 --> 00:26:46,210
+It's called
+trypuppeteer.appspot.com.
+
+747
+00:26:46,210 --> 00:26:49,300
+You can go there, just play
+around with Puppeteer's API,
+
+748
+00:26:49,300 --> 00:26:51,340
+run all of our
+demos, tweak code,
+
+749
+00:26:51,340 --> 00:26:52,480
+see the results at the top.
+
+750
+00:26:52,480 --> 00:26:53,979
+You can see the
+console information,
+
+751
+00:26:53,979 --> 00:26:56,860
+and also any PDFs or
+screenshots you generate.
+
+752
+00:26:56,860 --> 00:26:59,320
+Really easy just to get started
+and kind of tinker around.
+
+753
+00:26:59,320 --> 00:27:01,736
+But no guarantee of that uptime,
+because it is just a hack
+
+754
+00:27:01,736 --> 00:27:02,237
+project.
+
+755
+00:27:02,237 --> 00:27:04,736
+Now one thing you can kind of
+do that's cool with this is we
+
+756
+00:27:04,736 --> 00:27:06,850
+can use Puppeteer
+locally on our machine
+
+757
+00:27:06,850 --> 00:27:09,805
+to launch that site,
+which runs Headless Chrome
+
+758
+00:27:09,805 --> 00:27:10,930
+and Puppeteer in the cloud.
+
+759
+00:27:10,930 --> 00:27:12,388
+So we're using
+Puppeteer to control
+
+760
+00:27:12,388 --> 00:27:15,289
+Puppeteer, which is kind of like
+this crazy inception moment.
+
+761
+00:27:15,289 --> 00:27:17,080
+So just to show that's
+possible, I actually
+
+762
+00:27:17,080 --> 00:27:18,399
+built that little script.
+
+763
+00:27:18,399 --> 00:27:19,940
+What we're going to
+do here, is we're
+
+764
+00:27:19,940 --> 00:27:21,520
+going to run Puppeteer
+on my machine.
+
+765
+00:27:21,520 --> 00:27:24,766
+We're going to launch that site,
+trypuppeteer, inject some code.
+
+766
+00:27:24,766 --> 00:27:26,890
+So you can see what I've
+done is injected code that
+
+767
+00:27:26,890 --> 00:27:29,320
+opens that page
+itself, and then takes
+
+768
+00:27:29,320 --> 00:27:31,500
+a screenshot of
+the final product.
+
+769
+00:27:31,500 --> 00:27:34,750
+So hopefully, we'll see a
+picture within a picture here.
+
+770
+00:27:34,750 --> 00:27:36,910
+And note, my mouse at the
+top is not going to move.
+
+771
+00:27:36,910 --> 00:27:38,380
+So we're actually
+automating this using Node.
+
+772
+00:27:38,380 --> 00:27:40,420
+We're not moving and
+clicking around the page.
+
+773
+00:27:40,420 --> 00:27:41,860
+So Puppeteer, we'll
+click that run button.
+
+774
+00:27:41,860 --> 00:27:42,820
+We'll get a final product.
+
+775
+00:27:42,820 --> 00:27:44,080
+And eventually,
+what happens is you
+
+776
+00:27:44,080 --> 00:27:45,871
+get a screenshot within
+a screenshot, which
+
+777
+00:27:45,871 --> 00:27:47,450
+is kind of cool.
+
+778
+00:27:47,450 --> 00:27:50,147
+So before I leave you, just a
+couple of things to mention.
+
+779
+00:27:50,147 --> 00:27:51,730
+The first thing is
+make sure if you're
+
+780
+00:27:51,730 --> 00:27:53,290
+using one of these
+testing frameworks
+
+781
+00:27:53,290 --> 00:27:54,929
+out there, Phantom
+or Selenium, make
+
+782
+00:27:54,929 --> 00:27:57,220
+sure they're using the headless
+version of the browser.
+
+783
+00:27:57,220 --> 00:28:00,250
+A lot of browsers now have
+a proper headless mode.
+
+784
+00:28:00,250 --> 00:28:02,200
+And some of these
+APIs and frameworks
+
+785
+00:28:02,200 --> 00:28:03,408
+have been around for a while.
+
+786
+00:28:03,408 --> 00:28:05,314
+They might not be
+using this mode.
+
+787
+00:28:05,314 --> 00:28:06,230
+It'll save you memory.
+
+788
+00:28:06,230 --> 00:28:07,063
+It'll save you time.
+
+789
+00:28:07,063 --> 00:28:09,650
+It's a lot faster to
+test in headless mode.
+
+790
+00:28:09,650 --> 00:28:11,560
+A lot of people use
+libraries like JSDOM,
+
+791
+00:28:11,560 --> 00:28:13,870
+which is a great, awesome
+library for testing DOM
+
+792
+00:28:13,870 --> 00:28:15,335
+and testing code that uses DOM.
+
+793
+00:28:15,335 --> 00:28:17,210
+But the fact that we
+have a headless browser,
+
+794
+00:28:17,210 --> 00:28:19,750
+and we can actually test in a
+real DOM implementation using
+
+795
+00:28:19,750 --> 00:28:23,020
+a real browser, maybe you
+don't need a library like JSDOM
+
+796
+00:28:23,020 --> 00:28:24,070
+anymore.
+
+797
+00:28:24,070 --> 00:28:25,750
+So consider that.
+
+798
+00:28:25,750 --> 00:28:28,390
+And also, test in other
+browsers, not just Chrome,
+
+799
+00:28:28,390 --> 00:28:29,470
+obviously.
+
+800
+00:28:29,470 --> 00:28:32,420
+Firefox has a headless mode that
+they launched in Firefox 56.
+
+801
+00:28:32,420 --> 00:28:35,140
+And other browsers, also, are
+implementing headless mode.
+
+802
+00:28:35,140 --> 00:28:37,090
+So test across all
+browsers, not just Chrome.
+
+803
+00:28:37,090 --> 00:28:39,242
+It's very important.
+
+804
+00:28:39,242 --> 00:28:41,200
+So with that, we threw
+a lot of stuff your way.
+
+805
+00:28:41,200 --> 00:28:43,617
+Here are all the open source
+projects and resources
+
+806
+00:28:43,617 --> 00:28:45,950
+that we talked about today,
+Lighthouse, which V covered.
+
+807
+00:28:45,950 --> 00:28:47,704
+Puppeteer, the
+DevTools protocol,
+
+808
+00:28:47,704 --> 00:28:49,870
+if you want to really know
+what the DevTools can do,
+
+809
+00:28:49,870 --> 00:28:50,740
+and that API can do.
+
+810
+00:28:50,740 --> 00:28:52,720
+Really, really awesome stuff.
+
+811
+00:28:52,720 --> 00:28:54,970
+The article on Headless
+Chrome and the Chrome launcher
+
+812
+00:28:54,970 --> 00:28:57,261
+module-- if you just want to
+work with Headless Chrome,
+
+813
+00:28:57,261 --> 00:28:59,390
+check that out.
+
+814
+00:28:59,390 --> 00:29:01,480
+So I think with
+that, we're all done.
+
+815
+00:29:01,480 --> 00:29:02,920
+And we really appreciate
+you guys sticking around.
+
+816
+00:29:02,920 --> 00:29:03,700
+We know it's late in the day.
+
+817
+00:29:03,700 --> 00:29:06,340
+Thank you, everyone on the
+live stream, for attending.
+
+818
+00:29:06,340 --> 00:29:07,385
+My name's Eric Bidelman.
+
+819
+00:29:07,385 --> 00:29:09,010
+VINAMRATA SINGAL:
+I'm Vinamrata Singal.
+
+820
+00:29:09,010 --> 00:29:11,110
+And thank you for coming.
+
+821
+00:29:11,110 --> 00:29:12,010
+[APPLAUSE]
+
+822
+00:29:12,010 --> 00:29:15,960
+[MUSIC PLAYING]
+
+823
+00:29:15,960 --> 00:29:22,834
+
+
