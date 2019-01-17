@@ -125,7 +125,7 @@ class Shadowing extends React.Component {
     return (
       <div className="views-shadowing">
         <h2>
-          <Link to="/shadowing">back</Link>
+          <Link to="/esl-shadowing">back</Link>
           <a href="javascript: void(0);" onClick={this.onToggleSettings}>
             Settings
           </a>
@@ -157,7 +157,7 @@ class Shadowing extends React.Component {
           <audio
             controls
             ref={this.playerRef}
-            src={`/shadowing/resources/${id}/audio.mp3`}
+            src={`/esl-shadowing/resources/${id}/audio.mp3`}
           />
         </div>
         <div className="countdown-bar" style={this.state.countdownStyle} />

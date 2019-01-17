@@ -85,7 +85,7 @@ class Subtitle extends React.Component {
           <audio
             controls
             ref={this.playerRef}
-            src={`/shadowing/resources/${id}/audio.mp3`}
+            src={`/resources/${id}/audio.mp3`}
           />
         </div>
         <div className="subtitles">

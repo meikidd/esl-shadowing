@@ -11,9 +11,13 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/shadowing/" component={Home} />
-          <Route exact path="/shadowing/subtitle/:id" component={Subtitle} />
-          <Route path="/shadowing/audio/:id" component={Shadowing} />
+          <Route exact path="/esl-shadowing/" component={Home} />
+          <Route
+            exact
+            path="/esl-shadowing/subtitle/:id"
+            component={Subtitle}
+          />
+          <Route path="/esl-shadowing/audio/:id" component={Shadowing} />
         </Switch>
       </Router>
     );

@@ -17,7 +17,7 @@ class Home extends React.Component {
         <h1>ESL Shadowing</h1>
         <nav className="home-nav">
           {this.state.resourceIds.map(id => (
-            <Link key={id} to={`/shadowing/audio/${id}`}>
+            <Link key={id} to={`/esl-shadowing/audio/${id}`}>
               {id}
             </Link>
           ))}
