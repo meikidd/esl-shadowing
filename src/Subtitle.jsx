@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Clipboard from 'clipboard';
 import RestAPI from './RestAPI';
+import Utils from './utils';
 
 class Subtitle extends React.Component {
   state = {
@@ -85,7 +86,7 @@ class Subtitle extends React.Component {
           <audio
             controls
             ref={this.playerRef}
-            src={`/resources/${id}/audio.mp3`}
+            src={`${Utils.resourceUrl()}/${id}/audio.mp3`}
           />
         </div>
         <div className="subtitles">

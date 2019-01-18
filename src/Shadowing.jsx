@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RestAPI from './RestAPI';
+import Utils from './utils';
 
 class Shadowing extends React.Component {
   state = {
@@ -125,10 +126,12 @@ class Shadowing extends React.Component {
     return (
       <div className="views-shadowing">
         <h2>
-          <Link to="/esl-shadowing">back</Link>
-          <a href="javascript: void(0);" onClick={this.onToggleSettings}>
+          <Link className="topbar-btn" to="/">
+            Back
+          </Link>
+          <div className="topbar-btn" onClick={this.onToggleSettings}>
             Settings
-          </a>
+          </div>
         </h2>
         {this.state.showSettings && (
           <div className="settings">
@@ -157,7 +160,7 @@ class Shadowing extends React.Component {
           <audio
             controls
             ref={this.playerRef}
-            src={`/esl-shadowing/resources/${id}/audio.mp3`}
+            src={`${Utils.resourceUrl()}/${id}/audio.mp3`}
           />
         </div>
         <div className="countdown-bar" style={this.state.countdownStyle} />

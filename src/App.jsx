@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Subtitle from './Subtitle';
 import Shadowing from './Shadowing';
@@ -11,13 +11,9 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/esl-shadowing/" component={Home} />
-          <Route
-            exact
-            path="/esl-shadowing/subtitle/:id"
-            component={Subtitle}
-          />
-          <Route path="/esl-shadowing/audio/:id" component={Shadowing} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/subtitle/:id" component={Subtitle} />
+          <Route path="/audio/:id" component={Shadowing} />
         </Switch>
       </Router>
     );

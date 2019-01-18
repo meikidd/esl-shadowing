@@ -1,5 +1,13 @@
 import * as qs from 'querystring';
 
+function resourceUrl() {
+  if (process.env.NODE_ENV === 'development') {
+    return '/resources';
+  } else {
+    return '/esl-shadowing/resources';
+  }
+}
+
 /* parseQuery */
 function parseQuery(str) {
   const querystring = str || window.location.search.slice(1);
@@ -35,6 +43,7 @@ function convertCase(convertFunc) {
 }
 
 export default {
+  resourceUrl,
   parseQuery,
   stringifyQuery,
   camelizeStr,

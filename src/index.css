@@ -84,6 +84,11 @@ code {
   display: flex;
   flex-direction: column;
 }
+.views-shadowing .topbar-btn {
+  color: #333;
+  cursor: pointer;
+  text-decoration: underline;
+}
 .views-shadowing h2 {
   flex: none;
   margin: 0 0 5px;
@@ -144,6 +149,7 @@ code {
   border: 1px solid #999;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .views-shadowing .btns .btn:focus {
   outline: none;

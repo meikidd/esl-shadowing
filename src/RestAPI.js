@@ -2,8 +2,7 @@ import axios from 'axios';
 import Utils from './utils';
 
 function api(method = 'get', src, data = {}) {
-  const url = src;
-  // const url = '/esl-shadowing' + src;
+  const url = Utils.resourceUrl() + src;
 
   const params = {
     method,
@@ -28,12 +27,12 @@ function api(method = 'get', src, data = {}) {
 
 export default {
   getResources() {
-    return api('get', '/resources/index.json');
+    return api('get', '/index.json');
   },
   getSubtitle(id) {
-    return api('get', `/resources/${id}/subtitle.json`);
+    return api('get', `/${id}/subtitle.json`);
   },
   getMergedSubtitle(id) {
-    return api('get', `/resources/${id}/merged.json`);
+    return api('get', `/${id}/merged.json`);
   }
 };
