@@ -342,14 +342,13 @@
   },
   {
     "startTime": 148.827,
-    "endTime": 150.66,
-    "content": ["But in order to build", "a progressive web app,"],
-    "current": false
-  },
-  {
-    "startTime": 150.66,
     "endTime": 152.47,
-    "content": ["there's a lot of", "things you need to do,"],
+    "content": [
+      "But in order to build",
+      "a progressive web app,",
+      "there's a lot of",
+      "things you need to do,"
+    ],
     "current": false
   },
   {
@@ -540,20 +539,15 @@
   },
   {
     "startTime": 230.72,
-    "endTime": 233.45,
-    "content": ["So I'm going to now run", "Lighthouse through the Chrome"],
-    "current": false
-  },
-  {
-    "startTime": 233.45,
-    "endTime": 235.61,
-    "content": ["Developer Tools,", "but I will also talk"],
-    "current": false
-  },
-  {
-    "startTime": 235.61,
     "endTime": 238.17,
-    "content": ["about other ways in which", "you can run Lighthouse later."],
+    "content": [
+      "So I'm going to now run",
+      "Lighthouse through the Chrome",
+      "Developer Tools,",
+      "but I will also talk",
+      "about other ways in which",
+      "you can run Lighthouse later."
+    ],
     "current": false
   },
   {
@@ -585,26 +579,22 @@
   },
   {
     "startTime": 249.35,
-    "endTime": 251.9,
-    "content": ["and I can check whatever", "categories of audits"],
-    "current": false
-  },
-  {
-    "startTime": 251.9,
     "endTime": 252.92,
-    "content": ["I'm interested in."],
+    "content": [
+      "and I can check whatever",
+      "categories of audits",
+      "I'm interested in."
+    ],
     "current": false
   },
   {
     "startTime": 252.92,
-    "endTime": 254.64,
-    "content": ["So I care about everything."],
-    "current": false
-  },
-  {
-    "startTime": 254.64,
     "endTime": 256.7,
-    "content": ["So I'm just going to run", "it across everything."],
+    "content": [
+      "So I care about everything.",
+      "So I'm just going to run",
+      "it across everything."
+    ],
     "current": false
   },
   {
@@ -621,14 +611,12 @@
   },
   {
     "startTime": 262.52,
-    "endTime": 265.64,
-    "content": ["specifically, a Nexus 5x", "device, and it's actually"],
-    "current": false
-  },
-  {
-    "startTime": 265.64,
     "endTime": 267.17,
-    "content": ["throttling the network."],
+    "content": [
+      "specifically, a Nexus 5x",
+      "device, and it's actually",
+      "throttling the network."
+    ],
     "current": false
   },
   {
@@ -666,50 +654,43 @@
   },
   {
     "startTime": 279.8,
-    "endTime": 282.77,
-    "content": ["So as I was mentioning earlier,", "there's quite a few ways"],
-    "current": false
-  },
-  {
-    "startTime": 282.77,
     "endTime": 283.94,
-    "content": ["that you can run Lighthouse."],
+    "content": [
+      "So as I was mentioning earlier,",
+      "there's quite a few ways",
+      "that you can run Lighthouse."
+    ],
     "current": false
   },
   {
     "startTime": 283.94,
-    "endTime": 285.27,
-    "content": ["So the way that", "I just showed you"],
-    "current": false
-  },
-  {
-    "startTime": 285.27,
     "endTime": 286.55,
-    "content": ["was through the Chrome", "Developer Tools."],
+    "content": [
+      "So the way that",
+      "I just showed you",
+      "was through the Chrome",
+      "Developer Tools."
+    ],
     "current": false
   },
   {
     "startTime": 286.55,
-    "endTime": 288.758,
-    "content": ["But you can also run it", "through the Lighthouse Chrome"],
-    "current": false
-  },
-  {
-    "startTime": 288.758,
     "endTime": 289.49,
-    "content": ["extension."],
+    "content": [
+      "But you can also run it",
+      "through the Lighthouse Chrome",
+      "extension."
+    ],
     "current": false
   },
   {
     "startTime": 289.49,
-    "endTime": 291.29,
-    "content": ["You can run it through", "the command line"],
-    "current": false
-  },
-  {
-    "startTime": 291.29,
     "endTime": 293.18,
-    "content": ["with the Lighthouse NPM module."],
+    "content": [
+      "You can run it through",
+      "the command line",
+      "with the Lighthouse NPM module."
+    ],
     "current": false
   },
   {
@@ -720,14 +701,10 @@
   },
   {
     "startTime": 296.37,
-    "endTime": 298.97,
-    "content": ["So now let's do a", "little bit of deep dive"],
-    "current": false
-  },
-  {
-    "startTime": 298.97,
     "endTime": 301.58,
     "content": [
+      "So now let's do a",
+      "little bit of deep dive",
       "into the Lighthouse report",
       "that I was showing you earlier."
     ],
@@ -735,14 +712,10 @@
   },
   {
     "startTime": 301.58,
-    "endTime": 303.99,
-    "content": ["And for the purposes of", "this part of the talk,"],
-    "current": false
-  },
-  {
-    "startTime": 303.99,
     "endTime": 308.01,
     "content": [
+      "And for the purposes of",
+      "this part of the talk,",
       "I will only be focusing on the",
       "Performance and PWA section."
     ],
@@ -756,20 +729,12 @@
   },
   {
     "startTime": 310.11,
-    "endTime": 311.961,
-    "content": ["So this is a slide", "earlier, talking to you"],
-    "current": false
-  },
-  {
-    "startTime": 311.961,
-    "endTime": 314.21,
-    "content": ["about what are all the", "different requirements that you"],
-    "current": false
-  },
-  {
-    "startTime": 314.21,
     "endTime": 317.12,
     "content": [
+      "So this is a slide",
+      "earlier, talking to you",
+      "about what are all the",
+      "different requirements that you",
       "need to implement in order to",
       "build a progressive web app."
     ],
@@ -777,14 +742,13 @@
   },
   {
     "startTime": 317.12,
-    "endTime": 318.95,
-    "content": ["And we have a handy", "dandy checklist"],
-    "current": false
-  },
-  {
-    "startTime": 318.95,
     "endTime": 320.96,
-    "content": ["that you can look at", "in order to understand"],
+    "content": [
+      "And we have a handy",
+      "dandy checklist",
+      "that you can look at",
+      "in order to understand"
+    ],
     "current": false
   },
   {
@@ -795,32 +759,25 @@
   },
   {
     "startTime": 323.42,
-    "endTime": 324.92,
-    "content": ["And what Lighthouse", "does, is that it"],
-    "current": false
-  },
-  {
-    "startTime": 324.92,
-    "endTime": 327.17,
-    "content": ["takes this baseline", "checklist, and it basically"],
-    "current": false
-  },
-  {
-    "startTime": 327.17,
     "endTime": 328.656,
-    "content": ["automates the entire process."],
+    "content": [
+      "And what Lighthouse",
+      "does, is that it",
+      "takes this baseline",
+      "checklist, and it basically",
+      "automates the entire process."
+    ],
     "current": false
   },
   {
     "startTime": 328.656,
-    "endTime": 330.03,
-    "content": ["So you don't have", "to think about,"],
-    "current": false
-  },
-  {
-    "startTime": 330.03,
     "endTime": 332.28,
-    "content": ["am I actually implementing", "a service worker correctly."],
+    "content": [
+      "So you don't have",
+      "to think about,",
+      "am I actually implementing",
+      "a service worker correctly."
+    ],
     "current": false
   },
   {
@@ -831,53 +788,42 @@
   },
   {
     "startTime": 334.53,
-    "endTime": 336.29,
-    "content": ["And it tells you a", "score at the top that"],
-    "current": false
-  },
-  {
-    "startTime": 336.29,
     "endTime": 338.12,
-    "content": ["helps you understand,", "at a high level,"],
-    "current": false
-  },
-  {
-    "startTime": 338.12,
-    "endTime": 340.4,
-    "content": ["how far are you in the", "journey in building"],
-    "current": false
-  },
-  {
-    "startTime": 340.4,
-    "endTime": 341.93,
-    "content": ["your own progressive web app."],
-    "current": false
-  },
-  {
-    "startTime": 341.93,
-    "endTime": 346.26,
     "content": [
-      "And for Lighthouse definition,",
-      "we consider a score of a 100,"
+      "And it tells you a",
+      "score at the top that",
+      "helps you understand,",
+      "at a high level,"
     ],
     "current": false
   },
   {
-    "startTime": 346.26,
+    "startTime": 338.12,
+    "endTime": 341.93,
+    "content": [
+      "how far are you in the",
+      "journey in building",
+      "your own progressive web app."
+    ],
+    "current": false
+  },
+  {
+    "startTime": 341.93,
     "endTime": 349.49,
-    "content": ["meaning that you've built", "a progressive web app."],
+    "content": [
+      "And for Lighthouse definition,",
+      "we consider a score of a 100,",
+      "meaning that you've built",
+      "a progressive web app."
+    ],
     "current": false
   },
   {
     "startTime": 349.49,
-    "endTime": 351.56,
-    "content": ["So now, talking about", "the Performance section"],
-    "current": false
-  },
-  {
-    "startTime": 351.56,
     "endTime": 354.74,
     "content": [
+      "So now, talking about",
+      "the Performance section",
       "of the report, before we deep",
       "dive into the report itself,"
     ],
@@ -894,14 +840,10 @@
   },
   {
     "startTime": 357.56,
-    "endTime": 359.12,
-    "content": ["And so, on the Chrome", "team, you might"],
-    "current": false
-  },
-  {
-    "startTime": 359.12,
     "endTime": 362.5,
     "content": [
+      "And so, on the Chrome",
+      "team, you might",
       "have heard us talk about a thing",
       "called progressive web metrics."
     ],
@@ -909,44 +851,36 @@
   },
   {
     "startTime": 362.5,
-    "endTime": 364.16,
-    "content": ["And the idea behind", "that is the way"],
-    "current": false
-  },
-  {
-    "startTime": 364.16,
-    "endTime": 365.9,
-    "content": ["that you understand", "a page load is"],
-    "current": false
-  },
-  {
-    "startTime": 365.9,
     "endTime": 368.54,
-    "content": ["through how an end user", "perceives the page loading."],
+    "content": [
+      "And the idea behind",
+      "that is the way",
+      "that you understand",
+      "a page load is",
+      "through how an end user",
+      "perceives the page loading."
+    ],
     "current": false
   },
   {
     "startTime": 368.54,
-    "endTime": 371.2,
-    "content": ["And there's a couple of key", "moments here in that user"],
-    "current": false
-  },
-  {
-    "startTime": 371.2,
     "endTime": 374.4,
-    "content": ["journey, the first one being", "First Contentful Paint."],
+    "content": [
+      "And there's a couple of key",
+      "moments here in that user",
+      "journey, the first one being",
+      "First Contentful Paint."
+    ],
     "current": false
   },
   {
     "startTime": 374.4,
-    "endTime": 377,
-    "content": ["So what are the first", "pixels of content"],
-    "current": false
-  },
-  {
-    "startTime": 377,
     "endTime": 378.33,
-    "content": ["appearing on the screen."],
+    "content": [
+      "So what are the first",
+      "pixels of content",
+      "appearing on the screen."
+    ],
     "current": false
   },
   {
@@ -966,14 +900,10 @@
   },
   {
     "startTime": 384.32,
-    "endTime": 386.3,
-    "content": ["So First Meaningful", "Paint is when"],
-    "current": false
-  },
-  {
-    "startTime": 386.3,
     "endTime": 389.91,
     "content": [
+      "So First Meaningful",
+      "Paint is when",
       "did the first meaningful content",
       "on my page start appearing."
     ],
@@ -987,50 +917,45 @@
   },
   {
     "startTime": 392.64,
-    "endTime": 394.07,
-    "content": ["And then finally,", "at the very end,"],
-    "current": false
-  },
-  {
-    "startTime": 394.07,
     "endTime": 395.39,
-    "content": ["you have Time to Interactive."],
+    "content": [
+      "And then finally,",
+      "at the very end,",
+      "you have Time to Interactive."
+    ],
     "current": false
   },
   {
     "startTime": 395.39,
-    "endTime": 398.69,
-    "content": ["So when does my page become", "first interactive to users,"],
-    "current": false
-  },
-  {
-    "startTime": 398.69,
     "endTime": 400.52,
-    "content": ["as well as continuously", "interactive,"],
+    "content": [
+      "So when does my page become",
+      "first interactive to users,",
+      "as well as continuously",
+      "interactive,"
+    ],
     "current": false
   },
   {
     "startTime": 400.52,
-    "endTime": 402.14,
-    "content": ["so that users can", "click on anything,"],
-    "current": false
-  },
-  {
-    "startTime": 402.14,
     "endTime": 405.96,
-    "content": ["and they're able to see", "the page be responsive."],
+    "content": [
+      "so that users can",
+      "click on anything,",
+      "and they're able to see",
+      "the page be responsive."
+    ],
     "current": false
   },
   {
     "startTime": 405.96,
-    "endTime": 408.83,
-    "content": ["And so what Lighthouse", "does, is it basically takes"],
-    "current": false
-  },
-  {
-    "startTime": 408.83,
     "endTime": 411.74,
-    "content": ["all these metrics, shows them", "to you for your web page,"],
+    "content": [
+      "And so what Lighthouse",
+      "does, is it basically takes",
+      "all these metrics, shows them",
+      "to you for your web page,"
+    ],
     "current": false
   },
   {
@@ -1047,20 +972,14 @@
   },
   {
     "startTime": 415.059,
-    "endTime": 416.6,
-    "content": ["also tells you what", "are ways that you"],
-    "current": false
-  },
-  {
-    "startTime": 416.6,
-    "endTime": 418.67,
-    "content": ["can improve these metrics", "with the performance"],
-    "current": false
-  },
-  {
-    "startTime": 418.67,
     "endTime": 419.88,
-    "content": ["section of the report."],
+    "content": [
+      "also tells you what",
+      "are ways that you",
+      "can improve these metrics",
+      "with the performance",
+      "section of the report."
+    ],
     "current": false
   },
   {
@@ -1089,14 +1008,13 @@
   },
   {
     "startTime": 427.67,
-    "endTime": 429.17,
-    "content": ["that tells you this", "is, overall, how"],
-    "current": false
-  },
-  {
-    "startTime": 429.17,
     "endTime": 431.15,
-    "content": ["the performance of", "your website is."],
+    "content": [
+      "that tells you this",
+      "is, overall, how",
+      "the performance of",
+      "your website is."
+    ],
     "current": false
   },
   {
@@ -1107,14 +1025,10 @@
   },
   {
     "startTime": 433.43,
-    "endTime": 434.93,
-    "content": ["So basically, at", "the top, you'll see"],
-    "current": false
-  },
-  {
-    "startTime": 434.93,
     "endTime": 437.81,
     "content": [
+      "So basically, at",
+      "the top, you'll see",
       "a bunch of different images,",
       "what we call a filmstrip, which"
     ],
@@ -1122,26 +1036,24 @@
   },
   {
     "startTime": 437.81,
-    "endTime": 441.02,
-    "content": ["is basically how did your", "page look at different time"],
-    "current": false
-  },
-  {
-    "startTime": 441.02,
     "endTime": 443.81,
-    "content": ["intervals of your", "web site loading."],
+    "content": [
+      "is basically how did your",
+      "page look at different time",
+      "intervals of your",
+      "web site loading."
+    ],
     "current": false
   },
   {
     "startTime": 443.81,
-    "endTime": 445.612,
-    "content": ["And then, it also", "gives you values"],
-    "current": false
-  },
-  {
-    "startTime": 445.612,
     "endTime": 447.32,
-    "content": ["for the metrics that", "I was talking about,"],
+    "content": [
+      "And then, it also",
+      "gives you values",
+      "for the metrics that",
+      "I was talking about,"
+    ],
     "current": false
   },
   {
@@ -1152,56 +1064,47 @@
   },
   {
     "startTime": 450.32,
-    "endTime": 453.95,
-    "content": ["The key thing to note here is", "that this section basically"],
-    "current": false
-  },
-  {
-    "startTime": 453.95,
     "endTime": 456.05,
-    "content": ["determines your", "Lighthouse score,"],
+    "content": [
+      "The key thing to note here is",
+      "that this section basically",
+      "determines your",
+      "Lighthouse score,"
+    ],
     "current": false
   },
   {
     "startTime": 456.05,
-    "endTime": 459.11,
-    "content": ["meaning that metrics like", "First Meaningful Paint, First"],
-    "current": false
-  },
-  {
-    "startTime": 459.11,
     "endTime": 461.66,
-    "content": ["Interactive, and", "Consistently Interactive,"],
+    "content": [
+      "meaning that metrics like",
+      "First Meaningful Paint, First",
+      "Interactive, and",
+      "Consistently Interactive,"
+    ],
     "current": false
   },
   {
     "startTime": 461.66,
-    "endTime": 465.23,
-    "content": ["are worth five times as", "much in terms of determining"],
-    "current": false
-  },
-  {
-    "startTime": 465.23,
     "endTime": 466.449,
-    "content": ["your final Lighthouse score."],
+    "content": [
+      "are worth five times as",
+      "much in terms of determining",
+      "your final Lighthouse score."
+    ],
     "current": false
   },
   {
     "startTime": 466.449,
-    "endTime": 468.74,
-    "content": ["And so when you're thinking", "about what metrics should I"],
-    "current": false
-  },
-  {
-    "startTime": 468.74,
-    "endTime": 470.66,
-    "content": ["be paying attention", "to and how do I"],
-    "current": false
-  },
-  {
-    "startTime": 470.66,
     "endTime": 472.67,
-    "content": ["think about improving", "my Lighthouse score,"],
+    "content": [
+      "And so when you're thinking",
+      "about what metrics should I",
+      "be paying attention",
+      "to and how do I",
+      "think about improving",
+      "my Lighthouse score,"
+    ],
     "current": false
   },
   {
@@ -1215,14 +1118,13 @@
   },
   {
     "startTime": 477.65,
-    "endTime": 479.57,
-    "content": ["So the next section", "of the report"],
-    "current": false
-  },
-  {
-    "startTime": 479.57,
     "endTime": 483.02,
-    "content": ["is the Opportunity section,", "with the idea being,"],
+    "content": [
+      "So the next section",
+      "of the report",
+      "is the Opportunity section,",
+      "with the idea being,"
+    ],
     "current": false
   },
   {
@@ -1233,20 +1135,15 @@
   },
   {
     "startTime": 485.11,
-    "endTime": 488,
-    "content": ["So in this case, you can see", "that optimizing your images"],
-    "current": false
-  },
-  {
-    "startTime": 488,
-    "endTime": 489.74,
-    "content": ["is probably your", "best bet in terms"],
-    "current": false
-  },
-  {
-    "startTime": 489.74,
     "endTime": 492.6,
-    "content": ["of improving the", "performance of your website."],
+    "content": [
+      "So in this case, you can see",
+      "that optimizing your images",
+      "is probably your",
+      "best bet in terms",
+      "of improving the",
+      "performance of your website."
+    ],
     "current": false
   },
   {
@@ -1257,14 +1154,13 @@
   },
   {
     "startTime": 494.57,
-    "endTime": 496.43,
-    "content": ["So if you're interested", "in deep diving"],
-    "current": false
-  },
-  {
-    "startTime": 496.43,
     "endTime": 498.23,
-    "content": ["into performance", "further, you can"],
+    "content": [
+      "So if you're interested",
+      "in deep diving",
+      "into performance",
+      "further, you can"
+    ],
     "current": false
   },
   {
@@ -1275,26 +1171,21 @@
   },
   {
     "startTime": 502.42,
-    "endTime": 504.75,
-    "content": ["So I would like to", "give to all of you"],
-    "current": false
-  },
-  {
-    "startTime": 504.75,
     "endTime": 507.54,
-    "content": ["a sneak peek into what's", "coming up next for Lighthouse."],
+    "content": [
+      "So I would like to",
+      "give to all of you",
+      "a sneak peek into what's",
+      "coming up next for Lighthouse."
+    ],
     "current": false
   },
   {
     "startTime": 507.54,
-    "endTime": 510.72,
-    "content": ["So I'm excited to announce", "that in the next few releases"],
-    "current": false
-  },
-  {
-    "startTime": 510.72,
     "endTime": 513.39,
     "content": [
+      "So I'm excited to announce",
+      "that in the next few releases",
       "of Lighthouse, we'll be adding a",
       "whole new section of the report"
     ],
@@ -1308,14 +1199,13 @@
   },
   {
     "startTime": 516.27,
-    "endTime": 519.48,
-    "content": ["specifically about how you", "can make your website more"],
-    "current": false
-  },
-  {
-    "startTime": 519.48,
     "endTime": 522.45,
-    "content": ["friendly to search engine", "callers and indexers."],
+    "content": [
+      "specifically about how you",
+      "can make your website more",
+      "friendly to search engine",
+      "callers and indexers."
+    ],
     "current": false
   },
   {
@@ -1326,44 +1216,35 @@
   },
   {
     "startTime": 525.93,
-    "endTime": 528.75,
+    "endTime": 530.73,
     "content": [
       "So now I want to take a step",
-      "back and talk about Lighthouse"
+      "back and talk about Lighthouse",
+      "in a broader context",
+      "of web development."
     ],
-    "current": false
-  },
-  {
-    "startTime": 528.75,
-    "endTime": 530.73,
-    "content": ["in a broader context", "of web development."],
     "current": false
   },
   {
     "startTime": 530.73,
-    "endTime": 532.11,
-    "content": ["Specifically, I", "want to start off"],
-    "current": false
-  },
-  {
-    "startTime": 532.11,
     "endTime": 534.48,
-    "content": ["by talking about our", "adoption metrics."],
-    "current": false
-  },
-  {
-    "startTime": 534.48,
-    "endTime": 538.41,
     "content": [
-      "So Lighthouse has pretty good",
-      "adoption, in the sense of we"
+      "Specifically, I",
+      "want to start off",
+      "by talking about our",
+      "adoption metrics."
     ],
     "current": false
   },
   {
-    "startTime": 538.41,
+    "startTime": 534.48,
     "endTime": 542.01,
-    "content": ["have over 100,000 users using", "the Lighthouse extension."],
+    "content": [
+      "So Lighthouse has pretty good",
+      "adoption, in the sense of we",
+      "have over 100,000 users using",
+      "the Lighthouse extension."
+    ],
     "current": false
   },
   {
@@ -1377,44 +1258,35 @@
   },
   {
     "startTime": 546.626,
-    "endTime": 548.25,
-    "content": ["And in terms of", "DevTools tools, well, I"],
-    "current": false
-  },
-  {
-    "startTime": 548.25,
     "endTime": 550.08,
-    "content": ["can't share exact stats."],
+    "content": [
+      "And in terms of",
+      "DevTools tools, well, I",
+      "can't share exact stats."
+    ],
     "current": false
   },
   {
     "startTime": 550.08,
-    "endTime": 551.7,
-    "content": ["What I can say is", "that it's about half"],
-    "current": false
-  },
-  {
-    "startTime": 551.7,
     "endTime": 553.71,
-    "content": ["as popular as the", "Timeline panel."],
+    "content": [
+      "What I can say is",
+      "that it's about half",
+      "as popular as the",
+      "Timeline panel."
+    ],
     "current": false
   },
   {
     "startTime": 553.71,
-    "endTime": 555.81,
-    "content": ["We've also seen people", "building services"],
-    "current": false
-  },
-  {
-    "startTime": 555.81,
-    "endTime": 558.06,
-    "content": ["on top of Lighthouse,", "specifically services"],
-    "current": false
-  },
-  {
-    "startTime": 558.06,
     "endTime": 560.82,
-    "content": ["like Calibre and Treo."],
+    "content": [
+      "We've also seen people",
+      "building services",
+      "on top of Lighthouse,",
+      "specifically services",
+      "like Calibre and Treo."
+    ],
     "current": false
   },
   {
@@ -1431,56 +1303,47 @@
   },
   {
     "startTime": 564.97,
-    "endTime": 565.98,
-    "content": ["And we definitely", "wouldn't be here"],
-    "current": false
-  },
-  {
-    "startTime": 565.98,
-    "endTime": 567.375,
-    "content": ["without open source", "contributions"],
-    "current": false
-  },
-  {
-    "startTime": 567.375,
     "endTime": 569.49,
-    "content": ["we receive from", "developers like you."],
+    "content": [
+      "And we definitely",
+      "wouldn't be here",
+      "without open source",
+      "contributions",
+      "we receive from",
+      "developers like you."
+    ],
     "current": false
   },
   {
     "startTime": 569.49,
-    "endTime": 572.1,
-    "content": ["Even something as simple", "as changing the README file"],
-    "current": false
-  },
-  {
-    "startTime": 572.1,
     "endTime": 574.05,
-    "content": ["really helps our", "project go a long way."],
+    "content": [
+      "Even something as simple",
+      "as changing the README file",
+      "really helps our",
+      "project go a long way."
+    ],
     "current": false
   },
   {
     "startTime": 574.05,
-    "endTime": 575.81,
-    "content": ["And we have over 100", "plus contributors"],
-    "current": false
-  },
-  {
-    "startTime": 575.81,
     "endTime": 576.81,
-    "content": ["from all over the world."],
+    "content": [
+      "And we have over 100",
+      "plus contributors",
+      "from all over the world."
+    ],
     "current": false
   },
   {
     "startTime": 576.81,
-    "endTime": 579.96,
-    "content": ["You can see them in blue on", "this map here, from countries"],
-    "current": false
-  },
-  {
-    "startTime": 579.96,
     "endTime": 583.41,
-    "content": ["like India, and", "Brazil, and Poland,"],
+    "content": [
+      "You can see them in blue on",
+      "this map here, from countries",
+      "like India, and",
+      "Brazil, and Poland,"
+    ],
     "current": false
   },
   {
@@ -1491,95 +1354,71 @@
   },
   {
     "startTime": 586.046,
-    "endTime": 588.42,
-    "content": ["So if you're interested in", "being part of this contributor"],
-    "current": false
-  },
-  {
-    "startTime": 588.42,
-    "endTime": 590.46,
-    "content": ["community, and we'd", "love to have you join,"],
-    "current": false
-  },
-  {
-    "startTime": 590.46,
     "endTime": 591.78,
-    "content": ["check us out on GitHub."],
+    "content": [
+      "So if you're interested in",
+      "being part of this contributor",
+      "community, and we'd",
+      "love to have you join,",
+      "check us out on GitHub."
+    ],
     "current": false
   },
   {
     "startTime": 591.78,
     "endTime": 594.6,
-    "content": ["The VEPO is called Lighthouse."],
+    "content": ["The REPO is called Lighthouse."],
     "current": false
   },
   {
     "startTime": 594.6,
-    "endTime": 597.354,
-    "content": ["And then, finally,", "I want to thank you."],
-    "current": false
-  },
-  {
-    "startTime": 597.354,
-    "endTime": 598.77,
-    "content": ["I want to thank", "everyone for being"],
-    "current": false
-  },
-  {
-    "startTime": 598.77,
     "endTime": 600.66,
-    "content": ["here on behalf of the team."],
-    "current": false
-  },
-  {
-    "startTime": 600.66,
-    "endTime": 602.91,
-    "content": ["I really appreciate you", "coming out and listening to me"],
-    "current": false
-  },
-  {
-    "startTime": 602.91,
-    "endTime": 604.077,
-    "content": ["talk about Lighthouse."],
-    "current": false
-  },
-  {
-    "startTime": 604.077,
-    "endTime": 606.16,
-    "content": ["And if you're interested", "in trying out Lighthouse,"],
-    "current": false
-  },
-  {
-    "startTime": 606.16,
-    "endTime": 607.966,
-    "content": ["we actually have a", "booth at the sandbox."],
-    "current": false
-  },
-  {
-    "startTime": 607.966,
-    "endTime": 610.59,
     "content": [
-      "You can come talk to Eric and I",
-      "about Lighthouse after the talk"
+      "And then, finally,",
+      "I want to thank you.",
+      "I want to thank",
+      "everyone for being",
+      "here on behalf of the team."
     ],
     "current": false
   },
   {
-    "startTime": 610.59,
+    "startTime": 600.66,
+    "endTime": 604.077,
+    "content": [
+      "I really appreciate you",
+      "coming out and listening to me",
+      "talk about Lighthouse."
+    ],
+    "current": false
+  },
+  {
+    "startTime": 604.077,
+    "endTime": 607.966,
+    "content": [
+      "And if you're interested",
+      "in trying out Lighthouse,",
+      "we actually have a",
+      "booth at the sandbox."
+    ],
+    "current": false
+  },
+  {
+    "startTime": 607.966,
     "endTime": 612.18,
-    "content": ["if you want to learn more."],
+    "content": [
+      "You can come talk to Eric and I",
+      "about Lighthouse after the talk",
+      "if you want to learn more."
+    ],
     "current": false
   },
   {
     "startTime": 612.18,
-    "endTime": 614.25,
-    "content": ["And so now that", "you have a website"],
-    "current": false
-  },
-  {
-    "startTime": 614.25,
     "endTime": 617.67,
     "content": [
+      "And so now that",
+      "you have a website",
       "and you have a nice little way",
       "to audit it via Lighthouse,"
     ],
@@ -1587,44 +1426,34 @@
   },
   {
     "startTime": 617.67,
-    "endTime": 619.26,
-    "content": ["you might want to", "think about what"],
-    "current": false
-  },
-  {
-    "startTime": 619.26,
-    "endTime": 624.639,
+    "endTime": 623.639,
     "content": [
+      "you might want to",
+      "think about what",
       "is the best way that I can",
-      "detect regressions and automate"
+      "detect regressions,"
     ],
     "current": false
   },
   {
-    "startTime": 624.639,
-    "endTime": 627.18,
-    "content": [
-      "some testing to make sure that",
-      "the regressions don't actually"
-    ],
-    "current": false
-  },
-  {
-    "startTime": 627.18,
+    "startTime": 623.639,
     "endTime": 628.65,
-    "content": ["end up going to my end users."],
+    "content": [
+      "and automate some testing to make sure that",
+      "the regressions don't actually",
+      "end up going to my end users."
+    ],
     "current": false
   },
   {
     "startTime": 628.65,
-    "endTime": 630.39,
-    "content": ["And this is where", "Eric will tell you"],
-    "current": false
-  },
-  {
-    "startTime": 630.39,
     "endTime": 632.94,
-    "content": ["all about Puppeteer", "and Headless Chrome,"],
+    "content": [
+      "And this is where",
+      "Eric will tell you",
+      "all about Puppeteer",
+      "and Headless Chrome,"
+    ],
     "current": false
   },
   {
@@ -1635,20 +1464,12 @@
   },
   {
     "startTime": 634.57,
-    "endTime": 636.88,
-    "content": ["So thanks very much."],
-    "current": false
-  },
-  {
-    "startTime": 636.88,
-    "endTime": 638.14,
-    "content": ["ERIC BIDELMAN: Thank you."],
-    "current": false
-  },
-  {
-    "startTime": 638.14,
     "endTime": 639.58,
-    "content": ["Thank you."],
+    "content": [
+      "So thanks very much.",
+      "ERIC BIDELMAN: Thank you.",
+      "Thank you."
+    ],
     "current": false
   },
   {
@@ -1659,48 +1480,40 @@
   },
   {
     "startTime": 640.779,
-    "endTime": 642.57,
-    "content": ["We talked a little bit", "about manual testing"],
-    "current": false
-  },
-  {
-    "startTime": 642.57,
     "endTime": 644.65,
-    "content": ["using Lighthouse, which", "is in the DevTools now."],
-    "current": false
-  },
-  {
-    "startTime": 644.65,
-    "endTime": 647.487,
     "content": [
-      "But maybe you want to do some",
-      "testing and automation using"
+      "We talked a little bit",
+      "about manual testing",
+      "using Lighthouse, which",
+      "is in the DevTools now."
     ],
     "current": false
   },
   {
-    "startTime": 647.487,
+    "startTime": 644.65,
     "endTime": 648.695,
-    "content": ["Headless Chrome or Puppeteer."],
+    "content": [
+      "But maybe you want to do some",
+      "testing and automation using",
+      "Headless Chrome or Puppeteer."
+    ],
     "current": false
   },
   {
     "startTime": 648.695,
-    "endTime": 651.29,
-    "content": ["And we're going to talk", "about both these right now."],
-    "current": false
-  },
-  {
-    "startTime": 651.29,
     "endTime": 651.84,
-    "content": ["All right."],
+    "content": [
+      "And we're going to talk",
+      "about both these right now.",
+      "All right."
+    ],
     "current": false
   },
   {
     "startTime": 651.84,
     "endTime": 653.304,
     "content": ["So what is headless browsing?"],
-    "current": false
+    "current": true
   },
   {
     "startTime": 653.304,
