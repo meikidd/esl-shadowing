@@ -1,1 +1,5 @@
-["lighthouse-headless-chrome-and-puppeteer", "lighthouse-totally-tool-tips"]
+[
+  "using-lighthouse-to-build-progressive-web-apps",
+  "lighthouse-headless-chrome-and-puppeteer",
+  "lighthouse-totally-tool-tips"
+]
