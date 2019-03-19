@@ -187,7 +187,7 @@ class Shadowing extends React.Component {
               onClick={() => this.onPlaySentenceClick(i)}
             >
               {sentence.content.map((content, j) => (
-                <div key={j}><span>{j}</span>{content}</div>
+                <div key={j}>{content}</div>
               ))}
             </div>
           ))}
