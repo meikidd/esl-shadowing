@@ -1,0 +1,41 @@
+We already introduced one basic data structure
+last episode: Arrays, also called lists or
+vectors in some languages.
+
+These are a series of values stored in memory.
+
+So instead of just a single value being saved
+into a variable, like j=5, we can define a whole series
+of numbers, and save that into an array variable.
+
+To be able to find a particular value in this
+array, we have to specify an index.
+
+Almost all programing languages start arrays
+at index 0, and use a square bracket syntax to
+denote array access.
+
+It’s easy to confuse the fifth number in
+the array with the number at index 5.
+
+They are not the same.
+
+Remember, the number at index 5 is the 6th
+number in the array because the first number
+is at index 0.
+
+Arrays are extremely versatile data structures,
+used all the time, and so there are many functions
+that can handle them to do useful things.
+
+For example, pretty much every programming
+language comes with a built-in sort function,
+where you just pass in your array, and it
+comes back sorted.
+
+So there’s no need to write that algorithm
+from scratch.
+
+Very closely related are Strings, which are
+just arrays of characters, like letters, numbers,
+punctuation and other written symbols.
