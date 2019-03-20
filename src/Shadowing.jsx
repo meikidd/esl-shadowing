@@ -12,6 +12,7 @@ class Shadowing extends React.Component {
   };
   interval = -1;
   countdownTimer = null;
+  playSpeed = 1;
   playerRef = React.createRef();
 
   componentDidMount() {
@@ -22,47 +23,19 @@ class Shadowing extends React.Component {
     });
 
     // handle timeupdate
-    this.playerRef.current.addEventListener('timeupdate', this.onTimeUpdate);
+    this.playerRef.current.addEventListener('ended', this.onEnded);
   }
   componentWillUnmount() {
     this.stopCountdown();
-    this.playerRef.current.removeEventListener('timeupdate', this.onTimeUpdate);
+    this.playerRef.current.removeEventListener('ended', this.onEnded);
   }
 
-  onTimeUpdate = () => {
-    const player = this.playerRef.current;
-    const currentTime = player.currentTime;
-    const interval = this.interval;
-    const subtitles = this.state.subtitles;
-    const subtitle = subtitles[this.state.current];
-
-    if (interval && currentTime >= subtitle.endTime && !this.countdownTimer) {
-      // player.currentTime -= 0.3;
-      player.pause();
-
-      // start count down
-      if (interval > 0) {
-        const countdownDuration =
-          interval * (subtitle.endTime - subtitle.startTime) * 1000;
-        this.countdownTimer = setTimeout(() => {
-          this.play();
-          this.stopCountdown();
-        }, countdownDuration);
-        this.startCountdown(countdownDuration);
-      }
-    }
-
-    // update current
-    let current;
-    subtitles.forEach((subtitle, i) => {
-      if (currentTime > subtitle.startTime && currentTime < subtitle.endTime) {
-        current = i;
-      }
-    });
-    if (current) {
-      this.setState({ current });
+  onEnded = () => {
+    if (this.interval === 0) {
+      this.onPlaySentenceClick(this.state.current + 1);
     }
   };
+
   startCountdown(duration) {
     this.setState({
       countdownStyle: {
@@ -83,8 +56,10 @@ class Shadowing extends React.Component {
   };
 
   onPlaySentenceClick = i => {
-    const subtitle = this.state.subtitles[i];
-    this.playerRef.current.currentTime = subtitle.startTime;
+
+    const id = this.props.match.params.id;
+    this.playerRef.current.src = `${Utils.resourceUrl()}/${id}/audio-${i}.mp3`;
+    this.playerRef.current.playbackRate = this.playSpeed;
     this.setState({ current: i }, () => {
       this.play();
     });
@@ -107,6 +82,7 @@ class Shadowing extends React.Component {
   };
   onPlaySpeedChange = e => {
     const value = e.currentTarget.value;
+    this.playSpeed = value;
     this.playerRef.current.playbackRate = value;
   };
   onIntervalChange = e => {
@@ -149,9 +125,9 @@ class Shadowing extends React.Component {
               <select defaultValue={-1} onChange={this.onIntervalChange}>
                 <option value={-1}>stop</option>
                 <option value={0}>dont stop</option>
-                <option value={2}>2x</option>
-                <option value={3}>3x</option>
-                <option value={5}>5x</option>
+                {/* <option value={2}>2x</option> */}
+                {/* <option value={3}>3x</option> */}
+                {/* <option value={5}>5x</option> */}
               </select>
             </div>
           </div>
@@ -160,7 +136,7 @@ class Shadowing extends React.Component {
           <audio
             controls
             ref={this.playerRef}
-            src={`${Utils.resourceUrl()}/${id}/audio.mp3`}
+            src={`${Utils.resourceUrl()}/${id}/audio-0.mp3`}
           />
         </div>
         <div className="countdown-bar" style={this.state.countdownStyle} />
