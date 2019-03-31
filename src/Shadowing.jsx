@@ -57,6 +57,9 @@ class Shadowing extends React.Component {
   };
 
   onPlaySentenceClick = i => {
+    if (i >= this.state.subtitles.length) {
+      return;
+    }
 
     const id = this.props.match.params.id;
     this.playerRef.current.src = `${Utils.resourceUrl()}/${id}/audio-${i}.mp3`;
@@ -91,7 +94,6 @@ class Shadowing extends React.Component {
   };
   onLanguageChange = (e) => {
     this.setState({ language: e.currentTarget.value });
-    console.log(e.currentTarget.value)
   }
   onToggleSettings = () => {
     const show = this.state.showSettings;

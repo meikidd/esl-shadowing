@@ -1,0 +1,103 @@
+[
+  {
+    "en": [
+      "Let’s take a look at this structure that’s",
+      "called a “node”."
+    ],
+    "zh": [
+      "现在看看这个数据结构 - node"
+    ]
+  },
+  {
+    "en": [
+      "It stores a variable, like a number, and also",
+      "a pointer."
+    ],
+    "zh": [
+      "它能存储变量和指针"
+    ]
+  },
+  {
+    "en": [
+      "A pointer is a special variable that points,",
+      "hence the name, to a location in memory."
+    ],
+    "zh": [
+      "指针是一种特殊的变量，它指向一个内存地址"
+    ]
+  },
+  {
+    "en": [
+      "Using this structure, we can create a linked",
+      "list, which is a flexible data structure that",
+      "can store many nodes."
+    ],
+    "zh": [
+      "我们可以用这个数据结构来构造链表，链表是一个非常灵活的结构，能存储很多节点"
+    ]
+  },
+  {
+    "en": [
+      "It does this by having each node point to",
+      "the next node in the list."
+    ],
+    "zh": [
+      "它的每一个节点都有指针指向链表的下一个节点"
+    ]
+  },
+  {
+    "en": [
+      "Unlike an array, whose size has to be pre-defined,",
+      "linked lists can be dynamically extended or",
+      "shortened."
+    ],
+    "zh": [
+      "它跟数组不同，数组的长度是预先设置好的。而链表的可以动态增长或缩短。"
+    ]
+  },
+  {
+    "en": [
+      "For example, we can allocate a new node in",
+      "memory, and insert it into this list, just",
+      "by changing the next pointers."
+    ],
+    "zh": [
+      "例如，我们可以在内存中分配一个新节点，然后只需要修改指针指向的节点，就能实现插入。"
+    ]
+  },
+  {
+    "en": [
+      "Linked Lists can also easily be re-ordered,",
+      "trimmed, split, reversed, and so on."
+    ],
+    "zh": [
+      "链表还能很方便地重排、缩减、拆分、反转 等等。"
+    ]
+  },
+  {
+    "en": [
+      "Which is pretty nifty!"
+    ],
+    "zh": [
+      "真的非常灵活。"
+    ]
+  },
+  {
+    "en": [
+      "Owing to this flexibility, many more-complex",
+      "data structures are built on top of linked lists."
+    ],
+    "zh": [
+      "由于这种灵活性，很多更复杂的数据结构都是基于链表构建的。"
+    ]
+  },
+  {
+    "en": [
+      "The most famous and universal are queues and",
+      "stacks."
+    ],
+    "zh": [
+      "其中最著名且最常用的是队列和栈。"
+    ]
+  }
+]
