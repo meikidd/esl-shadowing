@@ -14,7 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "update-docs": "rm -r ./docs/* && cp -r ./build/* ./docs/"
   },
   "homepage": "http://meikidd.github.io/esl-shadowing",
   "eslintConfig": {
