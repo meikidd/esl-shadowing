@@ -1,0 +1,41 @@
+"Let’s take a look at this structure that’s",
+"called a “node”."
+
+"It stores a variable, like a number, and also",
+"a pointer."
+
+"A pointer is a special variable that points,",
+"hence the name, to a location in memory."
+
+"Using this structure, we can create a linked",
+"list, which is a flexible data structure that",
+"can store many nodes."
+
+"It does this by having each node point to",
+"the next node in the list."
+
+"So this linked list happened to be circular,",
+"but it could also have been terminated by"
+
+"using a next pointer value of 0 -- the null",
+"value -- which would indicate we’ve reached",
+"the end of the list."
+
+"Unlike an array, whose size has to be pre-defined,",
+"linked lists can be dynamically extended or",
+"shortened."
+
+"For example, we can allocate a new node in",
+"memory, and insert it into this list, just",
+"by changing the next pointers."
+
+"Linked Lists can also easily be re-ordered,",
+"trimmed, split, reversed, and so on."
+
+"Which is pretty nifty!"
+
+"Owing to this flexibility, many more-complex",
+"data structures are built on top of linked lists."
+
+"The most famous and universal are queues and",
+"stacks."
