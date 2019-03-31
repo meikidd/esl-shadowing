@@ -1,116 +1,116 @@
 [
   {
-    "startTime": 0,
-    "endTime": 6.889,
-    "content": [
+    "en": [
       "We already introduced one basic data structure",
       "last episode: Arrays, also called lists or",
       "vectors in some languages."
     ],
-    "current": false
+    "zh": [
+      "我们在上期视频中介绍了『数组』这个基础数据结构，在其它编程语言中也叫 vector 或 list"
+    ]
   },
   {
-    "startTime": 6.849,
-    "endTime": 9.000,
-    "content": [
+    "en": [
       "These are a series of values stored in memory."
     ],
-    "current": false
+    "zh": [
+      "它是在内存中的一组数据"
+    ]
   },
   {
-    "startTime": 9.000,
-    "endTime": 16.947,
-    "content": [
+    "en": [
       "So instead of just a single value being saved",
       "into a variable, like j=5, we can define a whole series",
       "of numbers, and save that into an array variable."
     ],
-    "current": false
+    "zh": [
+      "我们可以定义一组数字，并保存在数组变量里。而不是像 j=5 这样每个变量只能存一个值"
+    ]
   },
   {
-    "startTime": 16.947,
-    "endTime": 21.1,
-    "content": [
+    "en": [
       "To be able to find a particular value in this",
       "array, we have to specify an index."
     ],
-    "current": false
+    "zh": [
+      "我们通过数组下标找到数组中的某个值"
+    ]
   },
   {
-    "startTime": 19.2,
-    "endTime": 27.2,
-    "content": [
+    "en": [
       "Almost all programing languages start arrays",
       "at index 0, and use a square bracket syntax to",
       "denote array access."
     ],
-    "current": false
+    "zh": [
+      "几乎所有语言都从 0 开始计算下标，并且用方括号访问数组"
+    ]
   },
   {
-    "startTime": 27.2,
-    "endTime": 30.5,
-    "content": [
+    "en": [
       "It’s easy to confuse the fifth number in",
       "the array with the number at index 5."
     ],
-    "current": false
+    "zh": [
+      "很容易把数组中的第五个值当成是下标为 5 的那个值"
+    ]
   },
   {
-    "startTime": 30.5,
-    "endTime": 31.9,
-    "content": [
+    "en": [
       "They are not the same."
     ],
-    "current": false
+    "zh": [
+      "实则不然"
+    ]
   },
   {
-    "startTime": 31.9,
-    "endTime": 36.6,
-    "content": [
+    "en": [
       "Remember, the number at index 5 is the 6th",
       "number in the array because the first number",
       "is at index 0."
     ],
-    "current": false
+    "zh": [
+      "要记住，下标为 5 的是第六个值，因为 0 是第一个值"
+    ]
   },
   {
-    "startTime": 36.6,
-    "endTime": 42.8,
-    "content": [
+    "en": [
       "Arrays are extremely versatile data structures,",
       "used all the time, and so there are many functions",
       "that can handle them to do useful things."
     ],
-    "current": false
+    "zh": [
+      "数组是非常实用的数据结构，几乎任何时候都能用到，它有很多函数可以帮我们实现很有用的功能"
+    ]
   },
   {
-    "startTime": 42.8,
-    "endTime": 49.6,
-    "content": [
+    "en": [
       "For example, pretty much every programming",
       "language comes with a built-in sort function,",
       "where you just pass in your array, and it",
       "comes back sorted."
     ],
-    "current": false
+    "zh": [
+      "例如，几乎每个编程语言都有内置的排序函数，只需要传入一个数组，它就能给你返回排序后的数组"
+    ]
   },
   {
-    "startTime": 49.6,
-    "endTime": 52.03,
-    "content": [
+    "en": [
       "So there’s no need to write that algorithm",
       "from scratch."
     ],
-    "current": false
+    "zh": [
+      "不需要我们自己每次都从头开始写排序算法"
+    ]
   },
   {
-    "startTime": 52.03,
-    "endTime": 58.569,
-    "content": [
+    "en": [
       "Very closely related are Strings, which are",
       "just arrays of characters, like letters, numbers,",
       "punctuation and other written symbols."
     ],
-    "current": false
+    "zh": [
+      "字符串跟数组非常像，它是由字符组成的数组，例如字母、数字、连字符还有其他符号"
+    ]
   }
 ]

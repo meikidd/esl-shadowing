@@ -8,7 +8,8 @@ class Shadowing extends React.Component {
     subtitles: [],
     current: 0,
     countdownStyle: {},
-    showSettings: false
+    showSettings: false,
+    language: 'en'
   };
   interval = -1;
   countdownTimer = null;
@@ -88,6 +89,10 @@ class Shadowing extends React.Component {
   onIntervalChange = e => {
     this.interval = parseInt(e.currentTarget.value);
   };
+  onLanguageChange = (e) => {
+    this.setState({ language: e.currentTarget.value });
+    console.log(e.currentTarget.value)
+  }
   onToggleSettings = () => {
     const show = this.state.showSettings;
     this.setState({
@@ -98,6 +103,7 @@ class Shadowing extends React.Component {
     const id = this.props.match.params.id;
     const subtitles = this.state.subtitles;
     const current = this.state.current;
+    const language = this.state.language;
 
     return (
       <div className="views-shadowing">
@@ -128,6 +134,13 @@ class Shadowing extends React.Component {
                 {/* <option value={2}>2x</option> */}
                 {/* <option value={3}>3x</option> */}
                 {/* <option value={5}>5x</option> */}
+              </select>
+            </div>
+            <div className="settings-field">
+              <span>language:</span>
+              <select defaultValue="en" onChange={this.onLanguageChange}>
+                <option value="en">en</option>
+                <option value="zh">zh</option>
               </select>
             </div>
           </div>
@@ -162,7 +175,7 @@ class Shadowing extends React.Component {
               className={`subtitle ${i === current ? 'current' : ''}`}
               onClick={() => this.onPlaySentenceClick(i)}
             >
-              {sentence.content.map((content, j) => (
+              {sentence[language].map((content, j) => (
                 <div key={j}>{content}</div>
               ))}
             </div>
