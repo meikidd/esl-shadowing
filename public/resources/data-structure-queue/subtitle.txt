@@ -1,0 +1,25 @@
+A queue – like the line at your post office – goes in order of arrival.
+
+The person who has been waiting the longest, gets served first.
+
+Imagine we have a pointer, named “post office queue”, that points to the first node in our linked list.
+
+Once we’re done serving Hank, we can read Hank’s next pointer,
+
+and update our “post office queue” pointer to the next person in the line.
+
+We’ve successfully dequeued Hank -- he’s gone, done, finished.
+
+If we want to enqueue someone, that is, add them to the line.
+
+we have to traverse down the linked list until we hit the end,
+
+and then change that next pointer to point to the new person.
+
+With just a small change, we can use linked lists as stacks, which are LIFO - Last-In First-Out.
+
+You can think of this like a stack of pancakes, as you make them, you add them to the top of stack.
+
+And when you want to eat one, you take them from the top of the stack.
+
+Instead of enqueueing and dequeuing, data is pushed onto the stack and popped from the stacks.
