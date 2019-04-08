@@ -1,0 +1,106 @@
+[
+  {
+    "en": [
+      "A queue – like the line at your post office – goes in order of arrival."
+    ],
+    "zh": [
+      "队列像邮局排队一样，按到达的顺序处理数据"
+    ]
+  },
+  {
+    "en": [
+      "The person who has been waiting the longest, gets served first."
+    ],
+    "zh": [
+      "等待时间最长的人，最先办理"
+    ]
+  },
+  {
+    "en": [
+      "Imagine we have a pointer, named “post office queue”, that points to the first node in our linked list."
+    ],
+    "zh": [
+      "假设我们有一个指针名叫\"邮局队列\"，它指向链表的的第一个节点"
+    ]
+  },
+  {
+    "en": [
+      "Once we’re done serving Hank, we can read Hank’s next pointer,"
+    ],
+    "zh": [
+      "一旦处理完 Hank 的业务，我们就从它的指针读取 Hank 的下一个节点"
+    ]
+  },
+  {
+    "en": [
+      "and update our “post office queue” pointer to the next person in the line."
+    ],
+    "zh": [
+      "然后把\"邮局队列\"的指针指向下个节点"
+    ]
+  },
+  {
+    "en": [
+      "We’ve successfully dequeued Hank -- he’s gone, done, finished."
+    ],
+    "zh": [
+      "现在我们成功处理了 Hank，搞定他了"
+    ]
+  },
+  {
+    "en": [
+      "If we want to enqueue someone, that is, add them to the line."
+    ],
+    "zh": [
+      "如果要把某人加入队，也就是说让他开始排队"
+    ]
+  },
+  {
+    "en": [
+      "we have to traverse down the linked list until we hit the end,"
+    ],
+    "zh": [
+      "我们要穿越整个列表，一直到链表的结尾处"
+    ]
+  },
+  {
+    "en": [
+      "and then change that next pointer to point to the new person."
+    ],
+    "zh": [
+      "然后把结尾的指针指向新来的节点"
+    ]
+  },
+  {
+    "en": [
+      "With just a small change, we can use linked lists as stacks, which are LIFO - Last-In First-Out."
+    ],
+    "zh": [
+      "现在我们稍作修改，就能实现先进先出的堆栈"
+    ]
+  },
+  {
+    "en": [
+      "You can think of this like a stack of pancakes, as you make them, you add them to the top of stack."
+    ],
+    "zh": [
+      "你可以把它想象成煎饼堆，当你在做煎饼塔堆，通常把煎饼加在顶上"
+    ]
+  },
+  {
+    "en": [
+      "And when you want to eat one, you take them from the top of the stack."
+    ],
+    "zh": [
+      "而你在吃的时候，通常也是从顶上开始吃"
+    ]
+  },
+  {
+    "en": [
+      "Instead of enqueueing and dequeuing, data is pushed onto the stack and popped from the stacks."
+    ],
+    "zh": [
+      "堆跟队列的出队入队不一样，数据是从堆顶进入，也是从堆顶出去"
+    ]
+  }
+]
