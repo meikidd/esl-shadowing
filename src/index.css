@@ -79,7 +79,7 @@ code {
 
 /* shadowing */
 .views-shadowing {
-  height: 100vh;
+  height: 90vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
