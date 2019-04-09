@@ -1,0 +1,82 @@
+[
+  {
+    "en": [
+      "If we update our node struct to contain not just one, but two pointers, we can build trees, another data structure that’s used in many algorithms."
+    ],
+    "zh": [
+      "如果我们修改节点的数据结构，把一个指针改为两个指针，就改造成了另一个常用的数据结构，树(tree)"
+    ]
+  },
+  {
+    "en": [
+      "The top most node is called the root."
+    ],
+    "zh": [
+      "树的最顶层节点称为根节点"
+    ]
+  },
+  {
+    "en": [
+      "And any nodes that hang from other nodes are called children nodes."
+    ],
+    "zh": [
+      "所有依附于其它节点的节点，称为子节点"
+    ]
+  },
+  {
+    "en": [
+      "As you might expect, nodes above children are called parent nodes."
+    ],
+    "zh": [
+      "在子节点之上的，称为父节点"
+    ]
+  },
+  {
+    "en": [
+      "And finally, any nodes that have no children -- where the tree ends -- are called Leaf Nodes."
+    ],
+    "zh": [
+      "最后，没有子节点的节点，称为叶子节点"
+    ]
+  },
+  {
+    "en": [
+      "In our example, nodes can have up to two children, and for that reason, this particular data structure is called a binary tree."
+    ],
+    "zh": [
+      "在这个例子中，每个父节点最多拥有两个子节点，因此，这个数据结构称为二叉树"
+    ]
+  },
+  {
+    "en": [
+      "But you could just as easily have trees with three, four or any number of children by modifying the data structure accordingly."
+    ],
+    "zh": [
+      "很显然，修改数据结构中子节点的数目，也可以有三叉树、四叉树"
+    ]
+  },
+  {
+    "en": [
+      "You can even have tree nodes that use linked lists to store all the nodes they point to."
+    ],
+    "zh": [
+      "你可以用链表来存储树中的所有节点"
+    ]
+  },
+  {
+    "en": [
+      "An important property of trees – both in real life and in data structures – is that there’s a one-way path from roots to leaves."
+    ],
+    "zh": [
+      "在现实生活中和数据结构中，树都有一个重要特性，从根节点到叶子节点的路径是单向的"
+    ]
+  },
+  {
+    "en": [
+      "It’d be weird if roots connected to leaves,that connected to roots."
+    ],
+    "zh": [
+      "如果叶子节点也能指向根节点，那看起来会很怪"
+    ]
+  }
+]
