@@ -1,0 +1,19 @@
+"If we update our node struct to contain not just one, but two pointers, we can build trees, another data structure that’s used in many algorithms."
+
+"The top most node is called the root."
+
+"And any nodes that hang from other nodes are called children nodes."
+
+"As you might expect, nodes above children are called parent nodes."
+
+"And finally, any nodes that have no children -- where the tree ends -- are called Leaf Nodes."
+
+"In our example, nodes can have up to two children, and for that reason, this particular data structure is called a binary tree."
+
+"But you could just as easily have trees with three, four or any number of children by modifying the data structure accordingly."
+
+"You can even have tree nodes that use linked lists to store all the nodes they point to."
+
+"An important property of trees – both in real life and in data structures – is that there’s a one-way path from roots to leaves."
+
+"It’d be weird if roots connected to leaves,that connected to roots."
